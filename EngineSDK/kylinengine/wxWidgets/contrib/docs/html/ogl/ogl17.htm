@@ -1,0 +1,395 @@
+<HTML>
+<head><title>wxLineShape</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxlineshape"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl16.htm#wxellipseshape"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl18.htm#wxpolygonshape"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxLineShape</H2>
+<P>
+A wxLineShape may be attached to two nodes; it may be segmented, in which
+case a control point is drawn for each joint.<P>
+A wxLineShape may have arrows at the beginning, end and centre.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+<A HREF="ogl21.htm#wxshape">wxShape</A><P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic104">wxLineShape::wxLineShape</A><BR>
+<A HREF="#topic105">wxLineShape::~wxLineShape</A><BR>
+<A HREF="#wxlineshapeaddarrow">wxLineShape::AddArrow</A><BR>
+<A HREF="#topic106">wxLineShape::AddArrowOrdered</A><BR>
+<A HREF="#topic107">wxLineShape::ClearArrow</A><BR>
+<A HREF="#topic108">wxLineShape::ClearArrowsAtPosition</A><BR>
+<A HREF="#topic109">wxLineShape::DrawArrow</A><BR>
+<A HREF="#topic110">wxLineShape::DeleteArrowHead</A><BR>
+<A HREF="#topic111">wxLineShape::DeleteLineControlPoint</A><BR>
+<A HREF="#topic112">wxLineShape::DrawArrows</A><BR>
+<A HREF="#topic113">wxLineShape::DrawRegion</A><BR>
+<A HREF="#topic114">wxLineShape::EraseRegion</A><BR>
+<A HREF="#topic115">wxLineShape::FindArrowHead</A><BR>
+<A HREF="#topic116">wxLineShape::FindLineEndPoints</A><BR>
+<A HREF="#topic117">wxLineShape::FindLinePosition</A><BR>
+<A HREF="#topic118">wxLineShape::FindMinimumWidth</A><BR>
+<A HREF="#topic119">wxLineShape::FindNth</A><BR>
+<A HREF="#topic120">wxLineShape::GetAttachmentFrom</A><BR>
+<A HREF="#topic121">wxLineShape::GetAttachmentTo</A><BR>
+<A HREF="#topic122">wxLineShape::GetEnds</A><BR>
+<A HREF="#topic123">wxLineShape::GetFrom</A><BR>
+<A HREF="#topic124">wxLineShape::GetLabelPosition</A><BR>
+<A HREF="#topic125">wxLineShape::GetNextControlPoint</A><BR>
+<A HREF="#topic126">wxLineShape::GetTo</A><BR>
+<A HREF="#topic127">wxLineShape::Initialise</A><BR>
+<A HREF="#topic128">wxLineShape::InsertLineControlPoint</A><BR>
+<A HREF="#topic129">wxLineShape::IsEnd</A><BR>
+<A HREF="#topic130">wxLineShape::IsSpline</A><BR>
+<A HREF="#wxlineshapemakelinecontrolpoints">wxLineShape::MakeLineControlPoints</A><BR>
+<A HREF="#topic131">wxLineShape::OnMoveLink</A><BR>
+<A HREF="#topic132">wxLineShape::SetAttachmentFrom</A><BR>
+<A HREF="#topic133">wxLineShape::SetAttachments</A><BR>
+<A HREF="#topic134">wxLineShape::SetAttachmentTo</A><BR>
+<A HREF="#topic135">wxLineShape::SetEnds</A><BR>
+<A HREF="#topic136">wxLineShape::SetFrom</A><BR>
+<A HREF="#topic137">wxLineShape::SetIgnoreOffsets</A><BR>
+<A HREF="#topic138">wxLineShape::SetSpline</A><BR>
+<A HREF="#topic139">wxLineShape::SetTo</A><BR>
+<A HREF="#topic140">wxLineShape::Straighten</A><BR>
+<A HREF="#topic141">wxLineShape::Unlink</A><BR>
+<P>
+
+<HR>
+<A NAME="topic104"></A>
+<H3>wxLineShape::wxLineShape</H3>
+<P>
+<B></B> <B>wxLineShape</B>()<P>
+Constructor.<P>
+Usually you will call <A HREF="ogl17.htm#wxlineshapemakelinecontrolpoints">wxLineShape::MakeLineControlPoints</A> to
+specify the number of segments in the line.<P>
+
+<HR>
+<A NAME="topic105"></A>
+<H3>wxLineShape::~wxLineShape</H3>
+<P>
+<B></B> <B>~wxLineShape</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="wxlineshapeaddarrow"></A>
+<H3>wxLineShape::AddArrow</H3>
+<P>
+<B>void</B> <B>AddArrow</B>(<B>WXTYPE</B><I> type</I>, <B>bool</B><I> end = ARROW_POSITION_END</I>, <B>double</B><I> arrowSize = 10.0</I>,
+ <B>double</B><I> xOffset = 0.0</I>, <B>const wxString&amp; </B><I>name = ""</I>, <B>wxPseudoMetaFile *</B><I>mf = NULL</I>, <B>long</B><I> arrowId = -1</I>)<P>
+Adds an arrow (or annotation) to the line.<P>
+<I>type</I> may currently be one of:<P>
+<DL>
+
+<DT> ARROW_HOLLOW_CIRCLE
+<DD> Hollow circle.
+<DT> ARROW_FILLED_CIRCLE
+<DD> Filled circle.
+<DT> ARROW_ARROW
+<DD> Conventional arrowhead.
+<DT> ARROW_SINGLE_OBLIQUE
+<DD> Single oblique stroke.
+<DT> ARROW_DOUBLE_OBLIQUE
+<DD> Double oblique stroke.
+<DT> ARROW_DOUBLE_METAFILE
+<DD> Custom arrowhead.
+</DL>
+<P>
+<I>end</I> may currently be one of:<P>
+<DL>
+
+<DT> ARROW_POSITION_END
+<DD> Arrow appears at the end.
+<DT> ARROW_POSITION_START
+<DD> Arrow appears at the start.
+</DL>
+<P>
+<I>arrowSize</I> specifies the length of the arrow.<P>
+<I>xOffset</I> specifies the offset from the end of the line.<P>
+<I>name</I> specifies a name for the arrow.<P>
+<I>mf</I> can be a wxPseduoMetaFile, perhaps loaded from a simple Windows metafile.<P>
+<I>arrowId</I> is the id for the arrow.<P>
+
+<HR>
+<A NAME="topic106"></A>
+<H3>wxLineShape::AddArrowOrdered</H3>
+<P>
+<B>void</B> <B>AddArrowOrdered</B>(<B>wxArrowHead *</B><I>arrow</I>, <B>wxList&amp;</B><I> referenceList</I>, <B>int</B><I> end</I>)<P>
+Add an arrowhead in the position indicated by the reference
+list of arrowheads, which contains all legal arrowheads for this
+line, in the correct order.
+E.g.<P>
+<PRE>
+  Reference list:      a b c d e
+  Current line list:   a d
+</PRE>
+Add c, then line list is: a c d.<P>
+If no legal arrowhead position, return FALSE.  Assume reference list is
+for one end only, since it potentially defines the ordering for any one
+of the 3 positions. So we don't check the reference list for arrowhead
+position.<P>
+
+<HR>
+<A NAME="topic107"></A>
+<H3>wxLineShape::ClearArrow</H3>
+<P>
+<B>bool</B> <B>ClearArrow</B>(<B>const wxString&amp; </B><I>name</I>)<P>
+Delete the arrow with the given name.<P>
+
+<HR>
+<A NAME="topic108"></A>
+<H3>wxLineShape::ClearArrowsAtPosition</H3>
+<P>
+<B>void</B> <B>ClearArrowsAtPosition</B>(<B>int</B><I> position = -1</I>)<P>
+Delete the arrows at the specified position, or at any position if <I>position</I> is -1.<P>
+
+<HR>
+<A NAME="topic109"></A>
+<H3>wxLineShape::DrawArrow</H3>
+<P>
+<B>void</B> <B>DrawArrow</B>(<B>ArrowHead *</B><I>arrow</I>, <B>double</B><I> xOffset</I>, <B>bool</B><I> proportionalOffset</I>)<P>
+Draws the given arrowhead (or annotation).<P>
+
+<HR>
+<A NAME="topic110"></A>
+<H3>wxLineShape::DeleteArrowHead</H3>
+<P>
+<B>bool</B> <B>DeleteArrowHead</B>(<B>long</B><I> arrowId</I>)<P>
+<B>bool</B> <B>DeleteArrowHead</B>(<B>int</B><I> position</I>, <B>const wxString&amp; </B><I>name</I>)<P>
+Delete arrowhead by id or position and name.<P>
+
+<HR>
+<A NAME="topic111"></A>
+<H3>wxLineShape::DeleteLineControlPoint</H3>
+<P>
+<B>bool</B> <B>DeleteLineControlPoint</B>()<P>
+Deletes an arbitary point on the line.<P>
+
+<HR>
+<A NAME="topic112"></A>
+<H3>wxLineShape::DrawArrows</H3>
+<P>
+<B>void</B> <B>DrawArrows</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Draws all arrows.<P>
+
+<HR>
+<A NAME="topic113"></A>
+<H3>wxLineShape::DrawRegion</H3>
+<P>
+<B>void</B> <B>DrawRegion</B>(<B>wxDC&amp;</B><I> dc</I>, <B>wxShapeRegion *</B><I>region</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>)<P>
+Format one region at this position.<P>
+
+<HR>
+<A NAME="topic114"></A>
+<H3>wxLineShape::EraseRegion</H3>
+<P>
+<B>void</B> <B>EraseRegion</B>(<B>wxDC&amp;</B><I> dc</I>, <B>wxShapeRegion *</B><I>region</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>)<P>
+Format one region at this position.<P>
+
+<HR>
+<A NAME="topic115"></A>
+<H3>wxLineShape::FindArrowHead</H3>
+<P>
+<B>wxArrowHead *</B> <B>FindArrowHead</B>(<B>long</B><I> arrowId</I>)<P>
+<B>wxArrowHead *</B> <B>FindArrowHead</B>(<B>int</B><I> position</I>, <B>const wxString&amp; </B><I>name</I>)<P>
+Find arrowhead by id or position and name.<P>
+
+<HR>
+<A NAME="topic116"></A>
+<H3>wxLineShape::FindLineEndPoints</H3>
+<P>
+<B>void</B> <B>FindLineEndPoints</B>(<B>double *</B><I>fromX</I>, <B>double *</B><I>fromY</I>, <B>double *</B><I>toX</I>, <B>double *</B><I>toY</I>)<P>
+Finds the x, y points at the two ends of the line. This function can be
+used by e.g. line-routing routines to get the actual points on the two
+node images where the lines will be drawn to/from.<P>
+
+<HR>
+<A NAME="topic117"></A>
+<H3>wxLineShape::FindLinePosition</H3>
+<P>
+<B>int</B> <B>FindLinePosition</B>(<B>double </B><I>x</I>, <B>double </B><I>y</I>)<P>
+Find which position we're talking about at this x, y.
+Returns ARROW_POSITION_START, ARROW_POSITION_MIDDLE, ARROW_POSITION_END.<P>
+
+<HR>
+<A NAME="topic118"></A>
+<H3>wxLineShape::FindMinimumWidth</H3>
+<P>
+<B>double</B> <B>FindMinimumWidth</B>()<P>
+Finds the horizontal width for drawing a line with arrows in minimum
+space. Assume arrows at end only.<P>
+
+<HR>
+<A NAME="topic119"></A>
+<H3>wxLineShape::FindNth</H3>
+<P>
+<B>void</B> <B>FindNth</B>(<B>wxShape *</B><I>image</I>, <B>int *</B><I>nth</I>, <B>int *</B><I>noArcs</I>, <B>bool</B><I> incoming</I>)<P>
+Finds the position of the line on the given object. Specify whether incoming or outgoing lines are
+being considered with <I>incoming</I>.<P>
+
+<HR>
+<A NAME="topic120"></A>
+<H3>wxLineShape::GetAttachmentFrom</H3>
+<P>
+<B>int</B> <B>GetAttachmentFrom</B>() <B>const</B><P>
+Returns the attachment point on the 'from' node.<P>
+
+<HR>
+<A NAME="topic121"></A>
+<H3>wxLineShape::GetAttachmentTo</H3>
+<P>
+<B>int</B> <B>GetAttachmentTo</B>() <B>const</B><P>
+Returns the attachment point on the 'to' node.<P>
+
+<HR>
+<A NAME="topic122"></A>
+<H3>wxLineShape::GetEnds</H3>
+<P>
+<B>void</B> <B>GetEnds</B>(<B>double *</B><I>x1</I>, <B>double *</B><I>y1</I>, <B>double *</B><I>x2</I>, <B>double *</B><I>y2</I>)<P>
+Gets the visible endpoints of the lines for drawing between two objects.<P>
+
+<HR>
+<A NAME="topic123"></A>
+<H3>wxLineShape::GetFrom</H3>
+<P>
+<B>wxShape *</B> <B>GetFrom</B>() <B>const</B><P>
+Gets the 'from' object.<P>
+
+<HR>
+<A NAME="topic124"></A>
+<H3>wxLineShape::GetLabelPosition</H3>
+<P>
+<B>void</B> <B>GetLabelPosition</B>(<B>int</B><I> position</I>, <B>double *</B><I>x</I>, <B>double *</B><I>y</I>)<P>
+Get the reference point for a label. Region x and y are offsets from this.
+position is 0 (middle), 1 (start), 2 (end).<P>
+
+<HR>
+<A NAME="topic125"></A>
+<H3>wxLineShape::GetNextControlPoint</H3>
+<P>
+<B>wxPoint *</B> <B>GetNextControlPoint</B>(<B>wxShape *</B><I>shape</I>)<P>
+Find the next control point in the line after the start/end point,
+depending on whether the shape is at the start or end.<P>
+
+<HR>
+<A NAME="topic126"></A>
+<H3>wxLineShape::GetTo</H3>
+<P>
+<B>wxShape *</B> <B>GetTo</B>()<P>
+Gets the 'to' object.<P>
+
+<HR>
+<A NAME="topic127"></A>
+<H3>wxLineShape::Initialise</H3>
+<P>
+<B>void</B> <B>Initialise</B>()<P>
+Initialises the line object.<P>
+
+<HR>
+<A NAME="topic128"></A>
+<H3>wxLineShape::InsertLineControlPoint</H3>
+<P>
+<B>void</B> <B>InsertLineControlPoint</B>()<P>
+Inserts a control point at an arbitrary position.<P>
+
+<HR>
+<A NAME="topic129"></A>
+<H3>wxLineShape::IsEnd</H3>
+<P>
+<B>bool</B> <B>IsEnd</B>(<B>wxShape *</B><I>shape</I>)<P>
+Returns TRUE if <I>shape</I> is at the end of the line.<P>
+
+<HR>
+<A NAME="topic130"></A>
+<H3>wxLineShape::IsSpline</H3>
+<P>
+<B>bool</B> <B>IsSpline</B>()<P>
+Returns TRUE if a spline is drawn through the control points, and FALSE otherwise.<P>
+
+<HR>
+<A NAME="wxlineshapemakelinecontrolpoints"></A>
+<H3>wxLineShape::MakeLineControlPoints</H3>
+<P>
+<B>void</B> <B>MakeLineControlPoints</B>(<B>int</B><I> n</I>)<P>
+Make a given number of control points (minimum of two).<P>
+
+<HR>
+<A NAME="topic131"></A>
+<H3>wxLineShape::OnMoveLink</H3>
+<P>
+<B>void</B> <B>OnMoveLink</B>(<B>wxDC&amp;</B><I> dc</I>, <B>bool</B><I> moveControlPoints = TRUE</I>)<P>
+Called when a connected object has moved, to move the link to
+correct position.<P>
+
+<HR>
+<A NAME="topic132"></A>
+<H3>wxLineShape::SetAttachmentFrom</H3>
+<P>
+<B>void</B> <B>SetAttachmentTo</B>(<B>int</B><I> fromAttach</I>)<P>
+Sets the 'from' shape attachment.<P>
+
+<HR>
+<A NAME="topic133"></A>
+<H3>wxLineShape::SetAttachments</H3>
+<P>
+<B>void</B> <B>SetAttachments</B>(<B>int</B><I> fromAttach</I>, <B>int</B><I> toAttach</I>)<P>
+Specifies which object attachment points should be used at each end of the line.<P>
+
+<HR>
+<A NAME="topic134"></A>
+<H3>wxLineShape::SetAttachmentTo</H3>
+<P>
+<B>void</B> <B>SetAttachmentTo</B>(<B>int</B><I> toAttach</I>)<P>
+Sets the 'to' shape attachment.<P>
+
+<HR>
+<A NAME="topic135"></A>
+<H3>wxLineShape::SetEnds</H3>
+<P>
+<B>void</B> <B>SetEnds</B>(<B>double</B><I> x1</I>, <B>double</B><I> y1</I>, <B>double</B><I> x2</I>, <B>double</B><I> y2</I>)<P>
+Sets the end positions of the line.<P>
+
+<HR>
+<A NAME="topic136"></A>
+<H3>wxLineShape::SetFrom</H3>
+<P>
+<B>void</B> <B>SetFrom</B>(<B>wxShape *</B><I>object</I>)<P>
+Sets the 'from' object for the line.<P>
+
+<HR>
+<A NAME="topic137"></A>
+<H3>wxLineShape::SetIgnoreOffsets</H3>
+<P>
+<B>void</B> <B>SetIgnoreOffsets</B>(<B>bool</B><I> ignore</I>)<P>
+Tells the shape whether to ignore offsets from the end of the line when drawing.<P>
+
+<HR>
+<A NAME="topic138"></A>
+<H3>wxLineShape::SetSpline</H3>
+<P>
+<B>void</B> <B>SetSpline</B>(<B>bool</B><I> spline</I>)<P>
+Specifies whether a spline is to be drawn through the control points (TRUE), or a line (FALSE).<P>
+
+<HR>
+<A NAME="topic139"></A>
+<H3>wxLineShape::SetTo</H3>
+<P>
+<B>void</B> <B>SetTo</B>(<B>wxShape *</B><I>object</I>)<P>
+Sets the 'to' object for the line.<P>
+
+<HR>
+<A NAME="topic140"></A>
+<H3>wxLineShape::Straighten</H3>
+<P>
+<B>void</B> <B>Straighten</B>(<B>wxDC*</B><I> dc = NULL</I>)<P>
+Straighten verticals and horizontals. <I>dc</I> is optional.<P>
+
+<HR>
+<A NAME="topic141"></A>
+<H3>wxLineShape::Unlink</H3>
+<P>
+<B>void</B> <B>Unlink</B>()<P>
+Unlinks the line from the nodes at either end.<P>
+
+</FONT></BODY></HTML>

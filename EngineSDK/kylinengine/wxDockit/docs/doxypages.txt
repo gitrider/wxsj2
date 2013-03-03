@@ -1,0 +1,88 @@
+/////////////////////////////////////////////////////////////////////////////
+// Name:        doxypages.txt
+// Purpose:     contains some additional doc pages
+// Author:      Francesco Montorsi
+// Modified by: 
+// Created:     2005-05-14
+// RCS-ID:      $Id: doxypages.txt,v 1.1 2005/05/14 12:59:15 frm Exp $
+// Copyright:   (c) 2004 Francesco Montorsi
+// Licence:     wxWidgets license
+//
+// This file contains some special comments which are used by Doxygen
+// to create the hand-written pages. These pages uses doxygen special
+// commands & some HTML commands. You should not read directly this file;
+// you should instead read the doxygen output... see docgen.bat
+///////////////////////////////////////////////////////////////////////
+
+
+// ---------------------------------------------------------------------------------
+//! \mainpage wxDockIt Guide
+//! 
+//! <H3 align="center">Copyright &copy; 2003-2005 by 
+//! <A HREF="mailto:markmccormack@users.sourceforge.net">Mark McCormack</A></H3>
+//! 
+//! <BR><P>This page and the following linked here have been written by hand; 
+//! all the other pages were extracted from the sources' comments by Doxygen.</P>
+//! 
+//! <P><STRONG>Note:</STRONG> this documentation is not very useful yet since it
+//! misses comments and function descriptions. Next versions will have a full
+//! documentation. To get the most updated version of this documentation, you have to 
+//! download the CVS module of wxDockIt.</P>
+//! <BR><BR>
+//! 
+//! \section sec1 Pages written by hand:
+//! <TABLE ALIGN="center" WIDTH="90%" CELLSPACING="2" CELLPADDING="2" BORDER="0">
+//! <TR>
+//!     <TD CLASS="md"><P>&nbsp;&nbsp;&nbsp;<A HREF="authors.html">
+//!     Authors</A></P></TD>
+//!     <TD><DIV CLASS="groupText"><EM>The programmers who works or 
+//!     worked on wxDockIt</EM></DIV></TD>
+//! </TR>
+//! </TABLE>
+//! <BR><BR>
+
+
+/*! \page authors Authors
+
+<P>The following is the list of the programmers who works or worked on wxDockIt, in
+chronological order:</P>
+
+<TABLE ALIGN="center" WIDTH="90%" CELLSPACING="2" CELLPADDING="0" BORDER="0">
+<TR>
+    <TD WIDTH=80%><DIV CLASS="ah"><P>- Mark McCormack -</P></DIV></TD>
+    <TD><DIV ALIGN="right">[markmccormack@users.sourceforge.net]</DIV></TD>
+</TR>
+<TR>
+    <TD COLSPAN=2><P>The administrator of the project; he designed and developed the main 
+classes. Send him an email for any question or suggestion about the project.</P></TD>    
+</TR>
+</TABLE>
+
+<TABLE ALIGN="center" WIDTH="90%" CELLSPACING="2" CELLPADDING="2" BORDER="0">
+<TR>
+    <TD WIDTH=80%><DIV CLASS="ah"><P>- Landon Bradshaw -</P></DIV></TD>
+    <TD><DIV ALIGN="right">[spooker@users.sourceforge.net]</DIV></TD>
+</TR>
+<TR>
+    <TD COLSPAN=2><P></P></TD>    
+</TR>
+</TABLE>
+
+<TABLE ALIGN="center" WIDTH="90%" CELLSPACING="2" CELLPADDING="2" BORDER="0">
+<TR>
+    <TD WIDTH=80%><DIV CLASS="ah"><P>- Francesco Montorsi -</P></DIV></TD>
+    <TD><DIV ALIGN="right">[frm@users.sourceforge.net]</DIV></TD>
+</TR>
+<TR>
+    <TD COLSPAN=2><P></P></TD>    
+</TR>
+</TABLE>
+
+*/
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BuildTools", "BuildTools.vcproj", "{DF2E24E2-E571-4380-86D2-9BAA6D2A4A09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Final|Win32 = Final|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF2E24E2-E571-4380-86D2-9BAA6D2A4A09}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF2E24E2-E571-4380-86D2-9BAA6D2A4A09}.Debug|Win32.Build.0 = Debug|Win32
+		{DF2E24E2-E571-4380-86D2-9BAA6D2A4A09}.Final|Win32.ActiveCfg = Release|Win32
+		{DF2E24E2-E571-4380-86D2-9BAA6D2A4A09}.Final|Win32.Build.0 = Release|Win32
+		{DF2E24E2-E571-4380-86D2-9BAA6D2A4A09}.Release|Win32.ActiveCfg = Release|Win32
+		{DF2E24E2-E571-4380-86D2-9BAA6D2A4A09}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

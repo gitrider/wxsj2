@@ -1,0 +1,74 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "mdi"=..\..\samples\build\msw\samples_mdi.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wxdockit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "sdi"=..\..\samples\build\msw\samples_sdi.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wxdockit
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wxdockit_lib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wxdockit_dll"=.\wxdockit_wxdockit_dll.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "wxdockit_lib"=.\wxdockit_wxdockit_lib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

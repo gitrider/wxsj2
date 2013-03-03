@@ -1,0 +1,1 @@
+BuildConsole.exe Server.sln /build /cfg="Debug|Win32"

@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tConfig", "tConfig.vcproj", "{400B8ABB-E03B-4024-8DC2-3F25230AE23A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1} = {CDD3618E-A112-4A69-B07F-EB735FABB5E1}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AXP_MD", "..\..\AxFilePack\AXP\AXP_MD.vcproj", "{CDD3618E-A112-4A69-B07F-EB735FABB5E1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{400B8ABB-E03B-4024-8DC2-3F25230AE23A}.Debug.ActiveCfg = Debug|Win32
+		{400B8ABB-E03B-4024-8DC2-3F25230AE23A}.Debug.Build.0 = Debug|Win32
+		{400B8ABB-E03B-4024-8DC2-3F25230AE23A}.Release.ActiveCfg = Release|Win32
+		{400B8ABB-E03B-4024-8DC2-3F25230AE23A}.Release.Build.0 = Release|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Debug.ActiveCfg = Debug|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Debug.Build.0 = Debug|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Release.ActiveCfg = Release|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

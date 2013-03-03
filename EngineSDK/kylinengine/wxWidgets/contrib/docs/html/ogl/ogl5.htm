@@ -1,0 +1,43 @@
+<HTML>
+<head><title>How OGLEdit works</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="topic3"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl3.htm#ogledit"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl4.htm#topic2"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl6.htm#topic4"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>How OGLEdit works</H2>
+<P>
+OGLEdit defines a DiagramDocument class, each of instance of which holds a MyDiagram
+member which itself contains the shapes.<P>
+In order to implement specific mouse behaviour for shapes, a class MyEvtHandler is
+defined which is 'plugged into' each shape when it is created, instead of overriding each shape class
+individually. This event handler class also holds a label string.<P>
+The DiagramCommand class is the key to implementing Undo/Redo. Each instance of DiagramCommand
+stores enough information about an operation (create, delete, change colour etc.) to allow
+it to carry out (or undo) its command. In DiagramView::OnMenuCommand, when the user initiates the
+command, a new DiagramCommand instance is created which is then sent to the document's
+command processor (see wxWindows manual for more information about doc/view and command
+processing).<P>
+Apart from menu commands, another way commands are initiated is by the user left-clicking on
+the canvas or right-dragging on a node. MyCanvas::OnLeftClick in view.cpp shows how
+the appropriate wxClassInfo is passed to a DiagramCommand, to allow DiagramCommand::Do
+to create a new shape given the wxClassInfo.<P>
+The MyEvtHandler right-drag methods in doc.cpp implement drawing a line between
+two shapes, detecting where the right mouse button was released and looking for a second
+shape. Again, a new DiagramCommand instance is created and passed to the command
+processor to carry out the command.<P>
+DiagramCommand::Do and DiagramCommand::Undo embody much of the
+interesting interaction with the OGL library. A complication of note
+when implementing undo is the problem of deleting a node shape which has
+one or more arcs attached to it. If you delete the node, the arc(s)
+should be deleted too. But multiple arc deletion represents more information
+that can be incorporated in the existing DiagramCommand scheme. OGLEdit
+copes with this by treating each arc deletion as a separate command, and
+sending Cut commands recursively, providing an undo path. Undoing such a
+Cut will only undo one command at a time - not a one to one
+correspondence with the original command - but it's a reasonable
+compromise and preserves Do/Undo whilst keeping our DiagramCommand class
+simple.<P>
+
+</FONT></BODY></HTML>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Agent desc="原地摆摊" >
+	<Scripts>
+		<Script name="..\Common\Main.lua" />
+		<Script name="..\Common\Procedure_Login.lua" />
+		<Script name="..\Common\Procedure_CharSel.lua" />
+		<Script name="..\Common\Procedure_GameServer.lua" />
+		<Script name="..\Common\Procedure_EnterScene.lua" />
+		<Script name="..\Common\Procedure_CharCreate.lua" />
+		<Script name="Procedure_Main.lua" />
+	</Scripts>
+	
+	<Variables>
+		<Variable name="LoginServer_Address" default="127.0.0.1" />
+		<Variable name="LoginServer_Port" default="1233" />
+		<Variable name="AccountName" default="test0001" />
+		<Variable name="AccountPassword" default="123" />
+	</Variables>
+</Agent>

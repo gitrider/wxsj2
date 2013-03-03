@@ -1,0 +1,51 @@
+
+<html>
+
+<head>
+<title>wxWidgets 2 Unix Ports FAQ</title>
+</head>
+
+<body bgcolor=#ffffff text=#000000 vlink="#00376a" link="#00529c" alink="#313063">
+
+<font face="Arial, Lucida Sans, Helvetica">
+
+<table width=100% border=0 cellpadding=3 cellspacing=0>
+<tr>
+<td bgcolor="#004080" align=left height=24 background="images/bluetitlegradient.gif">
+<font size=+1 face="Arial, Lucida Sans, Helvetica" color="#FFFFFF">
+<b>wxWidgets 2 for X11 FAQ</b>
+</font>
+</td>
+</tr>
+</table>
+
+<p>
+
+See also <a href="faq.htm">top-level FAQ page</a>.
+<hr>
+<h3>List of questions in this category</a></h3>
+<ul>
+<li><a href="#makefile">How do I write a Unix makefile for my program?</a></li>
+</ul>
+<hr>
+
+<h3><a name="makefile">How do I write a Unix makefile for my program?</a></h3>
+
+The simplest way to write a makefile is to copy
+<tt>samples/minimal/makefile.unx</tt> from the wxWidgets distribution and
+adapt it to your needs. Notice that you should <i>not</i> use
+<tt>Makefile</tt> file from the same directory as it only works for the
+samples because it assumes that the program being built is inside wxWidgets
+source tree.
+<p>
+The <tt>makefile.unx</tt> files use <tt>wx-config</tt> instead and are more
+flexible. The minimal makefile has comments inside it explaining how to adapt
+it for your program.
+
+
+</font>
+
+</body>
+
+</html>
+

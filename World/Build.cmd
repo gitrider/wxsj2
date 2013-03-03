@@ -1,0 +1,1 @@
+BuildConsole.exe World.sln /build /cfg="Debug|Win32"

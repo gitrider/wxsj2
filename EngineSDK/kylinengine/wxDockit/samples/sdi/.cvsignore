@@ -1,0 +1,15 @@
+*.exe
+*.bak
+*.ncb
+*.plg
+*.opt
+*.manifest
+*.pdb
+*.il?
+*.map
+*.idb
+*.tds
+*.bin
+*.exp
+*.lib
+sdi

@@ -1,0 +1,16 @@
+wxDockIt Library for wxWidgets - CREDITS
+----------------------------------------
+
+Mark McCormack [Lead Programmer/Admin] <mark.mccormack@virgin.net>
+Landon Bradshaw [Programmer] <landon@phazeforward.com>
+Francesco Montorsi [Programmer] <frm@users.sourceforge.net>
+
+
+Thanks to the following people for contributing time, effort and even sometimes code to wxDockIt!
+-------------------------------------------------------------------------------------------------
+Arjan Knepper <arjan@jak.nl>
+Stefan Kowski <Stefan.Kowski@gmx.de>
+Maxime Topoloff <m_topoloff@yahoo.fr>
+Jesus Gonzalez <jgonzlz@users.sourceforge.net>
+Andargor The Wise <andargor@yahoo.com>
+Sylvain Marie <sylvain@exotibus.com>

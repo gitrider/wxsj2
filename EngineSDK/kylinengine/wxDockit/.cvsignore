@@ -1,0 +1,8 @@
+*.cache
+*.deps
+*.bak
+*.o
+*.log
+*.status
+Makefile
+bk-deps

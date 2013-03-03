@@ -1,0 +1,17 @@
+*.exp
+*.lib
+*.il?
+*.pdb
+*.idb
+*.map
+*.tds
+*.a
+*.so*
+vc_dll
+vc_lib
+gcc_dll
+gcc_lib
+bcc_dll
+bcc_lib
+wat_lib
+wat_dll

@@ -1,0 +1,198 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_UPDATEEXEHEAD       ICON                    "UpdateExeHead.ico"
+IDI_SMALL               ICON                    "small.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_UPDATEEXEHEAD MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_UPDATEEXEHEAD ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_MAIN DIALOGEX 0, 0, 362, 171
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "《天龙八部》升级补丁"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "开始升级",IDOK,223,150,75,14,WS_DISABLED
+    PUSHBUTTON      "取消",IDCANCEL,305,150,50,14
+    LTEXT           "",IDC_STATIC_STATUS,7,4,348,9
+    CONTROL         "",IDC_PROGRESS_MAIN,"msctls_progress32",WS_BORDER,7,17,
+                    348,12
+    EDITTEXT        IDC_EDIT_PATCHINFO,7,48,348,96,ES_MULTILINE | 
+                    ES_READONLY | WS_VSCROLL
+    LTEXT           "版本信息:",IDC_STATIC_STATUS,7,35,348,8
+    LTEXT           "火狐数码",IDC_STATIC_STATUS,7,153,212,11,WS_DISABLED
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 355
+        BOTTOMMARGIN, 164
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,17
+ PRODUCTVERSION 1,0,0,17
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName", "SOHU.COM"
+            VALUE "FileDescription", "UpdatePatch_0.17"
+            VALUE "FileVersion", "1, 0, 0, 17"
+            VALUE "InternalName", "UpdateEx"
+            VALUE "LegalCopyright", "Copyright (C) 2006"
+            VALUE "ProductName", "TLBB"
+            VALUE "ProductVersion", "1, 0, 0, 17"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "UpdateExeHead"
+    IDC_UPDATEEXEHEAD       "UPDATEEXEHEAD"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

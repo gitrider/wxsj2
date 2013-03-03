@@ -1,0 +1,42 @@
+<HTML>
+<head><title>OGL overview</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="ogloverview"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl26.htm#topic295"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl26.htm#topic295"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl28.htm#dividedshapeoverview"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>OGL overview</H2>
+<P>
+<A HREF="ogl22.htm#wxshapecanvas">wxShapeCanvas</A>, derived from <B>wxCanvas</B>, is the drawing area
+for a number of <A HREF="ogl21.htm#wxshape">wxShape</A> instances. Everything drawn on a
+wxShapeCanvas is derived from wxShape, which provides virtual
+member functions for redrawing, creating and destroying
+resize/selection 'handles', movement and erasing behaviour, mouse
+click behaviour, calculating the bounding box of the shape, linking
+nodes with arcs, and so on.<P>
+The way a client application copes with 'damage' to the canvas is to
+erase (white out) anything should no longer be displayed, redraw the shape,
+and then redraw everything on the canvas to repair any damage. If quick edit
+mode is on for the canvas, the complete should be omitted by OGL and the
+application.<P>
+Selection handles (called control points in the code) are implemented as
+wxRectangleShapes.<P>
+Events are passed to shapes by the canvas in a high-level form, for example <B>OnLeftClick</B>,
+<B>OnBeginDragLeft</B>, <B>OnDragLeft</B>, <B>OnEndDragLeft</B>. The canvas decides
+what is a click and what is a drag, whether it is on a shape or the canvas itself,
+and (by interrogating the shape) which attachment point the click is associated with.<P>
+In order to provide event-handling flexibility, each shapes has an 'event handler' associated with it,
+which by default is the shape itself (all shapes derive from wxShapeEvtHandler).
+An application can modify the event-handling behaviour simply by plugging a new
+event handler into the shape. This can avoid the need for multiple inheritance when
+new properties and behaviour are required for a number of different shape classes: instead
+of overriding each class, one new event handler class can be defined and used for all
+existing shape classes.<P>
+A range of shapes have been predefined in the library, including rectangles, ellipses,
+polygons. A client application can derive from these shapes and/or derive entirely
+new shapes from wxShape.<P>
+Instances of a class called <A HREF="ogl10.htm#wxdiagram">wxDiagram</A> organise collections of
+shapes, providing default file input and output behaviour.<P>
+
+</FONT></BODY></HTML>

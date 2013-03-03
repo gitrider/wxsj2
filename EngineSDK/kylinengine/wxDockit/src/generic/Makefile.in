@@ -1,0 +1,27 @@
+
+# Main compiler settings discovered by ./configure
+
+CC = @CC@
+CXX = @CXX@
+CFLAGS = @CFLAGS@
+DEFS = @DEFS@
+CXXFLAGS = @CXXFLAGS@
+LIBS = @LIBS@
+
+LOCAL_INCLUDES = -I../../include
+DOCKIT_DEFINES = @WXCOMPAT24@ @WXCOMPAT254@
+
+# wxWidgets settings gathered from wx-config
+
+WXFLAGS = @WXFLAGS@
+WXLIBS = @WXLIBS@
+
+MODS = barholder.cpp dockpanel.cpp gdi.cpp pane.cpp util.cpp dockwindow.cpp gripper.cpp slidebar.cpp dockhost.cpp exsplitter.cpp layoutmanager.cpp toolbutton.cpp
+OBJS = barholder.o dockpanel.o gdi.o pane.o util.o dockwindow.o gripper.o slidebar.o dockhost.o exsplitter.o layoutmanager.o toolbutton.o
+
+# Packages
+
+all: $(OBJS)
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) $(LOCAL_INCLUDES) $(WXFLAGS) -c $<

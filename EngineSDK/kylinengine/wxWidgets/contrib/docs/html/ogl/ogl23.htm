@@ -1,0 +1,330 @@
+<HTML>
+<head><title>wxShapeEvtHandler</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxshapeevthandler"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl22.htm#wxshapecanvas"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl24.htm#wxtextshape"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxShapeEvtHandler</H2>
+<P>
+wxShapeEvtHandler is a class from which wxShape (and therefore all shape classes) are derived.
+A wxShape also contains a pointer to its current wxShapeEvtHandler. Event handlers
+can be swapped in and out, altering the behaviour of a shape. This allows, for example,
+a range of behaviours to be redefined in one class, rather than requiring
+each shape class to be subclassed.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+wxObject<P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic261">wxShapeEvtHandler::m_handlerShape</A><BR>
+<A HREF="#topic262">wxShapeEvtHandler::m_previousHandler</A><BR>
+<A HREF="#topic263">wxShapeEvtHandler::wxShapeEvtHandler</A><BR>
+<A HREF="#topic264">wxShapeEvtHandler::~wxShapeEvtHandler</A><BR>
+<A HREF="#wxshapeevthandlercopydata">wxShapeEvtHandler::CopyData</A><BR>
+<A HREF="#wxshapeevthandlercreatenewcopy">wxShapeEvtHandler::CreateNewCopy</A><BR>
+<A HREF="#wxshapeevthandlergetprevioushandler">wxShapeEvtHandler::GetPreviousHandler</A><BR>
+<A HREF="#wxshapeevthandlergetshape">wxShapeEvtHandler::GetShape</A><BR>
+<A HREF="#topic265">wxShapeEvtHandler::OnBeginDragLeft</A><BR>
+<A HREF="#topic266">wxShapeEvtHandler::OnBeginDragRight</A><BR>
+<A HREF="#topic267">wxShapeEvtHandler::OnBeginSize</A><BR>
+<A HREF="#wxshapeevthandleronchangeattachment">wxShapeEvtHandler::OnChangeAttachment</A><BR>
+<A HREF="#topic268">wxShapeEvtHandler::OnDragLeft</A><BR>
+<A HREF="#topic269">wxShapeEvtHandler::OnDragRight</A><BR>
+<A HREF="#topic270">wxShapeEvtHandler::OnDraw</A><BR>
+<A HREF="#topic271">wxShapeEvtHandler::OnDrawContents</A><BR>
+<A HREF="#topic272">wxShapeEvtHandler::OnDrawControlPoints</A><BR>
+<A HREF="#topic273">wxShapeEvtHandler::OnDrawOutline</A><BR>
+<A HREF="#topic274">wxShapeEvtHandler::OnEndDragLeft</A><BR>
+<A HREF="#topic275">wxShapeEvtHandler::OnEndDragRight</A><BR>
+<A HREF="#topic276">wxShapeEvtHandler::OnEndSize</A><BR>
+<A HREF="#topic277">wxShapeEvtHandler::OnErase</A><BR>
+<A HREF="#topic278">wxShapeEvtHandler::OnEraseContents</A><BR>
+<A HREF="#topic279">wxShapeEvtHandler::OnEraseControlPoints</A><BR>
+<A HREF="#topic280">wxShapeEvtHandler::OnHighlight</A><BR>
+<A HREF="#topic281">wxShapeEvtHandler::OnLeftClick</A><BR>
+<A HREF="#topic282">wxShapeEvtHandler::OnMoveLink</A><BR>
+<A HREF="#topic283">wxShapeEvtHandler::OnMoveLinks</A><BR>
+<A HREF="#topic284">wxShapeEvtHandler::OnMovePost</A><BR>
+<A HREF="#topic285">wxShapeEvtHandler::OnMovePre</A><BR>
+<A HREF="#topic286">wxShapeEvtHandler::OnRightClick</A><BR>
+<A HREF="#topic287">wxShapeEvtHandler::OnSize</A><BR>
+<A HREF="#topic288">wxShapeEvtHandler::OnSizingBeginDragLeft</A><BR>
+<A HREF="#topic289">wxShapeEvtHandler::OnSizingDragLeft</A><BR>
+<A HREF="#topic290">wxShapeEvtHandler::OnSizingEndDragLeft</A><BR>
+<A HREF="#wxshapeevthandlersetprevioushandler">wxShapeEvtHandler::SetPreviousHandler</A><BR>
+<A HREF="#wxshapeevthandlersetshape">wxShapeEvtHandler::SetShape</A><BR>
+<P>
+
+<HR>
+<A NAME="topic261"></A>
+<H3>wxShapeEvtHandler::m_handlerShape</H3>
+<P>
+wxShape* m_handlerShape<P>
+Pointer to the shape associated with this handler.<P>
+
+<HR>
+<A NAME="topic262"></A>
+<H3>wxShapeEvtHandler::m_previousHandler</H3>
+<P>
+wxShapeEvtHandler* m_previousHandler<P>
+Pointer to the previous handler.<P>
+
+<HR>
+<A NAME="topic263"></A>
+<H3>wxShapeEvtHandler::wxShapeEvtHandler</H3>
+<P>
+<B>void</B> <B>wxShapeEvtHandler</B>(<B>wxShapeEvtHandler *</B><I>previous = NULL</I>, <B>wxShape *</B><I>shape = NULL</I>)<P>
+Constructs a new event handler.<P>
+
+<HR>
+<A NAME="topic264"></A>
+<H3>wxShapeEvtHandler::~wxShapeEvtHandler</H3>
+<P>
+<B>void</B> <B>~wxShapeEvtHandler</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="wxshapeevthandlercopydata"></A>
+<H3>wxShapeEvtHandler::CopyData</H3>
+<P>
+<B>void</B> <B>CopyData</B>(<B>wxShapeEvtHandler&amp;</B><I> handler</I>)<P>
+A virtual function to copy the data from this object to <I>handler</I>. Override if you
+derive from wxShapeEvtHandler and have data to copy.<P>
+
+<HR>
+<A NAME="wxshapeevthandlercreatenewcopy"></A>
+<H3>wxShapeEvtHandler::CreateNewCopy</H3>
+<P>
+<B>wxShapeEvtHandler*</B> <B>CreateNewCopy</B>()<P>
+Creates a new event handler object of the same class as this object, and then
+calls <A HREF="ogl23.htm#wxshapeevthandlercopydata">wxShapeEvtHandler::CopyData</A>.<P>
+
+<HR>
+<A NAME="wxshapeevthandlergetprevioushandler"></A>
+<H3>wxShapeEvtHandler::GetPreviousHandler</H3>
+<P>
+<B>wxShapeEvtHandler*</B> <B>GetPreviousHandler</B>() <B>const</B><P>
+Returns the previous handler.<P>
+
+<HR>
+<A NAME="wxshapeevthandlergetshape"></A>
+<H3>wxShapeEvtHandler::GetShape</H3>
+<P>
+<B>wxShape*</B> <B>GetShape</B>() <B>const</B><P>
+Returns the shape associated with this handler.<P>
+
+<HR>
+<A NAME="topic265"></A>
+<H3>wxShapeEvtHandler::OnBeginDragLeft</H3>
+<P>
+<B>void</B> <B>OnBeginDragLeft</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys=0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called when the user is beginning to drag using the left mouse button.<P>
+
+<HR>
+<A NAME="topic266"></A>
+<H3>wxShapeEvtHandler::OnBeginDragRight</H3>
+<P>
+<B>void</B> <B>OnBeginDragRight</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys=0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called when the user is beginning to drag using the right mouse button.<P>
+
+<HR>
+<A NAME="topic267"></A>
+<H3>wxShapeEvtHandler::OnBeginSize</H3>
+<P>
+<B>void</B> <B>OnBeginSize</B>(<B>double</B><I> width</I>, <B>double</B><I> height</I>)<P>
+Called when a shape starts to be resized.<P>
+
+<HR>
+<A NAME="wxshapeevthandleronchangeattachment"></A>
+<H3>wxShapeEvtHandler::OnChangeAttachment</H3>
+<P>
+<B>void</B> <B>OnChangeAttachment</B>(<B>int</B><I> attachment</I>, <B>wxLineShape*</B><I> line</I>, <B>wxList&amp;</B><I> ordering</I>)<P>
+Override this to prevent or intercept line reordering. wxShape's implementation of this function
+calls <A HREF="ogl21.htm#wxshapeapplyattachmentordering">wxShape::ApplyAttachmentOrdering</A> to apply
+the new ordering.<P>
+
+<HR>
+<A NAME="topic268"></A>
+<H3>wxShapeEvtHandler::OnDragLeft</H3>
+<P>
+<B>void</B> <B>OnDragLeft</B>(<B>bool</B><I> draw</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys=0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called twice when the shape is being dragged, once to allow erasing the old
+image, and again to allow drawing at the new position.<P>
+
+<HR>
+<A NAME="topic269"></A>
+<H3>wxShapeEvtHandler::OnDragRight</H3>
+<P>
+<B>void</B> <B>OnDragRight</B>(<B>bool</B><I> draw</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys=0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called twice when the shape is being dragged, once to allow erasing the old
+image, and again to allow drawing at the new position.<P>
+
+<HR>
+<A NAME="topic270"></A>
+<H3>wxShapeEvtHandler::OnDraw</H3>
+<P>
+<B>void</B> <B>OnDraw</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Defined for each class to draw the main graphic, but
+not the contents.<P>
+
+<HR>
+<A NAME="topic271"></A>
+<H3>wxShapeEvtHandler::OnDrawContents</H3>
+<P>
+<B>void</B> <B>OnDrawContents</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Defined for each class to draw the contents of the
+shape, such as text.<P>
+
+<HR>
+<A NAME="topic272"></A>
+<H3>wxShapeEvtHandler::OnDrawControlPoints</H3>
+<P>
+<B>void</B> <B>OnDrawControlPoints</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Called when the shape's control points (handles) should
+be drawn.<P>
+
+<HR>
+<A NAME="topic273"></A>
+<H3>wxShapeEvtHandler::OnDrawOutline</H3>
+<P>
+<B>void</B> <B>OnDrawOutline</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Called when the outline of the shape should be drawn.<P>
+
+<HR>
+<A NAME="topic274"></A>
+<H3>wxShapeEvtHandler::OnEndDragLeft</H3>
+<P>
+<B>void</B> <B>OnEndDragLeft</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys=0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called when the user is stopping dragging using the left mouse button.<P>
+
+<HR>
+<A NAME="topic275"></A>
+<H3>wxShapeEvtHandler::OnEndDragRight</H3>
+<P>
+<B>void</B> <B>OnEndDragRight</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys=0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called when the user is stopping dragging using the right mouse button.<P>
+
+<HR>
+<A NAME="topic276"></A>
+<H3>wxShapeEvtHandler::OnEndSize</H3>
+<P>
+<B>void</B> <B>OnEndSize</B>(<B>double</B><I> width</I>, <B>double</B><I> height</I>)<P>
+Called after a shape is resized.<P>
+
+<HR>
+<A NAME="topic277"></A>
+<H3>wxShapeEvtHandler::OnErase</H3>
+<P>
+<B>void</B> <B>OnErase</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Called when the whole shape should be erased.<P>
+
+<HR>
+<A NAME="topic278"></A>
+<H3>wxShapeEvtHandler::OnEraseContents</H3>
+<P>
+<B>void</B> <B>OnEraseContents</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Called when the contents should be erased.<P>
+
+<HR>
+<A NAME="topic279"></A>
+<H3>wxShapeEvtHandler::OnEraseControlPoints</H3>
+<P>
+<B>void</B> <B>OnEraseControlPoints</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Called when the shape's control points (handles) should
+be erased.<P>
+
+<HR>
+<A NAME="topic280"></A>
+<H3>wxShapeEvtHandler::OnHighlight</H3>
+<P>
+<B>void</B> <B>OnHighlight</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Called when the shape should be highlighted.<P>
+
+<HR>
+<A NAME="topic281"></A>
+<H3>wxShapeEvtHandler::OnLeftClick</H3>
+<P>
+<B>void</B> <B>OnLeftClick</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys =0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called when the shape receives a left mouse click event.<P>
+
+<HR>
+<A NAME="topic282"></A>
+<H3>wxShapeEvtHandler::OnMoveLink</H3>
+<P>
+<B>void</B> <B>OnMoveLink</B>(<B>wxDC&amp;</B><I> dc</I>, <B>bool</B><I> moveControlPoints=TRUE</I>)<P>
+Called when the line attached to an shape need to be repositioned,
+because the shape has moved.<P>
+
+<HR>
+<A NAME="topic283"></A>
+<H3>wxShapeEvtHandler::OnMoveLinks</H3>
+<P>
+<B>void</B> <B>OnMoveLinks</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Called when the lines attached to an shape need to be repositioned,
+because the shape has moved.<P>
+
+<HR>
+<A NAME="topic284"></A>
+<H3>wxShapeEvtHandler::OnMovePost</H3>
+<P>
+<B>bool</B> <B>OnMovePost</B>(<B>wxDC&amp;</B><I> dc</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>double</B><I> oldX</I>, <B>double</B><I> oldY</I>, <B>bool</B><I> display = TRUE</I>)<P>
+Called just after the shape receives a move request.<P>
+
+<HR>
+<A NAME="topic285"></A>
+<H3>wxShapeEvtHandler::OnMovePre</H3>
+<P>
+<B>bool</B> <B>OnMovePre</B>(<B>wxDC&amp;</B><I> dc</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>double</B><I> oldX</I>, <B>double</B><I> oldY</I>, <B>bool</B><I> display = TRUE</I>)<P>
+Called just before the shape receives a move request. Returning TRUE
+allows the move to be processed; returning FALSE vetoes the move.<P>
+
+<HR>
+<A NAME="topic286"></A>
+<H3>wxShapeEvtHandler::OnRightClick</H3>
+<P>
+<B>void</B> <B>OnRightClick</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys = 0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called when the shape receives a mouse mouse click event.<P>
+
+<HR>
+<A NAME="topic287"></A>
+<H3>wxShapeEvtHandler::OnSize</H3>
+<P>
+<B>void</B> <B>OnSize</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>)<P>
+Called when the shape receives a resize request.<P>
+
+<HR>
+<A NAME="topic288"></A>
+<H3>wxShapeEvtHandler::OnSizingBeginDragLeft</H3>
+<P>
+<B>void</B> <B>OnSizingBeginDragLeft</B>(<B>wxControlPoint*</B><I> pt</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys=0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called when a sizing drag is beginning.<P>
+
+<HR>
+<A NAME="topic289"></A>
+<H3>wxShapeEvtHandler::OnSizingDragLeft</H3>
+<P>
+<B>void</B> <B>OnSizingDragLeft</B>(<B>wxControlPoint*</B><I> pt</I>, <B>bool</B><I> draw</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys=0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called when a sizing drag is occurring.<P>
+
+<HR>
+<A NAME="topic290"></A>
+<H3>wxShapeEvtHandler::OnSizingEndDragLeft</H3>
+<P>
+<B>void</B> <B>OnSizingEndDragLeft</B>(<B>wxControlPoint*</B><I> pt</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys=0</I>, <B>int</B><I> attachment = 0</I>)<P>
+Called when a sizing drag is ending.<P>
+
+<HR>
+<A NAME="wxshapeevthandlersetprevioushandler"></A>
+<H3>wxShapeEvtHandler::SetPreviousHandler</H3>
+<P>
+<B>void</B> <B>SetPreviousHandler</B>(<B>wxShapeEvtHandler*</B><I> handler</I>)<P>
+Sets the previous handler.<P>
+
+<HR>
+<A NAME="wxshapeevthandlersetshape"></A>
+<H3>wxShapeEvtHandler::SetShape</H3>
+<P>
+<B>void</B> <B>SetShape</B>(<B>wxShape*</B><I> shape</I>)<P>
+Sets the shape for this handler.<P>
+
+</FONT></BODY></HTML>

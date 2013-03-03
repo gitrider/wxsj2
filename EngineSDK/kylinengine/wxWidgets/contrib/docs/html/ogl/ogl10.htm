@@ -1,0 +1,326 @@
+<HTML>
+<head><title>wxDiagram</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxdiagram"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl9.htm#wxbitmapshape"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl11.htm#wxdrawnshape"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxDiagram</H2>
+<P>
+Encapsulates an entire diagram, with methods for reading/writing and drawing.
+A diagram has an associated wxShapeCanvas.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+wxObject<P>
+<B><FONT COLOR="#FF0000">See also</FONT></B><P>
+<A HREF="ogl22.htm#wxshapecanvas">wxShapeCanvas</A><P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic14">wxDiagram::wxDiagram</A><BR>
+<A HREF="#topic15">wxDiagram::~wxDiagram</A><BR>
+<A HREF="#topic16">wxDiagram::AddShape</A><BR>
+<A HREF="#topic17">wxDiagram::Clear</A><BR>
+<A HREF="#topic18">wxDiagram::DeleteAllShapes</A><BR>
+<A HREF="#topic19">wxDiagram::DrawOutline</A><BR>
+<A HREF="#wxdiagramfindshape">wxDiagram::FindShape</A><BR>
+<A HREF="#topic20">wxDiagram::GetCanvas</A><BR>
+<A HREF="#wxdiagramgetcount">wxDiagram::GetCount</A><BR>
+<A HREF="#topic21">wxDiagram::GetGridSpacing</A><BR>
+<A HREF="#topic22">wxDiagram::GetMouseTolerance</A><BR>
+<A HREF="#topic23">wxDiagram::GetShapeList</A><BR>
+<A HREF="#topic24">wxDiagram::GetQuickEditMode</A><BR>
+<A HREF="#topic25">wxDiagram::GetSnapToGrid</A><BR>
+<A HREF="#topic26">wxDiagram::InsertShape</A><BR>
+<A HREF="#topic27">wxDiagram::LoadFile</A><BR>
+<A HREF="#topic28">wxDiagram::OnDatabaseLoad</A><BR>
+<A HREF="#topic29">wxDiagram::OnDatabaseSave</A><BR>
+<A HREF="#topic30">wxDiagram::OnHeaderLoad</A><BR>
+<A HREF="#topic31">wxDiagram::OnHeaderSave</A><BR>
+<A HREF="#topic32">wxDiagram::OnShapeLoad</A><BR>
+<A HREF="#topic33">wxDiagram::OnShapeSave</A><BR>
+<A HREF="#topic34">wxDiagram::ReadContainerGeometry</A><BR>
+<A HREF="#topic35">wxDiagram::ReadLines</A><BR>
+<A HREF="#topic36">wxDiagram::ReadNodes</A><BR>
+<A HREF="#topic37">wxDiagram::RecentreAll</A><BR>
+<A HREF="#topic38">wxDiagram::Redraw</A><BR>
+<A HREF="#topic39">wxDiagram::RemoveAllShapes</A><BR>
+<A HREF="#topic40">wxDiagram::RemoveShape</A><BR>
+<A HREF="#topic41">wxDiagram::SaveFile</A><BR>
+<A HREF="#wxdiagramsetcanvas">wxDiagram::SetCanvas</A><BR>
+<A HREF="#topic42">wxDiagram::SetGridSpacing</A><BR>
+<A HREF="#topic43">wxDiagram::SetMouseTolerance</A><BR>
+<A HREF="#topic44">wxDiagram::SetQuickEditMode</A><BR>
+<A HREF="#topic45">wxDiagram::SetSnapToGrid</A><BR>
+<A HREF="#topic46">wxDiagram::ShowAll</A><BR>
+<A HREF="#topic47">wxDiagram::Snap</A><BR>
+<P>
+
+<HR>
+<A NAME="topic14"></A>
+<H3>wxDiagram::wxDiagram</H3>
+<P>
+<B></B> <B>wxDiagram</B>()<P>
+Constructor.<P>
+
+<HR>
+<A NAME="topic15"></A>
+<H3>wxDiagram::~wxDiagram</H3>
+<P>
+<B></B> <B>~wxDiagram</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="topic16"></A>
+<H3>wxDiagram::AddShape</H3>
+<P>
+<B>void</B> <B>AddShape</B>(<B>wxShape*</B><I>shape</I>, <B>wxShape *</B><I>addAfter = NULL</I>)<P>
+Adds a shape to the diagram. If <I>addAfter</I> is non-NULL, the shape will be added after this
+one.<P>
+
+<HR>
+<A NAME="topic17"></A>
+<H3>wxDiagram::Clear</H3>
+<P>
+<B>void</B> <B>Clear</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Clears the specified device context.<P>
+
+<HR>
+<A NAME="topic18"></A>
+<H3>wxDiagram::DeleteAllShapes</H3>
+<P>
+<B>void</B> <B>DeletesAllShapes</B>()<P>
+Removes and deletes all shapes in the diagram.<P>
+
+<HR>
+<A NAME="topic19"></A>
+<H3>wxDiagram::DrawOutline</H3>
+<P>
+<B>void</B> <B>DrawOutline</B>(<B>wxDC&amp;</B><I> dc</I>, <B>double</B><I> x1</I>, <B>double</B><I> y1</I>, <B>double</B><I> x2</I>, <B>double</B><I> y2</I>)<P>
+Draws an outline rectangle on the current device context.<P>
+
+<HR>
+<A NAME="wxdiagramfindshape"></A>
+<H3>wxDiagram::FindShape</H3>
+<P>
+<B>wxShape*</B> <B>FindShape</B>(<B>long</B><I> id</I>) <B>const</B><P>
+Returns the shape for the given identifier.<P>
+
+<HR>
+<A NAME="topic20"></A>
+<H3>wxDiagram::GetCanvas</H3>
+<P>
+<B>wxShapeCanvas*</B> <B>GetCanvas</B>() <B>const</B><P>
+Returns the shape canvas associated with this diagram.<P>
+
+<HR>
+<A NAME="wxdiagramgetcount"></A>
+<H3>wxDiagram::GetCount</H3>
+<P>
+<B>int</B> <B>GetCount</B>() <B>const</B><P>
+Returns the number of shapes in the diagram.<P>
+
+<HR>
+<A NAME="topic21"></A>
+<H3>wxDiagram::GetGridSpacing</H3>
+<P>
+<B>double</B> <B>GetGridSpacing</B>() <B>const</B><P>
+Returns the grid spacing.<P>
+
+<HR>
+<A NAME="topic22"></A>
+<H3>wxDiagram::GetMouseTolerance</H3>
+<P>
+<B>int</B> <B>GetMouseTolerance</B>()<P>
+Returns the tolerance within which a mouse move is ignored.<P>
+
+<HR>
+<A NAME="topic23"></A>
+<H3>wxDiagram::GetShapeList</H3>
+<P>
+<B>wxList*</B> <B>GetShapeList</B>() <B>const</B><P>
+Returns a pointer to the internal shape list.<P>
+
+<HR>
+<A NAME="topic24"></A>
+<H3>wxDiagram::GetQuickEditMode</H3>
+<P>
+<B>bool</B> <B>GetQuickEditMode</B>() <B>const</B><P>
+Returns quick edit mode.<P>
+
+<HR>
+<A NAME="topic25"></A>
+<H3>wxDiagram::GetSnapToGrid</H3>
+<P>
+<B>bool</B> <B>GetSnapToGrid</B>() <B>const</B><P>
+Returns snap-to-grid mode.<P>
+
+<HR>
+<A NAME="topic26"></A>
+<H3>wxDiagram::InsertShape</H3>
+<P>
+<B>void</B> <B>InsertShape</B>(<B>wxShape *</B><I>shape</I>)<P>
+Inserts a shape at the front of the shape list.<P>
+
+<HR>
+<A NAME="topic27"></A>
+<H3>wxDiagram::LoadFile</H3>
+<P>
+<B>bool</B> <B>LoadFile</B>(<B>const wxString&amp; </B><I>filename</I>)<P>
+Loads the diagram from a file.<P>
+
+<HR>
+<A NAME="topic28"></A>
+<H3>wxDiagram::OnDatabaseLoad</H3>
+<P>
+<B>void</B> <B>OnDatabaseLoad</B>(<B>wxExprDatabase&amp;</B><I> database</I>)<P>
+Called just after the nodes and lines have been read from the wxExprDatabase. You may override this;
+the default member does nothing.<P>
+
+<HR>
+<A NAME="topic29"></A>
+<H3>wxDiagram::OnDatabaseSave</H3>
+<P>
+<B>void</B> <B>OnDatabaseSave</B>(<B>wxExprDatabase&amp;</B><I> database</I>)<P>
+Called just after the nodes and lines have been written to the wxExprDatabase. You may override this;
+the default member does nothing.<P>
+
+<HR>
+<A NAME="topic30"></A>
+<H3>wxDiagram::OnHeaderLoad</H3>
+<P>
+<B>bool</B> <B>OnHeaderLoad</B>(<B>wxExprDatabase&amp;</B><I> database</I>, <B>wxExpr&amp;</B><I> expr</I>)<P>
+Called to allow the 'diagram' header object to be read. The default member reads no further information.
+You may wish to override this to read version information, author name, etc.<P>
+
+<HR>
+<A NAME="topic31"></A>
+<H3>wxDiagram::OnHeaderSave</H3>
+<P>
+<B>bool</B> <B>OnHeaderSave</B>(<B>wxExprDatabase&amp;</B><I> database</I>, <B>wxExpr&amp;</B><I> expr</I>)<P>
+Called to allow instantiation of the 'diagram' header object. The default member writes no further information.
+You may wish to override this to include version information, author name, etc.<P>
+
+<HR>
+<A NAME="topic32"></A>
+<H3>wxDiagram::OnShapeLoad</H3>
+<P>
+<B>bool</B> <B>OnShapeLoad</B>(<B>wxExprDatabase&amp;</B><I> database</I>, <B>wxShape&amp;</B><I> shape</I>, <B>wxExpr&amp;</B><I> expr</I>)<P>
+Called to read the shape from the <I>expr</I>. You may override this, but call this function first.
+The default member calls ReadAttributes for the shape.<P>
+
+<HR>
+<A NAME="topic33"></A>
+<H3>wxDiagram::OnShapeSave</H3>
+<P>
+<B>bool</B> <B>OnShapeSave</B>(<B>wxExprDatabase&amp;</B><I> database</I>, <B>wxShape&amp;</B><I> shape</I>, <B>wxExpr&amp;</B><I> expr</I>)<P>
+Called to save the shape to the <I>expr</I> and <I>database</I>. You may override this, but call this function first.
+The default member calls WriteAttributes for the shape, appends the shape to the database, and of the shape
+is a composite, recursively calls OnShapeSave for its children.<P>
+
+<HR>
+<A NAME="topic34"></A>
+<H3>wxDiagram::ReadContainerGeometry</H3>
+<P>
+<B>void</B> <B>ReadContainerGeometry</B>(<B>wxExprDatabase&amp;</B><I> database</I>)<P>
+Reads container geometry from a wxExprDatabase, linking up nodes which
+are part of a composite. You probably won't need to redefine this.<P>
+
+<HR>
+<A NAME="topic35"></A>
+<H3>wxDiagram::ReadLines</H3>
+<P>
+<B>void</B> <B>ReadLines</B>(<B>wxExprDatabase&amp;</B><I> database</I>)<P>
+Reads lines from a wxExprDatabase. You probably won't need to redefine this.<P>
+
+<HR>
+<A NAME="topic36"></A>
+<H3>wxDiagram::ReadNodes</H3>
+<P>
+<B>void</B> <B>ReadNodes</B>(<B>wxExprDatabase&amp;</B><I> database</I>)<P>
+Reads nodes from a wxExprDatabase. You probably won't need to redefine this.<P>
+
+<HR>
+<A NAME="topic37"></A>
+<H3>wxDiagram::RecentreAll</H3>
+<P>
+<B>void</B> <B>RecentreAll</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Make sure all text that should be centred, is centred.<P>
+
+<HR>
+<A NAME="topic38"></A>
+<H3>wxDiagram::Redraw</H3>
+<P>
+<B>void</B> <B>Redraw</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Draws the shapes in the diagram on the specified device context.<P>
+
+<HR>
+<A NAME="topic39"></A>
+<H3>wxDiagram::RemoveAllShapes</H3>
+<P>
+<B>void</B> <B>RemoveAllShapes</B>()<P>
+Removes all shapes from the diagram but does not delete the shapes.<P>
+
+<HR>
+<A NAME="topic40"></A>
+<H3>wxDiagram::RemoveShape</H3>
+<P>
+<B>void</B> <B>RemoveShape</B>(<B>wxShape*</B><I> shape</I>)<P>
+Removes the shape from the diagram (non-recursively) but does not delete it.<P>
+
+<HR>
+<A NAME="topic41"></A>
+<H3>wxDiagram::SaveFile</H3>
+<P>
+<B>bool</B> <B>SaveFile</B>(<B>const wxString&amp; </B><I>filename</I>)<P>
+Saves the diagram in a file.<P>
+
+<HR>
+<A NAME="wxdiagramsetcanvas"></A>
+<H3>wxDiagram::SetCanvas</H3>
+<P>
+<B>void</B> <B>SetCanvas</B>(<B>wxShapeCanvas*</B><I> canvas</I>)<P>
+Sets the canvas associated with this diagram.<P>
+
+<HR>
+<A NAME="topic42"></A>
+<H3>wxDiagram::SetGridSpacing</H3>
+<P>
+<B>void</B> <B>SetGridSpacing</B>(<B>double</B><I> spacing</I>)<P>
+Sets the grid spacing. The default is 5.<P>
+
+<HR>
+<A NAME="topic43"></A>
+<H3>wxDiagram::SetMouseTolerance</H3>
+<P>
+<B>void</B> <B>SetMouseTolerance</B>(<B>int</B><I> tolerance</I>)<P>
+Sets the tolerance within which a mouse move is ignored. The default is 3 pixels.<P>
+
+<HR>
+<A NAME="topic44"></A>
+<H3>wxDiagram::SetQuickEditMode</H3>
+<P>
+<B>void</B> <B>SetQuickEditMode</B>(<B>bool</B><I> mode</I>)<P>
+Sets quick-edit-mode on or off. In this mode, refreshes are minimized, but the
+diagram may need manual refreshing occasionally.<P>
+
+<HR>
+<A NAME="topic45"></A>
+<H3>wxDiagram::SetSnapToGrid</H3>
+<P>
+<B>void</B> <B>SetSnapToGrid</B>(<B>bool</B><I> snap</I>)<P>
+Sets snap-to-grid mode on or off. The default is on.<P>
+
+<HR>
+<A NAME="topic46"></A>
+<H3>wxDiagram::ShowAll</H3>
+<P>
+<B>void</B> <B>ShowAll</B>(<B>bool</B><I> show</I>)<P>
+Calls Show for each shape in the diagram.<P>
+
+<HR>
+<A NAME="topic47"></A>
+<H3>wxDiagram::Snap</H3>
+<P>
+<B>void</B> <B>Snap</B>(<B>double *</B><I>x</I>, <B>double *</B><I>y</I>)<P>
+'Snaps' the coordinate to the nearest grid position, if snap-to-grid is on.<P>
+
+</FONT></BODY></HTML>

@@ -1,0 +1,1 @@
+#include "smconfig.h"

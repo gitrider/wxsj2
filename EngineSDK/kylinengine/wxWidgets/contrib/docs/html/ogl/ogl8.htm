@@ -1,0 +1,138 @@
+<HTML>
+<head><title>wxOGLConstraint</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxoglconstraint"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl7.htm#classref"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl9.htm#wxbitmapshape"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxOGLConstraint</H2>
+<P>
+
+<img src="books.gif"></A><A HREF="ogl29.htm#compositeshapeoverview">wxCompositeShape overview</A>
+<P>
+An wxOGLConstraint object helps specify how child shapes are laid out with respect
+to siblings and parents.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+wxObject<P>
+<B><FONT COLOR="#FF0000">See also</FONT></B><P>
+<A HREF="ogl13.htm#wxcompositeshape">wxCompositeShape</A><P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#wxoglconstraintconstr">wxOGLConstraint::wxOGLConstraint</A><BR>
+<A HREF="#topic5">wxOGLConstraint::~wxOGLConstraint</A><BR>
+<A HREF="#topic6">wxOGLConstraint::Equals</A><BR>
+<A HREF="#topic7">wxOGLConstraint::Evaluate</A><BR>
+<A HREF="#wxoglconstraintsetspacing">wxOGLConstraint::SetSpacing</A><BR>
+<P>
+
+<HR>
+<A NAME="wxoglconstraintconstr"></A>
+<H3>wxOGLConstraint::wxOGLConstraint</H3>
+<P>
+<B></B> <B>wxOGLConstraint</B>()<P>
+Default constructor.<P>
+<B></B> <B>wxOGLConstraint</B>(<B>int</B><I> type</I>, <B>wxShape *</B><I>constraining</I>, <B>wxList&amp; </B><I>constrained</I>)<P>
+Constructor.<P>
+<B><FONT COLOR="#FF0000">Parameters</FONT></B><P>
+<I>constraining</I><UL><UL>
+The shape which is used as the reference for positioning the <I>constrained</I> objects.</UL></UL>
+<P>
+<I>constrained</I><UL><UL>
+Contains a list of wxShapes which are to be constrained (with respect
+to <I>constraining</I>) using <I>type</I>.</UL></UL>
+<P>
+<I>type</I><UL><UL>
+Can be one of:<P>
+<UL>
+
+<LI> <B>gyCONSTRAINT_CENTRED_VERTICALLY</B>: the Y co-ordinates of the centres of the
+bounding boxes of the constrained objects and the constraining object
+will be the same
+<LI> <B>gyCONSTRAINT_CENTRED_HORIZONTALLY</B>: the X co-ordinates of the centres of the
+bounding boxes of the constrained objects and the constraining object
+will be the same
+<LI> <B>gyCONSTRAINT_CENTRED_BOTH</B>: the co-ordinates of the centres of the bounding boxes
+of the constrained objects and the constraining object will be the same
+<LI> <B>gyCONSTRAINT_LEFT_OF</B>: the X co-ordinates of the right hand vertical edges
+of the bounding boxes of the constrained objects will be less than
+the X co-ordinate of the left hand vertical edge of the bounding box
+of the constraining object
+<LI> <B>gyCONSTRAINT_RIGHT_OF</B>: the X co-ordinates of the left hand vertical edges
+of the bounding boxes of the constrained objects will be greater than
+the X co-ordinate of the right hand vertical edge of the bounding box
+of the constraining object
+<LI> <B>gyCONSTRAINT_ABOVE</B>: the Y co-ordinates of the bottom horizontal edges of the
+bounding boxes of the constrained objects will be less than the
+Y co-ordinate of the top horizontal edge of the bounding box of the
+constraining object
+<LI> <B>gyCONSTRAINT_BELOW</B>: the Y co-ordinates of the top horizontal edges of the
+bounding boxes of the constrained objects will be greater than
+the X co-ordinate of the bottom horizontal edge of the bounding box
+of the constraining object
+<LI> <B>gyCONSTRAINT_ALIGNED_TOP</B>: the Y co-ordinates of the top horizontal edges of the
+bounding boxes of the constrained objects will be the same as the
+Y co-ordinate of the top horizontal edge of the bounding box of the
+constraining object
+<LI> <B>gyCONSTRAINT_ALIGNED_BOTTOM</B>: the Y co-ordinates of the bottom horizontal edges
+of the bounding boxes of the constrained objects will be the same as
+the Y co-ordinate of the bottom horizontal edge of the bounding box
+of the constraining object
+<LI> <B>gyCONSTRAINT_ALIGNED_LEFT</B>: the X co-ordinates of the left hand vertical edges
+of the bounding boxes of the constrained objects will be the same as
+the X co-ordinate of the left hand vertical edge of the bounding box
+of the constraining object
+<LI> <B>gyCONSTRAINT_ALIGNED_RIGHT</B>: the X co-ordinates of the right hand vertical edges
+of the bounding boxes of the constrained objects will be the same as
+the X co-ordinate of the right hand vertical edge of the bounding box
+of the constraining object
+<LI> <B>gyCONSTRAINT_MIDALIGNED_TOP</B>: the Y co-ordinates of the centres of
+the bounding boxes of the constrained objects will be the same
+as the Y co-ordinate of the top horizontal edge of
+the bounding box of the constraining object
+<LI> <B>gyCONSTRAINT_MIDALIGNED_BOTTOM</B>: the Y co-ordinates of the centres of
+the bounding boxes of the constrained objects will be the same
+as the Y co-ordinate of the bottom horizontal edge of
+the bounding box of the constraining object
+<LI> <B>gyCONSTRAINT_MIDALIGNED_LEFT</B>: the X co-ordinates of the centres of
+the bounding boxes of the constrained objects will be the same
+as the X co-ordinate of the left hand vertical edge of
+the bounding box of the constraining object
+<LI> <B>gyCONSTRAINT_MIDALIGNED_RIGHT</B>: the X co-ordinates of the centres of
+the bounding boxes of the constrained objects will be the same as
+the X co-ordinate of the right hand vertical edge of
+the bounding box of the constraining object
+</UL>
+
+</UL></UL>
+<P>
+
+<HR>
+<A NAME="topic5"></A>
+<H3>wxOGLConstraint::~wxOGLConstraint</H3>
+<P>
+<B></B> <B>~wxOGLConstraint</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="topic6"></A>
+<H3>wxOGLConstraint::Equals</H3>
+<P>
+<B>bool</B> <B>Equals</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>)<P>
+Returns TRUE if <I>x</I> and <I>y</I> are approximately equal (for the purposes
+of evaluating the constraint).<P>
+
+<HR>
+<A NAME="topic7"></A>
+<H3>wxOGLConstraint::Evaluate</H3>
+<P>
+<B>bool</B> <B>Evaluate</B>()<P>
+Evaluates this constraint, returning TRUE if anything changed.<P>
+
+<HR>
+<A NAME="wxoglconstraintsetspacing"></A>
+<H3>wxOGLConstraint::SetSpacing</H3>
+<P>
+<B>void</B> <B>SetSpacing</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>)<P>
+Sets the horizontal and vertical spacing for the constraint.<P>
+
+</FONT></BODY></HTML>

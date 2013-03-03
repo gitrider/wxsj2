@@ -1,0 +1,9 @@
+[Skin]
+LastSelected =./kin/kin06.skin
+
+[Plugin]
+Name = UIPlugin
+
+[System]
+ShowConsole = 0
+FPS = 10

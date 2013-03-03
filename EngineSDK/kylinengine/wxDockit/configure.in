@@ -1,0 +1,150 @@
+# ---------------------------
+# wxDockIt configure.ac file
+# ---------------------------
+
+# Command order to regen makefiles:
+# 
+# for developers:
+#    bakefile -fautoconf wxdockit.bkl
+#    aclocal
+#    autoconf
+#
+# for users:
+#    ./configure (--help eventually)
+#    make && make install
+
+AC_PREREQ(2.57)
+
+
+# wxDockIt version stuff
+# ----------------------
+AC_INIT([wxDockit], [2.1.0], [spooker@users.soruceforge.net])
+AC_CONFIG_SRCDIR([src/gtk/dockwindow_gtk.cpp])
+AC_CONFIG_SRCDIR([src/generic/layoutmanager.cpp])
+#AC_CONFIG_FILES([Makefile])
+#AC_CONFIG_FILES([src/generic/Makefile])
+#AC_CONFIG_FILES([src/gtk/Makefile])
+
+
+# Checks for programs
+# -------------------
+AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_RANLIB
+AC_PROG_MAKE_SET
+AC_FUNC_MALLOC
+AC_FUNC_REALLOC
+
+# This allows us to use Bakefile...
+AC_CANONICAL_SYSTEM
+
+
+
+# Checks for libraries (these checks are used to set config.h)
+# ------------------------------------------------------------
+AC_LANG(C++)
+
+# Check for wxWidgets
+AM_OPTIONS_WXCONFIG
+AM_PATH_WXCONFIG(2.5.3, wxWin=1, wxWin=0)
+if test "$wxWin" != 1; then
+	AC_MSG_ERROR([
+	   wxWidgets must be installed on your system
+	   but wx-config script couldn't be found.
+	
+	   Please check that wx-config is in path, the directory
+	   where wxWidgets libraries are installed (returned by
+	   'wx-config --libs' command) is in LD_LIBRARY_PATH or
+	   equivalent variable and wxWidgets version is 2.5.3 or above.
+	])
+else
+	# do not update CPPFLAGS nor CXXFLAGS otherwise we'll get the
+	# same settings repetead three times (since Makefile.in merges these
+	# two variables with $WX_CPPFLAGS automatically)
+	#CPPFLAGS="$CPPFLAGS"
+	CXXFLAGS="$CXXFLAGS"
+	CFLAGS="$CFLAGS $WX_CFLAGS_ONLY"
+	LDFLAGS="$LDFLAGS $WX_LIBS"
+fi
+
+
+
+# Synch our DEBUG,UNICODE,SHARED variables with wx ones
+# -----------------------------------------------------
+
+# these var will be set to '0' when they are FALSE, '1' when they are TRUE
+UNICODE_FLAG=$(test ! $($WX_CONFIG_WITH_ARGS --unicode >/dev/null 2>&1))
+DEBUG_FLAG=$(test ! $($WX_CONFIG_WITH_ARGS --debug >/dev/null 2>&1))
+SHARED_FLAG=$($WX_CONFIG_WITH_ARGS --static >/dev/null 2>&1)
+
+AC_MSG_CHECKING([if wxWidgets was built with UNICODE enabled])
+if test "$UNICODE_FLAG" != "0"; then
+	AC_MSG_RESULT([yes])
+	WX_UNICODE=1
+else
+	AC_MSG_RESULT([no])
+	WX_UNICODE=0
+fi
+
+
+AC_MSG_CHECKING([if wxWidgets was built in DEBUG or RELEASE mode])
+if test "$DEBUG_FLAG" != "0"; then
+	AC_MSG_RESULT([debug])
+	WX_DEBUG=1
+else
+	AC_MSG_RESULT([release])
+	WX_DEBUG=0
+fi
+
+AC_MSG_CHECKING([if wxWidgets was built in SHARED or STATIC mode])
+if test "$SHARED_FLAG" != "0"; then
+	AC_MSG_RESULT([shared])
+	WX_SHARED=1
+else
+	AC_MSG_RESULT([static])
+	WX_SHARED=0
+fi
+
+
+
+
+
+## Final macros
+## ------------
+
+AC_BAKEFILE([m4_include(autoconf_inc.m4)])
+AC_CONFIG_FILES([Makefile samples/Makefile])
+AC_OUTPUT
+
+
+
+# Just a little msg for GNU AUTOtools newbies (like me)
+echo
+echo " ------------------------------------------------------"
+echo "  Successfully configured wxDockIt ${PACKAGE_VERSION}:"
+echo "  wxDockIt will be built using the same configuration "
+echo "  used to build wxWidgets:"
+if [[ "$WX_DEBUG" = "1" ]]; then
+	echo "  - DEBUG build"
+else
+	echo "  - RELEASE build"
+fi
+if [[ "$WX_UNICODE" = "1" ]]; then
+	echo "  - UNICODE enabled"
+else
+	echo "  - UNICODE disabled"
+fi
+if [[ "$WX_SHARED" = "1" ]]; then
+	echo "  - SHARED mode"
+else
+	echo "  - STATIC mode"
+fi
+echo
+echo "  Now, just run make."
+echo " ------------------------------------------------------"
+echo
+
+
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!-- $Id: styles.bkl,v 1.1 2003/08/07 22:59:37 VS Exp $ -->
+
+<makefile>
+
+    <include file="../../../build/bakefiles/common_samples.bkl"/>
+
+    <exe id="styles" template="wx_sample" template_append="wx_append">
+        <sources>styles.cpp</sources>
+        <wx-lib>core</wx-lib>
+        <wx-lib>base</wx-lib>
+    </exe>
+
+    <wx-data id="data">
+        <files>
+            marble.jpg
+        </files>
+    </wx-data>
+
+</makefile>

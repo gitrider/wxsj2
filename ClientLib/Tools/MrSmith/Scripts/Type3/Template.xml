@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Agent desc="按照路径循环行走" >
+	<Scripts>
+		<Script name="..\Common\Main.lua" />
+		<Script name="..\Common\Procedure_Login.lua" />
+		<Script name="..\Common\Procedure_CharSel.lua" />
+		<Script name="..\Common\Procedure_GameServer.lua" />
+		<Script name="..\Common\Procedure_EnterScene.lua" />
+		<Script name="Procedure_Main.lua" />
+	</Scripts>
+	
+	<Variables>
+		<Variable name="LoginServer_Address" default="10.1.164.119" />
+		<Variable name="LoginServer_Port" default="1233" />
+		<Variable name="AccountName" default="boterra04" />
+		<Variable name="AccountPassword" default="123" />
+		
+		<Variable name="PathNodeNum" default="4" />
+		<Variable name="PathNode0" default="67,137" />
+		<Variable name="PathNode1" default="78,135" />
+		<Variable name="PathNode2" default="74,131" />
+		<Variable name="PathNode3" default="65,128" />
+	</Variables>
+</Agent>

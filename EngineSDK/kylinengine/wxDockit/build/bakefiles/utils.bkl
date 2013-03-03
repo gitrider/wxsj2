@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+
+<!-- Author: Francesco Montorsi <frm@users.sourceforge.net>         -->
+<!-- Date: 1/5/2005                                                 -->
+<!-- Last revision: 13/5/2005                                       -->
+
+<!--                                                                -->
+<!--             GENERIC BAKEFILE WITH UTILITY TAGS                 -->
+<!--                                                                -->
+<!--    This bakefile provides various new tags for easier          -->
+<!--    target creation (in particular these tags give you          -->
+<!--    the tools required to build INSTALL/UNINSTALL/RPM           -->
+<!--    targets.                                                    -->
+
+<makefile>
+
+    <!--                                                                -->
+    <!--                            NEW TAGS                            -->
+    <!--                                                                -->
+
+    <!-- Removes the $(value) file.                                     -->
+    <!-- Usage sample:                                                  -->
+    <!--          <action id="uninstall-lib">                           -->
+    <!--              <rmfile>$(LIBDIR)/*mylib*</rmfile>                -->
+    <!--          </action>                                             -->
+    <define-tag name="rmfile" rules="action">
+        <if cond="TARGETING_WIN32=='0'">
+            <command>rm -f $(value)</command>
+        </if>
+        <if cond="TARGETING_WIN32=='1' and FORMAT!='mingw'">
+            <command>-if exist $(value) del /Q $(value)</command>
+        </if>
+        <if cond="TARGETING_WIN32=='1' and FORMAT=='mingw'">
+        	<!-- The MINGW format needs the "then" keyword... -->
+            <command>-if exist $(value) then del /Q $(value)</command>
+        </if>        
+    </define-tag>
+
+    <!-- Recursively removes the $(value) file from the current folder. -->
+    <!-- Usage sample:                                                  -->
+    <!--          <action id="deepclean">                               -->
+    <!--              <rmfile-rec>$(BUILDDIR)/*.o</rmfile>              -->
+    <!--          </action>                                             -->
+    <define-tag name="rmfile-rec" rules="action">
+        <if cond="TOOLSET=='unix'"><command>$(RM) -r $(value)</command></if>
+        <if cond="TOOLSET=='win32'"><command>-del /S $(value)</command></if>
+    </define-tag>
+    
+    <!-- Removes the $(value) list of files. Each file should be        -->
+    <!-- separed from the previous with a single space.                 -->
+    <!-- To each file is prepended the $(DESTDIR)$(INCLUDEDIR)/         -->
+    <!-- string (the file list is supposed to be a list of headers)...  -->
+    <!-- Usage sample:                                                  -->
+    <!--          <set var="MYPRJ_HDR">                                 -->
+    <!--                  hdr1.h wx/hdr2.h                              -->             
+    <!--          </set>                                                -->
+    <!--          <modify-target target="uninstall">                    -->
+    <!--              <rmheaders>$(BUILDDIR)/*.o</rmheaders>            -->
+    <!--          </modify-target>                                      -->
+    <define-tag name="rmheaders" rules="action">
+       	<!-- First of all remove all unnecessary whitespaces and wrap long lines -->
+        <set var="__tmplist">$(wrapLongLine("", value, "\\", "\t", 20))</set> 
+        
+        <!-- then put the $(DESTDIR)$(INCLUDEDIR)/ string in front of all files -->
+        <set var="__tmplist">$(" " + __tmplist)</set>
+        <set var="__tmplist">$(__tmplist.replace(" ", " " + DESTDIR + INCLUDEDIR + DIRSEP))</set>
+        <set var="__tmplist">$(__tmplist.replace("\t", "\t" + DESTDIR + INCLUDEDIR + DIRSEP))</set>
+        
+        <!-- RM/DEL commands can take also lists of files (thanks Vaclav!) -->
+        <rmfile>$(__tmplist)</rmfile>
+    </define-tag>
+
+    <!-- Removes the $(value) folder.                                   -->
+    <!-- Usage sample:                                                  -->
+    <!--          <action id="uninstall-scripts">                       -->
+    <!--              <rmdir>$(DATADIR)/myscripts</rmdir>               -->
+    <!--          </action>                                             -->    
+    <define-tag name="rmdir" rules="action">
+        <if cond="TARGETING_WIN32=='0'">
+            <command>rm -rf $(value)</command>
+        </if>
+        <if cond="TARGETING_WIN32=='1' and FORMAT!='mingw'">
+            <command>-if exist $(value) rmdir /S /Q $(value)</command>
+        </if>
+        <if cond="TARGETING_WIN32=='1' and FORMAT=='mingw'">
+        	<!-- The MINGW format needs the "then" keyword... -->
+            <command>-if exist $(value) then rmdir /S /Q $(value)</command>
+        </if>                
+    </define-tag>
+
+    <!-- Removes the intermediate folders whose names are composed as   -->
+    <!-- "$(value)[u][d]" where 'u' is used when Unicode is enabled and -->
+    <!-- 'd' is used for debug builds.                                  -->
+    <!-- Usage sample:                                                  -->
+    <!--          <set var="BUILDDIR">$(FORMAT)$(WXLIBPOSTFIX)</set>    -->
+    <!--          <action id="deepclean">                               -->
+    <!--              <rmintdir>$(FORMAT)</rmintdir>                    -->
+    <!--          </action>                                             -->    
+    <define-tag name="rmintdir" rules="action">
+        <rmdir>$(value)</rmdir>
+        <rmdir>$(value)d</rmdir>
+        <rmdir>$(value)u</rmdir>
+        <rmdir>$(value)ud</rmdir>
+    </define-tag>
+    
+    <!-- Removes *all* intermediate files from the given folder         -->
+    <!-- recursively.                                                   -->
+    <!-- Usage sample:                                                  -->
+    <!--          <action id="deepclean">                               -->
+    <!--              <rmintfiles>build</rmintfiles>                    -->
+    <!--          </action>                                             -->
+    <define-tag name="rmintfiles" rules="action">
+    
+        <!-- remove results -->
+        <rmfile-rec>$(value)$(DIRSEP)*.a</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.lib</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.pdb</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.dll</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.exp</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.so*</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.exe</rmfile-rec>        
+    
+        <!-- various intermediate files for the bakefile-supported compilers -->
+	    <rmfile-rec>$(value)$(DIRSEP)*.obj</rmfile-rec>
+	    <rmfile-rec>$(value)$(DIRSEP)*.o</rmfile-rec>
+	    <rmfile-rec>$(value)$(DIRSEP)*.log</rmfile-rec>
+	    <rmfile-rec>$(value)$(DIRSEP)*.manifest*</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.log</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP).bakefile_gen.state</rmfile-rec>
+
+        <!-- MSVC -->
+        <rmfile-rec>$(value)$(DIRSEP)*.pch</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.ncb</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.plg</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.ncb</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.aps</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.suo</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.user</rmfile-rec>
+
+        <!-- Borland -->
+        <rmfile-rec>$(value)$(DIRSEP)*.il?</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.tds</rmfile-rec>
+        <rmfile-rec>$(value)$(DIRSEP)*.idb</rmfile-rec>	   
+        <rmfile-rec>$(value)$(DIRSEP)*.map</rmfile-rec>
+         	    
+	    <!-- autoconf -->
+        <rmdir>$(value)$(DIRSEP)autom4te.cache</rmdir>
+        <rmdir>$(value)$(DIRSEP).deps</rmdir>
+	    <rmfile-rec>$(value)$(DIRSEP)config.status</rmfile-rec>
+	    <rmfile-rec>$(value)$(DIRSEP)config.log</rmfile-rec>
+	    <rmfile-rec>$(value)$(DIRSEP)Makefile</rmfile-rec>
+	    <rmfile-rec>$(value)$(DIRSEP)bk-deps</rmfile-rec>
+    </define-tag>
+
+
+
+
+    <!--                                                                -->
+    <!--                           NEW RULES                            -->
+    <!--                                                                -->
+
+    <!-- Changes the current directory to the folder given to the CD    -->
+    <!-- tag and then executes the command given to the RUN tag.        -->
+    <!-- Usage sample:                                                  -->
+    <!--          <cd-and-run id="tarball">                             -->
+    <!--              <cd>..</cd>                                       -->
+    <!--              <run>tar -cvzf tarball.tar.gz myproj/*</run>      -->
+    <!--          </cd-and-run>                                         -->    
+    <define-rule name="cd-and-run" extends="action">
+        <template>
+            <set var="__cmddir"/>
+            <set var="__cmdstr"/>
+        </template>
+        <define-tag name="cd">
+            <set var="__cmddir">$(nativePaths(value))</set>
+        </define-tag>
+        <define-tag name="run">
+            <set var="__cmdstr">$(value)</set>
+            <if cond="FORMAT=='msvc' or FORMAT=='mingw' or FORMAT=='gnu' or FORMAT=='autoconf'">
+	            <command>( cd $(__cmddir) &amp;&amp; $(__cmdstr) )</command>
+	        </if>
+            <if cond="FORMAT=='borland' or FORMAT=='watcom'">
+	            <command>-cd $(__cmddir)</command>
+	            <command>-$(__cmdstr)</command>	            
+	        </if>
+        </define-tag>
+    </define-rule>
+
+</makefile>
