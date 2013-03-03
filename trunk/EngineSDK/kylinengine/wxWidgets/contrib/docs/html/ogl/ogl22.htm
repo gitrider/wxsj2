@@ -1,0 +1,283 @@
+<HTML>
+<head><title>wxShapeCanvas</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxshapecanvas"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl21.htm#wxshape"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl23.htm#wxshapeevthandler"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxShapeCanvas</H2>
+<P>
+A canvas for drawing diagrams on.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+wxScrolledWindow<P>
+<B><FONT COLOR="#FF0000">See also</FONT></B><P>
+<A HREF="ogl10.htm#wxdiagram">wxDiagram</A><P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic246">wxShapeCanvas::wxShapeCanvas</A><BR>
+<A HREF="#topic247">wxShapeCanvas::~wxShapeCanvas</A><BR>
+<A HREF="#topic248">wxShapeCanvas::AddShape</A><BR>
+<A HREF="#topic249">wxShapeCanvas::FindShape</A><BR>
+<A HREF="#topic250">wxShapeCanvas::FindFirstSensitiveShape</A><BR>
+<A HREF="#topic251">wxShapeCanvas::GetDiagram</A><BR>
+<A HREF="#topic252">wxShapeCanvas::GetGridSpacing</A><BR>
+<A HREF="#topic253">wxShapeCanvas::GetMouseTolerance</A><BR>
+<A HREF="#topic254">wxShapeCanvas::GetShapeList</A><BR>
+<A HREF="#topic255">wxShapeCanvas::GetQuickEditMode</A><BR>
+<A HREF="#topic256">wxShapeCanvas::InsertShape</A><BR>
+<A HREF="#wxshapecanvasonbegindragleft">wxShapeCanvas::OnBeginDragLeft</A><BR>
+<A HREF="#wxshapecanvasonbegindragright">wxShapeCanvas::OnBeginDragRight</A><BR>
+<A HREF="#wxshapecanvasonenddragleft">wxShapeCanvas::OnEndDragLeft</A><BR>
+<A HREF="#wxshapecanvasonenddragright">wxShapeCanvas::OnEndDragRight</A><BR>
+<A HREF="#wxshapecanvasondragleft">wxShapeCanvas::OnDragLeft</A><BR>
+<A HREF="#wxshapecanvasondragright">wxShapeCanvas::OnDragRight</A><BR>
+<A HREF="#wxshapecanvasonleftclick">wxShapeCanvas::OnLeftClick</A><BR>
+<A HREF="#wxshapecanvasonrightclick">wxShapeCanvas::OnRightClick</A><BR>
+<A HREF="#topic257">wxShapeCanvas::Redraw</A><BR>
+<A HREF="#topic258">wxShapeCanvas::RemoveShape</A><BR>
+<A HREF="#topic259">wxShapeCanvas::SetDiagram</A><BR>
+<A HREF="#topic260">wxShapeCanvas::Snap</A><BR>
+<P>
+
+<HR>
+<A NAME="topic246"></A>
+<H3>wxShapeCanvas::wxShapeCanvas</H3>
+<P>
+<B></B> <B>wxShapeCanvas</B>(<B>wxWindow*</B><I> parent = NULL</I>, <B>wxWindowID</B><I> id = -1</I>,
+ <B>const wxPoint&amp;</B><I> pos = wxDefaultPosition</I>, <B>const wxSize&amp;</B><I> size = wxDefaultSize</I>,
+ <B>long</B><I> style = wxBORDER</I>)<P>
+Constructor.<P>
+
+<HR>
+<A NAME="topic247"></A>
+<H3>wxShapeCanvas::~wxShapeCanvas</H3>
+<P>
+<B></B> <B>~wxShapeCanvas</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="topic248"></A>
+<H3>wxShapeCanvas::AddShape</H3>
+<P>
+<B>void</B> <B>AddShape</B>(<B>wxShape *</B><I>shape</I>, <B>wxShape *</B><I>addAfter = NULL</I>)<P>
+Adds a shape to the diagram. If <I>addAfter</I> is non-NULL, the shape will be added after this
+one.<P>
+
+<HR>
+<A NAME="topic249"></A>
+<H3>wxShapeCanvas::FindShape</H3>
+<P>
+<B>wxShape *</B> <B>FindShape</B>(<B>double</B><I> x1</I>, <B>double</B><I> y</I>, <B>int *</B><I>attachment</I>, <B>wxClassInfo *</B><I>info = NULL</I>,
+ <B>wxShape *</B><I>notImage = NULL</I>)<P>
+Find a shape under this mouse click. Returns the shape (or NULL), and the nearest attachment point.<P>
+If <I>info</I> is non-NULL, a shape whose class which is a descendant of the desired class is found.<P>
+If <I>notImage</I> is non-NULL, shapes which are descendants of <I>notImage</I> are ignored.<P>
+
+<HR>
+<A NAME="topic250"></A>
+<H3>wxShapeCanvas::FindFirstSensitiveShape</H3>
+<P>
+<B>wxShape *</B> <B>FindFirstSensitiveShape</B>(<B>double</B><I> x1</I>, <B>double</B><I> y</I>, <B>int *</B><I>attachment</I>, <B>int</B><I> op</I>)<P>
+Finds the first sensitive shape whose sensitivity filter matches <I>op</I>, working up the hierarchy of composites until
+one (or none) is found.<P>
+
+<HR>
+<A NAME="topic251"></A>
+<H3>wxShapeCanvas::GetDiagram</H3>
+<P>
+<B>wxDiagram*</B> <B>GetDiagram</B>() <B>const</B><P>
+Returns the canvas associated with this diagram.<P>
+
+<HR>
+<A NAME="topic252"></A>
+<H3>wxShapeCanvas::GetGridSpacing</H3>
+<P>
+<B>double</B> <B>GetGridSpacing</B>() <B>const</B><P>
+Returns the grid spacing.<P>
+
+<HR>
+<A NAME="topic253"></A>
+<H3>wxShapeCanvas::GetMouseTolerance</H3>
+<P>
+<B>int</B> <B>GetMouseTolerance</B>() <B>const</B><P>
+Returns the tolerance within which a mouse move is ignored.<P>
+
+<HR>
+<A NAME="topic254"></A>
+<H3>wxShapeCanvas::GetShapeList</H3>
+<P>
+<B>wxList*</B> <B>GetShapeList</B>() <B>const</B><P>
+Returns a pointer to the internal shape list.<P>
+
+<HR>
+<A NAME="topic255"></A>
+<H3>wxShapeCanvas::GetQuickEditMode</H3>
+<P>
+<B>bool</B> <B>GetQuickEditMode</B>() <B>const</B><P>
+Returns quick edit mode for the associated diagram.<P>
+
+<HR>
+<A NAME="topic256"></A>
+<H3>wxShapeCanvas::InsertShape</H3>
+<P>
+<B>void</B> <B>InsertShape</B>(<B>wxShape*</B><I> shape</I>)<P>
+Inserts a shape at the front of the shape list.<P>
+
+<HR>
+<A NAME="wxshapecanvasonbegindragleft"></A>
+<H3>wxShapeCanvas::OnBeginDragLeft</H3>
+<P>
+<B>void</B> <B>OnBeginDragLeft</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys = 0</I>)<P>
+Called when the start of a left-button drag event on the canvas background is detected by OnEvent. You may override this member;
+by default it does nothing.<P>
+<I>keys</I> is a bit list of the following:<P>
+<UL>
+
+<LI> KEY_SHIFT
+<LI> KEY_CTRL
+</UL>
+<P>
+See also <A HREF="ogl22.htm#wxshapecanvasondragleft">wxShapeCanvas::OnDragLeft</A>, <A HREF="ogl22.htm#wxshapecanvasonenddragleft">wxShapeCanvas::OnEndDragLeft</A>.<P>
+
+<HR>
+<A NAME="wxshapecanvasonbegindragright"></A>
+<H3>wxShapeCanvas::OnBeginDragRight</H3>
+<P>
+<B>void</B> <B>OnBeginDragRight</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys = 0</I>)<P>
+Called when the start of a right-button drag event on the canvas background is detected by OnEvent. You may override this member;
+by default it does nothing.<P>
+<I>keys</I> is a bit list of the following:<P>
+<UL>
+
+<LI> KEY_SHIFT
+<LI> KEY_CTRL
+</UL>
+<P>
+See also <A HREF="ogl22.htm#wxshapecanvasondragright">wxShapeCanvas::OnDragRight</A>, <A HREF="ogl22.htm#wxshapecanvasonenddragright">wxShapeCanvas::OnEndDragRight</A>.<P>
+
+<HR>
+<A NAME="wxshapecanvasonenddragleft"></A>
+<H3>wxShapeCanvas::OnEndDragLeft</H3>
+<P>
+<B>void</B> <B>OnEndDragLeft</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys = 0</I>)<P>
+Called when the end of a left-button drag event on the canvas background is detected by OnEvent. You may override this member;
+by default it does nothing.<P>
+<I>keys</I> is a bit list of the following:<P>
+<UL>
+
+<LI> KEY_SHIFT
+<LI> KEY_CTRL
+</UL>
+<P>
+See also <A HREF="ogl22.htm#wxshapecanvasondragleft">wxShapeCanvas::OnDragLeft</A>, <A HREF="ogl22.htm#wxshapecanvasonbegindragleft">wxShapeCanvas::OnBeginDragLeft</A>.<P>
+
+<HR>
+<A NAME="wxshapecanvasonenddragright"></A>
+<H3>wxShapeCanvas::OnEndDragRight</H3>
+<P>
+<B>void</B> <B>OnEndDragRight</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys = 0</I>)<P>
+Called when the end of a right-button drag event on the canvas background is detected by OnEvent. You may override this member;
+by default it does nothing.<P>
+<I>keys</I> is a bit list of the following:<P>
+<UL>
+
+<LI> KEY_SHIFT
+<LI> KEY_CTRL
+</UL>
+<P>
+See also <A HREF="ogl22.htm#wxshapecanvasondragright">wxShapeCanvas::OnDragRight</A>, <A HREF="ogl22.htm#wxshapecanvasonbegindragright">wxShapeCanvas::OnBeginDragRight</A>.<P>
+
+<HR>
+<A NAME="wxshapecanvasondragleft"></A>
+<H3>wxShapeCanvas::OnDragLeft</H3>
+<P>
+<B>void</B> <B>OnDragLeft</B>(<B>bool</B><I> draw</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys = 0</I>)<P>
+Called when a left-button drag event on the canvas background is detected by OnEvent. You may override this member;
+by default it does nothing.<P>
+<I>draw</I> is alternately TRUE and FALSE, to assist drawing and erasing.<P>
+<I>keys</I> is a bit list of the following:<P>
+<UL>
+
+<LI> KEY_SHIFT
+<LI> KEY_CTRL
+</UL>
+<P>
+See also <A HREF="ogl22.htm#wxshapecanvasonbegindragleft">wxShapeCanvas::OnBeginDragLeft</A>, <A HREF="ogl22.htm#wxshapecanvasonenddragleft">wxShapeCanvas::OnEndDragLeft</A>.<P>
+
+<HR>
+<A NAME="wxshapecanvasondragright"></A>
+<H3>wxShapeCanvas::OnDragRight</H3>
+<P>
+<B>void</B> <B>OnDragRight</B>(<B>bool</B><I> draw</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys = 0</I>)<P>
+Called when a right-button drag event on the canvas background is detected by OnEvent. You may override this member;
+by default it does nothing.<P>
+<I>draw</I> is alternately TRUE and FALSE, to assist drawing and erasing.<P>
+<I>keys</I> is a bit list of the following:<P>
+<UL>
+
+<LI> KEY_SHIFT
+<LI> KEY_CTRL
+</UL>
+<P>
+See also <A HREF="ogl22.htm#wxshapecanvasonbegindragright">wxShapeCanvas::OnBeginDragRight</A>, <A HREF="ogl22.htm#wxshapecanvasonenddragright">wxShapeCanvas::OnEndDragRight</A>.<P>
+
+<HR>
+<A NAME="wxshapecanvasonleftclick"></A>
+<H3>wxShapeCanvas::OnLeftClick</H3>
+<P>
+<B>void</B> <B>OnLeftClick</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys = 0</I>)<P>
+Called when a left click event on the canvas background is detected by OnEvent. You may override this member;
+by default it does nothing.<P>
+<I>keys</I> is a bit list of the following:<P>
+<UL>
+
+<LI> KEY_SHIFT
+<LI> KEY_CTRL
+</UL>
+<P>
+
+<HR>
+<A NAME="wxshapecanvasonrightclick"></A>
+<H3>wxShapeCanvas::OnRightClick</H3>
+<P>
+<B>void</B> <B>OnRightClick</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int</B><I> keys = 0</I>)<P>
+Called when a right click event on the canvas background is detected by OnEvent. You may override this member;
+by default it does nothing.<P>
+<I>keys</I> is a bit list of the following:<P>
+<UL>
+
+<LI> KEY_SHIFT
+<LI> KEY_CTRL
+</UL>
+<P>
+
+<HR>
+<A NAME="topic257"></A>
+<H3>wxShapeCanvas::Redraw</H3>
+<P>
+<B>void</B> <B>Redraw</B>()<P>
+Calls wxDiagram::Redraw.<P>
+
+<HR>
+<A NAME="topic258"></A>
+<H3>wxShapeCanvas::RemoveShape</H3>
+<P>
+<B>void</B> <B>RemoveShape</B>(<B>wxShape *</B><I>shape</I>)<P>
+Calls wxDiagram::RemoveShape.<P>
+
+<HR>
+<A NAME="topic259"></A>
+<H3>wxShapeCanvas::SetDiagram</H3>
+<P>
+<B>void</B> <B>SetDiagram</B>(<B>wxDiagram *</B><I>diagram</I>)<P>
+Sets the diagram associated with this diagram.<P>
+
+<HR>
+<A NAME="topic260"></A>
+<H3>wxShapeCanvas::Snap</H3>
+<P>
+<B>void</B> <B>Snap</B>(<B>double *</B><I>x</I>, <B>double *</B><I>y</I>)<P>
+Calls wxDiagram::Snap.<P>
+<P>
+
+</FONT></BODY></HTML>

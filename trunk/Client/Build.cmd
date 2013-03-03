@@ -1,0 +1,1 @@
+BuildConsole.exe Client.sln /build /cfg="Release|Win32"

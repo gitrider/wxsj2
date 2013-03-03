@@ -1,0 +1,51 @@
+16:54:45: Creating resource group General
+16:54:45: Creating resource group Internal
+16:54:45: Creating resource group Autodetect
+16:54:45: Registering ResourceManager for type Material
+16:54:45: Registering ResourceManager for type Mesh
+16:54:45: Registering ResourceManager for type Skeleton
+16:54:45: MovableObjectFactory for type 'ParticleSystem' registered.
+16:54:45: Loading library OgrePlatform.dll
+16:54:45: OverlayElementFactory for type Panel registered.
+16:54:45: OverlayElementFactory for type BorderPanel registered.
+16:54:45: OverlayElementFactory for type TextArea registered.
+16:54:45: Registering ResourceManager for type Font
+16:54:45: ArchiveFactory for archive type FileSystem registered.
+16:54:45: ArchiveFactory for archive type Zip registered.
+16:54:45: ArchiveFactory for archive type Kpm registered.
+16:54:45: DevIL version: Developer's Image Library (DevIL) 1.6.7 Oct 28 2005
+16:54:45: DevIL image formats: bmp dib cut dcx dds gif hdr ico cur jpg jpe jpeg lif mdl mng jng pcx pic pix png pbm pgm pnm ppm psd pdd psp pxr sgi bw rgb rgba tga vda icb vst tif tiff wal xpm raw 
+16:54:45: Registering ResourceManager for type HighLevelGpuProgram
+16:54:45: Registering ResourceManager for type Compositor
+16:54:45: MovableObjectFactory for type 'Entity' registered.
+16:54:45: MovableObjectFactory for type 'Light' registered.
+16:54:45: MovableObjectFactory for type 'BillboardSet' registered.
+16:54:45: MovableObjectFactory for type 'ManualObject' registered.
+16:54:45: MovableObjectFactory for type 'BillboardChain' registered.
+16:54:45: MovableObjectFactory for type 'RibbonTrail' registered.
+16:54:45: *-*-* OGRE Initialising
+16:54:45: *-*-* Version 1.2.5 (Dagon)
+16:54:45: MovableObjectFactory for type 'AutoAnimationEntity' registered.
+16:54:45: MovableObjectFactory for type 'Projector' registered.
+16:54:45: Particle Renderer Type 'texcoord_billboard' registered
+16:54:45: Particle Renderer Type 'mesh' registered
+16:54:45: Particle Affector Type 'MeshRotator' registered
+16:54:45: Particle Affector Type 'MeshAnimationAffector' registered
+16:54:45: Particle Renderer Type 'ribbon' registered
+16:54:45: Installing plugin: ParticleFXExtentionPlugin
+16:54:45: Particle Affector Type 'HeightField' registered
+16:54:45: Particle Affector Type 'FollowTarget' registered
+16:54:45: Particle Affector Type 'NoiseColor' registered
+16:54:45: Particle Affector Type 'NoiseScale' registered
+16:54:45: Plugin successfully installed
+16:54:45: An exception has been thrown!
+
+-----------------------------------
+Details:
+-----------------------------------
+Error #: 8
+Function: ConfigFile::load
+Description: 'Resources.cfg' file not found!. 
+File: e:\work\project_root\engine\ogre\ogremain\src\ogreconfigfile.cpp
+Line: 80
+Stack unwinding: <<beginning of stack>>

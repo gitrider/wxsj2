@@ -1,0 +1,529 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\tConfig.rc2""  // 非 Microsoft Visual C++ 编辑过的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\tConfig.ico"
+IDI_ICON_DX9            ICON                    "res\\dx9.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 tConfig"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,10,21,21
+    LTEXT           "tConfig Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) SOHU.COM Inc. 2006",IDC_STATIC,40,25,119,
+                    8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_TCONFIG_DIALOG DIALOGEX 0, 0, 307, 221
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "《天龙八部》配置程序"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,189,198,50,16
+    PUSHBUTTON      "取消",IDCANCEL,250,198,50,16
+    CONTROL         "",IDC_TAB_MAIN,"SysTabControl32",0x0,7,7,293,185
+    CONTROL         "",IDC_STATIC_PARENT,"Static",SS_BLACKRECT,16,27,275,156
+END
+
+IDD_DIALOG_INTEGRATE DIALOGEX 0, 0, 281, 163
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    GROUPBOX        "系统信息a",IDC_STATIC_SYSTEM_GROUP,0,0,273,65
+    GROUPBOX        "游戏设置",IDC_STATIC_SETTING_GROUP,0,70,273,84
+    CONTROL         "低    牺牲大部分图形表现以争取更高的性能,适应于低端配置",
+                    IDC_RADIO_SET_LOW,"Button",BS_AUTORADIOBUTTON,15,105,245,
+                    13
+    CONTROL         "中    适应于大部分配置",IDC_RADIO_SET_MIDDLE,"Button",
+                    BS_AUTORADIOBUTTON,15,121,240,13
+    CONTROL         "高    尽可能提高画面质量,适应于高端配置",
+                    IDC_RADIO_SET_HIGH,"Button",BS_AUTORADIOBUTTON,15,137,
+                    228,13
+    CONTROL         "推荐  根据当前硬件自动调整各项参数",IDC_RADIO_SET_DEF,
+                    "Button",BS_AUTORADIOBUTTON,12,84,222,13
+    LTEXT           "[注意]",IDC_STATIC_TIPS,238,85,27,10
+    EDITTEXT        IDC_EDIT_INFO,5,9,261,53,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER | 
+                    WS_VSCROLL
+END
+
+IDD_DIALOG_VIDEO DIALOGEX 0, 0, 281, 163
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    GROUPBOX        "一般选项",IDC_STATIC_GENERAL_GROUP,0,0,134,72
+    GROUPBOX        "屏幕效果",IDC_STATIC_SCREEN_GROUP,140,1,134,72
+    GROUPBOX        "纹理质量",IDC_STATIC_TEXTURE_GROUP,0,79,134,75
+    GROUPBOX        "其他选项",IDC_STATIC_OTHER_GROUP,140,79,134,75
+    RTEXT           "地形阴影:",IDC_STATIC_DIXINGYINYING,6,13,48,8
+    CONTROL         "",IDC_SLIDER_VIDEO_1,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,56,7,53,20
+    RTEXT           "全屏抗锯齿:",IDC_STATIC_QUANPING,6,33,48,8
+    CONTROL         "",IDC_SLIDER_VIDEO_2,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,56,27,53,20
+    RTEXT           "物体动画:",IDC_STATIC_ANIM,6,55,48,8
+    CONTROL         "",IDC_SLIDER_VIDEO_3,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,56,48,53,20
+    RTEXT           "颜色质量:",IDC_STATIC_COL_QUALITY,5,117,48,8
+    CONTROL         "",IDC_SLIDER_VIDEO_4,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,55,109,53,20
+    RTEXT           "采样:",IDC_STATIC_CAIYANG,5,138,48,8
+    CONTROL         "",IDC_SLIDER_VIDEO_5,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,55,130,53,20
+    RTEXT           "纹理质量:",IDC_STATIC_TEX_QUALITY,5,97,48,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    CONTROL         "",IDC_SLIDER_VIDEO_6,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,55,
+                    89,53,20
+    RTEXT           "角色阴影:",IDC_STATIC_CHAR_ANIM,149,16,48,8
+    CONTROL         "",IDC_SLIDER_VIDEO_7,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,199,7,53,20
+    CONTROL         "全屏泛光:",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,160,53,56,11
+    CONTROL         "垂直同步:",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,144,92,49,11
+    CONTROL         "全屏模式:",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,144,107,49,11
+    LTEXT           "",IDC_STATIC_VIDEO_1,117,13,12,8
+    LTEXT           "",IDC_STATIC_VIDEO_2,117,33,12,8
+    LTEXT           "",IDC_STATIC_VIDEO_3,117,55,12,8
+    LTEXT           "",IDC_STATIC_VIDEO_4,117,97,12,8,WS_DISABLED
+    LTEXT           "",IDC_STATIC_VIDEO_5,109,117,20,8
+    LTEXT           "",IDC_STATIC_VIDEO_6,117,138,12,8
+    LTEXT           "",IDC_STATIC_VIDEO_7,256,16,12,8
+    LTEXT           "显卡加速:",IDC_STATIC_XIANKA_JIASU,144,123,36,9
+    COMBOBOX        IDC_COMBO2,143,133,127,127,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "最大仰角:-",IDC_STATIC_MAX_PITCH,203,93,41,8
+    LTEXT           "最小仰角:-",IDC_STATIC_MIN_PITCH,203,109,41,8
+    EDITTEXT        IDC_EDIT2,244,91,27,14,ES_NUMBER
+    EDITTEXT        IDC_EDIT3,244,108,27,14,ES_NUMBER
+END
+
+IDD_DIALOG_SOUND DIALOGEX 0, 0, 281, 163
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    CONTROL         "全部静音",IDC_CHECK_SOUND_MUTE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,15,118,14
+    GROUPBOX        "声音",IDC_STATIC,0,0,271,152
+    CONTROL         "背景音乐",IDC_CHECK_SOUND_BKG,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,45,62,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,2,35,268,1
+    CONTROL         "",IDC_SLIDER_SOUND_BKG,"msctls_trackbar32",WS_TABSTOP,
+                    137,44,109,16
+    CONTROL         "环境音效",IDC_CHECK_SOUND_ENV,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,72,62,14
+    CONTROL         "",IDC_SLIDER_SOUND_ENV,"msctls_trackbar32",WS_TABSTOP,
+                    137,74,109,16
+    CONTROL         "技能音效",IDC_CHECK_SOUND_SKILL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,23,99,62,14
+    CONTROL         "",IDC_SLIDER_SOUND_SKILL,"msctls_trackbar32",WS_TABSTOP,
+                    137,101,109,16
+    CONTROL         "事件音效",IDC_CHECK_SOUND_UI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,126,62,14
+    CONTROL         "",IDC_SLIDER_SOUND_UI,"msctls_trackbar32",WS_TABSTOP,
+                    137,128,109,16
+    LTEXT           "",IDC_STATIC_SOUND_1,247,45,16,14
+    LTEXT           "",IDC_STATIC_SOUND_2,247,73,16,14
+    LTEXT           "",IDC_STATIC_SOUND_3,247,103,16,14
+    LTEXT           "",IDC_STATIC_SOUND_4,247,129,16,14
+END
+
+IDD_DIALOG_DX_ERROR DIALOGEX 0, 0, 225, 59
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "天龙八部"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "取消",IDOK,168,38,50,14
+    LTEXT           "《天龙八部》需要DirectX9.0c以上版本才能运行!",
+                    IDC_STATIC,38,7,180,29
+    ICON            IDI_ICON_DX9,IDC_STATIC,7,7,21,21
+    DEFPUSHBUTTON   "安装",IDC_BUTTON_SETUP,81,38,63,14
+END
+
+IDD_TCONFIG_DIALOG_VN DIALOGEX 0, 0, 379, 206
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "tConfig"
+FONT 8, "Tahoma", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,267,184,50,15
+    PUSHBUTTON      "&Cancel",IDCANCEL,322,184,50,15
+    CONTROL         "",IDC_TAB_MAIN,"SysTabControl32",0x0,7,7,365,171
+    CONTROL         "",IDC_STATIC_PARENT,"Static",SS_BLACKRECT,16,25,349,144
+END
+
+IDD_DIALOG_VIDEO_VN DIALOGEX 0, 0, 351, 150
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 8, "Tahoma", 400, 0, 0x0
+BEGIN
+    GROUPBOX        "ò?°?????",IDC_STATIC_GENERAL_GROUP,0,0,177,66
+    GROUPBOX        "?á??D§1?",IDC_STATIC_SCREEN_GROUP,183,1,161,66
+    GROUPBOX        "??àí?êá?",IDC_STATIC_TEXTURE_GROUP,0,73,177,70
+    GROUPBOX        "????????",IDC_STATIC_OTHER_GROUP,183,73,161,70
+    RTEXT           "μ?D?ò?ó°:",IDC_STATIC_DIXINGYINYING,6,12,78,8
+    CONTROL         "",IDC_SLIDER_VIDEO_1,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,91,7,53,18
+    RTEXT           "è??á?1?a3Y:",IDC_STATIC_QUANPING,6,31,78,8
+    CONTROL         "",IDC_SLIDER_VIDEO_2,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,91,25,53,18
+    RTEXT           "??ì??ˉ?-:",IDC_STATIC_ANIM,6,51,78,8
+    CONTROL         "",IDC_SLIDER_VIDEO_3,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,91,44,53,18
+    RTEXT           "??é??êá?:",IDC_STATIC_COL_QUALITY,6,108,78,8
+    CONTROL         "",IDC_SLIDER_VIDEO_4,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,91,101,53,18
+    RTEXT           "2é?ù:",IDC_STATIC_CAIYANG,6,127,78,8
+    CONTROL         "",IDC_SLIDER_VIDEO_5,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,91,120,53,18
+    RTEXT           "??àí?êá?:",IDC_STATIC_TEX_QUALITY,6,90,78,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    CONTROL         "",IDC_SLIDER_VIDEO_6,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,91,
+                    82,53,18
+    RTEXT           "??é?ò?ó°:",IDC_STATIC_CHAR_ANIM,194,15,48,8
+    CONTROL         "",IDC_SLIDER_VIDEO_7,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | WS_TABSTOP,251,7,53,18
+    CONTROL         "è??á·o1a:",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,194,49,93,10
+    CONTROL         "′1?±í?2?:",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,194,84,93,10
+    CONTROL         "è??á?￡ê?:",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,194,98,93,10
+    LTEXT           "",IDC_STATIC_VIDEO_1,147,12,24,8
+    LTEXT           "",IDC_STATIC_VIDEO_2,147,31,24,8
+    LTEXT           "",IDC_STATIC_VIDEO_3,147,51,24,8
+    LTEXT           "",IDC_STATIC_VIDEO_4,147,90,24,8,WS_DISABLED
+    LTEXT           "",IDC_STATIC_VIDEO_5,149,108,19,8
+    LTEXT           "",IDC_STATIC_VIDEO_6,147,127,24,8
+    LTEXT           "",IDC_STATIC_VIDEO_7,306,15,21,8
+    LTEXT           "???¨?ó?ù:",IDC_STATIC_XIANKA_JIASU,194,111,115,9
+    COMBOBOX        IDC_COMBO2,194,123,115,127,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Max:-",IDC_STATIC,293,85,20,8
+    LTEXT           "Min: -",IDC_STATIC,293,98,19,8
+    EDITTEXT        IDC_EDIT2,316,82,26,14,ES_NUMBER
+    EDITTEXT        IDC_EDIT3,316,97,26,14,ES_NUMBER
+END
+
+IDD_DIALOG_SOUND_VN DIALOGEX 0, 0, 278, 147
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "è?2??2ò?",IDC_CHECK_SOUND_MUTE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,10,14,118,13
+    GROUPBOX        "éùò?",IDC_STATIC,0,0,271,140
+    CONTROL         "±3?°ò?à?",IDC_CHECK_SOUND_BKG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,23,42,62,13
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,2,33,268,1
+    CONTROL         "",IDC_SLIDER_SOUND_BKG,"msctls_trackbar32",WS_TABSTOP,
+                    137,41,109,15
+    CONTROL         "?·?3ò?D§",IDC_CHECK_SOUND_ENV,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,23,66,62,13
+    CONTROL         "",IDC_SLIDER_SOUND_ENV,"msctls_trackbar32",WS_TABSTOP,
+                    137,68,109,15
+    CONTROL         "???üò?D§",IDC_CHECK_SOUND_SKILL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,23,92,62,13
+    CONTROL         "",IDC_SLIDER_SOUND_SKILL,"msctls_trackbar32",WS_TABSTOP,
+                    137,94,109,15
+    CONTROL         "ê??tò?D§",IDC_CHECK_SOUND_UI,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,23,116,62,13
+    CONTROL         "",IDC_SLIDER_SOUND_UI,"msctls_trackbar32",WS_TABSTOP,
+                    137,118,109,15
+    LTEXT           "",IDC_STATIC_SOUND_1,247,42,16,13
+    LTEXT           "",IDC_STATIC_SOUND_2,247,68,16,13
+    LTEXT           "",IDC_STATIC_SOUND_3,247,95,16,13
+    LTEXT           "",IDC_STATIC_SOUND_4,247,119,16,13
+END
+
+IDD_DIALOG_INTEGRATE_VN DIALOGEX 0, 0, 351, 150
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 8, "Tahoma", 400, 0, 0x0
+BEGIN
+    GROUPBOX        "System info",IDC_STATIC_SYSTEM_GROUP,0,0,344,60
+    GROUPBOX        "Game Setting",IDC_STATIC_SETTING_GROUP,0,65,344,77
+    CONTROL         "μí    ?téü′ó2?·?í?D?±í??ò??ùè??ü??μ?D??ü,êêó|óúμí??????",
+                    IDC_RADIO_SET_LOW,"Button",BS_AUTORADIOBUTTON,12,97,326,
+                    12
+    CONTROL         "?D    êêó|óú′ó2?·?????",IDC_RADIO_SET_MIDDLE,
+                    "Button",BS_AUTORADIOBUTTON,12,112,326,12
+    CONTROL         "??    ???é?üìá???-???êá?,êêó|óú????????",
+                    IDC_RADIO_SET_HIGH,"Button",BS_AUTORADIOBUTTON,12,127,
+                    326,12
+    CONTROL         "í???  ?ù?Yμ±?°ó2?t×??ˉμ÷???÷??2?êy",
+                    IDC_RADIO_SET_DEF,"Button",BS_AUTORADIOBUTTON,12,78,227,
+                    12
+    LTEXT           "[Notice]",IDC_STATIC_TIPS,245,80,27,9
+    EDITTEXT        IDC_EDIT_INFO,5,9,330,49,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER | 
+                    WS_VSCROLL
+END
+
+IDD_DIALOG_DX_ERROR_VN DIALOGEX 0, 0, 222, 58
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "DXError"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDOK,168,37,50,13
+    LTEXT           "DirectX9.0c Required!",IDC_STATIC,38,7,180,27
+    ICON            IDI_ICON_DX9,IDC_STATIC,7,7,21,20
+    DEFPUSHBUTTON   "Setup",IDC_BUTTON_SETUP,81,37,63,13
+END
+
+IDD_ABOUTBOX_VN DIALOGEX 0, 0, 235, 42
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About tConfig"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,9,20,20
+    LTEXT           "tConfig Version 1.0",IDC_STATIC,36,9,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) SOHU.COM Inc. 2006",IDC_STATIC,36,23,119,
+                    8
+    DEFPUSHBUTTON   "&OK",IDOK,178,7,50,15,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,8
+ PRODUCTVERSION 1,0,0,8
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "Comments", "天龙八部系统配置程序"
+            VALUE "CompanyName", "SOHU.COM Inc"
+            VALUE "FileDescription", "Configer_0.9"
+            VALUE "FileVersion", "1.0.0.9"
+            VALUE "InternalName", "tConfig.exe"
+            VALUE "LegalCopyright", "Copyright (C) SOHU 2007"
+            VALUE "OriginalFilename", "tConfig.exe"
+            VALUE "ProductName", "TianLongBaBu"
+            VALUE "ProductVersion", "1.0.0.9"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_TCONFIG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 300
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 214
+    END
+
+    IDD_DIALOG_INTEGRATE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 273
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_DIALOG_VIDEO, DIALOG
+    BEGIN
+        RIGHTMARGIN, 274
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_DIALOG_SOUND, DIALOG
+    BEGIN
+        RIGHTMARGIN, 271
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_DIALOG_DX_ERROR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 218
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_TCONFIG_DIALOG_VN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 372
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_DIALOG_VIDEO_VN, DIALOG
+    BEGIN
+        RIGHTMARGIN, 344
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_DIALOG_SOUND_VN, DIALOG
+    BEGIN
+        RIGHTMARGIN, 271
+        BOTTOMMARGIN, 140
+    END
+
+    IDD_DIALOG_INTEGRATE_VN, DIALOG
+    BEGIN
+        RIGHTMARGIN, 344
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_DIALOG_DX_ERROR_VN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_ABOUTBOX_VN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 35
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 tConfig(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\tConfig.rc2"  // 非 Microsoft Visual C++ 编辑过的资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

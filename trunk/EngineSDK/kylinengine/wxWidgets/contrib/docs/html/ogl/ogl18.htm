@@ -1,0 +1,84 @@
+<HTML>
+<head><title>wxPolygonShape</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxpolygonshape"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl17.htm#wxlineshape"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl19.htm#wxrectangleshape"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxPolygonShape</H2>
+<P>
+A wxPolygonShape's shape is defined by a number of points passed to the object's
+constructor. It can be used to create new shapes such as diamonds and triangles.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+<A HREF="ogl21.htm#wxshape">wxShape</A><P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic142">wxPolygonShape::wxPolygonShape</A><BR>
+<A HREF="#topic143">wxPolygonShape::~wxPolygonShape</A><BR>
+<A HREF="#wxpolygonshapecreate">wxPolygonShape::Create</A><BR>
+<A HREF="#topic144">wxPolygonShape::AddPolygonPoint</A><BR>
+<A HREF="#topic145">wxPolygonShape::CalculatePolygonCentre</A><BR>
+<A HREF="#topic146">wxPolygonShape::DeletePolygonPoint</A><BR>
+<A HREF="#topic147">wxPolygonShape::GetPoints</A><BR>
+<A HREF="#topic148">wxPolygonShape::UpdateOriginalPoints</A><BR>
+<P>
+
+<HR>
+<A NAME="topic142"></A>
+<H3>wxPolygonShape::wxPolygonShape</H3>
+<P>
+<B></B> <B>wxPolygonShape</B>(void)<P>
+Constructor. Call <A HREF="ogl18.htm#wxpolygonshapecreate">wxPolygonShape::Create</A> to specify the polygon's vertices.<P>
+
+<HR>
+<A NAME="topic143"></A>
+<H3>wxPolygonShape::~wxPolygonShape</H3>
+<P>
+<B></B> <B>~wxPolygonShape</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="wxpolygonshapecreate"></A>
+<H3>wxPolygonShape::Create</H3>
+<P>
+<B>void</B> <B>Create</B>(<B>wxList*</B><I> points</I>)<P>
+Takes a list of wxRealPoints; each point is an <I>offset</I> from the centre.
+The polygon's destructor will delete these points, so do not delete them yourself.<P>
+
+<HR>
+<A NAME="topic144"></A>
+<H3>wxPolygonShape::AddPolygonPoint</H3>
+<P>
+<B>void</B> <B>AddPolygonPoint</B>(<B>int</B><I> pos = 0</I>)<P>
+Add a control point after the given point.<P>
+
+<HR>
+<A NAME="topic145"></A>
+<H3>wxPolygonShape::CalculatePolygonCentre</H3>
+<P>
+<B>void</B> <B>CalculatePolygonCentre</B>()<P>
+Recalculates the centre of the polygon.<P>
+
+<HR>
+<A NAME="topic146"></A>
+<H3>wxPolygonShape::DeletePolygonPoint</H3>
+<P>
+<B>void</B> <B>DeletePolygonPoint</B>(<B>int</B><I> pos = 0</I>)<P>
+Deletes a control point.<P>
+
+<HR>
+<A NAME="topic147"></A>
+<H3>wxPolygonShape::GetPoints</H3>
+<P>
+<B>wxList *</B> <B>GetPoints</B>()<P>
+Returns a pointer to the internal list of polygon vertices (wxRealPoints).<P>
+
+<HR>
+<A NAME="topic148"></A>
+<H3>wxPolygonShape::UpdateOriginalPoints</H3>
+<P>
+<B>void</B> <B>UpdateOriginalPoints</B>()<P>
+If we've changed the shape, must make the original
+points match the working points with this function.<P>
+
+</FONT></BODY></HTML>

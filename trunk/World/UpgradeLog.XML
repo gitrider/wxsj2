@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="World">
+</Property><Property Name="Solution File" Value="E:\武侠世界2\武侠世界2\wxsj2\trunk\World\World.sln">
+</Property><Property Name="User Options File" Value="E:\武侠世界2\武侠世界2\wxsj2\trunk\World\World.suo">
+</Property><Property Name="Date" Value="2012年4月25日">
+</Property><Property Name="Time" Value="17:08">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="World.sln" Description="File successfully backed up as E:\武侠世界2\武侠世界2\wxsj2\trunk\World\World.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="World.suo" Description="File successfully backed up as E:\武侠世界2\武侠世界2\wxsj2\trunk\World\World.suo.old">
+</Event><Event ErrorLevel="0" Project="World" Source="World\World.vcproj" Description="Web deployment to the local IIS server is no longer supported. The Web Deployment build tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="World" Source="World\World.vcproj" Description="This application has been updated to include settings related to the User Account Control (UAC) feature of Windows Vista. By default, when run on Windows Vista with UAC enabled, this application is marked to run with the same privileges as the process that launched it. This marking also disables the application from running with virtualization. You can change UAC related settings from the Property Pages of the project.">
+</Event><Event ErrorLevel="0" Project="World" Source="World\World.vcproj" Description="Project file successfully backed up as 'E:\武侠世界2\武侠世界2\wxsj2\trunk\World\World\World.vcproj.8.00.old'.">
+</Event><Event ErrorLevel="0" Project="World" Source="World\World.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="World" Source="World\World.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="World.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="World.sln" Description="Converted">
+</Event></UpgradeLog>

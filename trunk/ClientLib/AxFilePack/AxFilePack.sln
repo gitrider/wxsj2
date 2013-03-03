@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AxpUtil", "AxpUtil\AxpUtil.vcproj", "{F5D3EB62-326F-4C68-8FCF-0C36E2029343}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1658EB2F-8E9F-4D28-85AC-633F0F4C82D4} = {1658EB2F-8E9F-4D28-85AC-633F0F4C82D4}
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1} = {CDD3618E-A112-4A69-B07F-EB735FABB5E1}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaPlus", "..\Tools\MrSmith\LuaPlus\LuaPlus.vcproj", "{1658EB2F-8E9F-4D28-85AC-633F0F4C82D4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AXP_MD", "AXP\AXP_MD.vcproj", "{CDD3618E-A112-4A69-B07F-EB735FABB5E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Final|Win32 = Final|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5D3EB62-326F-4C68-8FCF-0C36E2029343}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F5D3EB62-326F-4C68-8FCF-0C36E2029343}.Debug|Win32.Build.0 = Debug|Win32
+		{F5D3EB62-326F-4C68-8FCF-0C36E2029343}.Final|Win32.ActiveCfg = Release|Win32
+		{F5D3EB62-326F-4C68-8FCF-0C36E2029343}.Final|Win32.Build.0 = Release|Win32
+		{F5D3EB62-326F-4C68-8FCF-0C36E2029343}.Release|Win32.ActiveCfg = Release|Win32
+		{F5D3EB62-326F-4C68-8FCF-0C36E2029343}.Release|Win32.Build.0 = Release|Win32
+		{1658EB2F-8E9F-4D28-85AC-633F0F4C82D4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1658EB2F-8E9F-4D28-85AC-633F0F4C82D4}.Debug|Win32.Build.0 = Debug|Win32
+		{1658EB2F-8E9F-4D28-85AC-633F0F4C82D4}.Final|Win32.ActiveCfg = Release|Win32
+		{1658EB2F-8E9F-4D28-85AC-633F0F4C82D4}.Final|Win32.Build.0 = Release|Win32
+		{1658EB2F-8E9F-4D28-85AC-633F0F4C82D4}.Release|Win32.ActiveCfg = Release|Win32
+		{1658EB2F-8E9F-4D28-85AC-633F0F4C82D4}.Release|Win32.Build.0 = Release|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Debug|Win32.Build.0 = Debug|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Final|Win32.ActiveCfg = Release|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Final|Win32.Build.0 = Release|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Release|Win32.ActiveCfg = Release|Win32
+		{CDD3618E-A112-4A69-B07F-EB735FABB5E1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!-- $Id: sound.bkl,v 1.4 2004/03/18 21:18:12 RD Exp $ -->
+
+<makefile>
+
+    <include file="../../build/bakefiles/common_samples.bkl"/>
+
+    <exe id="sound" template="wx_sample" template_append="wx_append">
+        <sources>sound.cpp</sources>
+        <wx-lib>adv</wx-lib>
+        <wx-lib>core</wx-lib>
+        <wx-lib>base</wx-lib>
+    </exe>
+    
+    <wx-data id="data">
+        <files>
+           9000g.wav  cuckoo.wav  doggrowl.wav  tinkalink2.wav
+	</files>
+    </wx-data>
+
+</makefile>

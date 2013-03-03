@@ -1,0 +1,73 @@
+<HTML>
+<head><title>wxDividedShape overview</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="dividedshapeoverview"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl26.htm#topic295"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl27.htm#ogloverview"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl29.htm#compositeshapeoverview"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxDividedShape overview</H2>
+<P>
+Classes: <A HREF="ogl14.htm#wxdividedshape">wxDividedShape</A><P>
+A wxDividedShape is a rectangle with a number of vertical divisions. Each
+division may have its text formatted with independent characteristics, and
+the size of each division relative to the whole image may be specified.<P>
+Once a wxDividedShape has been created, the user may move the divisions with the
+mouse. By pressing Ctrl while right-clicking, the region attributes can be edited.<P>
+Here are examples of creating wxDividedShape objects:<P>
+<FONT SIZE=2>
+<PRE>
+  /*
+   * Divided rectangle with 3 regions
+   *
+   */
+
+  wxDividedShape *dividedRect = new wxDividedShape(50, 60);
+
+  wxShapeRegion *region = new wxShapeRegion;
+  region-&gt;SetProportions(0.0, 0.25);
+  dividedRect-&gt;AddRegion(region);
+
+  region = new wxShapeRegion;
+  region-&gt;SetProportions(0.0, 0.5);
+  dividedRect-&gt;AddRegion(region);
+
+  region = new wxShapeRegion;
+  region-&gt;SetProportions(0.0, 0.25);
+  dividedRect-&gt;AddRegion(region);
+  
+  dividedRect-&gt;SetSize(50, 60); // Allow it to calculate region sizes
+  dividedRect-&gt;SetPen(wxBLACK_PEN);
+  dividedRect-&gt;SetBrush(wxWHITE_BRUSH);
+  dividedRect-&gt;Show(TRUE);
+  dividedRect-&gt;NameRegions();
+
+  /*
+   * Divided rectangle with 3 regions, rounded
+   *
+   */
+
+  wxDividedShape *dividedRect3 = new wxDividedShape(50, 60);
+  dividedRect3-&gt;SetCornerRadius(-0.4);
+
+  region = new wxShapeRegion;
+  region-&gt;SetProportions(0.0, 0.25);
+  dividedRect3-&gt;AddRegion(region);
+
+  region = new wxShapeRegion;
+  region-&gt;SetProportions(0.0, 0.5);
+  dividedRect3-&gt;AddRegion(region);
+
+  region = new wxShapeRegion;
+  region-&gt;SetProportions(0.0, 0.25);
+  dividedRect3-&gt;AddRegion(region);
+  
+  dividedRect3-&gt;SetSize(50, 60); // Allow it to calculate region sizes
+  dividedRect3-&gt;SetPen(wxBLACK_PEN);
+  dividedRect3-&gt;SetBrush(wxWHITE_BRUSH);
+  dividedRect3-&gt;Show(TRUE);
+  dividedRect3-&gt;NameRegions();
+</PRE>
+</FONT><P>
+
+</FONT></BODY></HTML>

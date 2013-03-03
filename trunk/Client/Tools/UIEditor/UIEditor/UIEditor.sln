@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UIEditor", "UIEditor\UIEditor.vcproj", "{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Static|Win32 = Debug_Static|Win32
+		Debug|Win32 = Debug|Win32
+		Release_D|Win32 = Release_D|Win32
+		Release_D2|Win32 = Release_D2|Win32
+		Release_Layout|Win32 = Release_Layout|Win32
+		Release_Static|Win32 = Release_Static|Win32
+		Release|Win32 = Release|Win32
+		ReleaseWithSymbol|Win32 = ReleaseWithSymbol|Win32
+		ReleaseWithSymbols|Win32 = ReleaseWithSymbols|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Debug_Static|Win32.ActiveCfg = Debug|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Debug_Static|Win32.Build.0 = Debug|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Debug|Win32.Build.0 = Debug|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release_D|Win32.ActiveCfg = Release_D|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release_D|Win32.Build.0 = Release_D|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release_D2|Win32.ActiveCfg = Release_D2|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release_D2|Win32.Build.0 = Release_D2|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release_Layout|Win32.ActiveCfg = Release_D2|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release_Layout|Win32.Build.0 = Release_D2|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release_Static|Win32.ActiveCfg = Release_D2|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release_Static|Win32.Build.0 = Release_D2|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release|Win32.ActiveCfg = Release|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.Release|Win32.Build.0 = Release|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.ReleaseWithSymbol|Win32.ActiveCfg = Release_D2|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.ReleaseWithSymbol|Win32.Build.0 = Release_D2|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.ReleaseWithSymbols|Win32.ActiveCfg = Release_D2|Win32
+		{2AB0805A-07DF-46E0-8673-54CDF3F0BF6B}.ReleaseWithSymbols|Win32.Build.0 = Release_D2|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

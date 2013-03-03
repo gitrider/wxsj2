@@ -1,0 +1,1118 @@
+<HTML>
+<head><title>wxShape</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxshape"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl20.htm#wxpseudometafile"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl22.htm#wxshapecanvas"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxShape</H2>
+<P>
+The wxShape is the top-level, abstract object that all other
+objects are derived from. All common functionality is represented by
+wxShape's members, and overriden members that appear in derived
+classes and have behaviour as documented for wxShape, are not
+documented separately.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+<A HREF="ogl23.htm#wxshapeevthandler">wxShapeEvtHandler</A><P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic152">wxShape::wxShape</A><BR>
+<A HREF="#topic153">wxShape::~wxShape</A><BR>
+<A HREF="#topic154">wxShape::AddLine</A><BR>
+<A HREF="#topic155">wxShape::AddRegion</A><BR>
+<A HREF="#topic156">wxShape::AddText</A><BR>
+<A HREF="#topic157">wxShape::AddToCanvas</A><BR>
+<A HREF="#topic158">wxShape::AncestorSelected</A><BR>
+<A HREF="#wxshapeapplyattachmentordering">wxShape::ApplyAttachmentOrdering</A><BR>
+<A HREF="#topic159">wxShape::AssignNewIds</A><BR>
+<A HREF="#wxshapeattach">wxShape::Attach</A><BR>
+<A HREF="#wxshapeattachmentisvalid">wxShape::AttachmentIsValid</A><BR>
+<A HREF="#wxshapeattachmentsorttest">wxShape::AttachmentSortTest</A><BR>
+<A HREF="#wxshapecalcsimpleattachment">wxShape::CalcSimpleAttachment</A><BR>
+<A HREF="#topic160">wxShape::CalculateSize</A><BR>
+<A HREF="#topic161">wxShape::ClearAttachments</A><BR>
+<A HREF="#topic162">wxShape::ClearRegions</A><BR>
+<A HREF="#topic163">wxShape::ClearText</A><BR>
+<A HREF="#topic164">wxShape::Constrain</A><BR>
+<A HREF="#wxshapecopy">wxShape::Copy</A><BR>
+<A HREF="#wxshapecreatenewcopy">wxShape::CreateNewCopy</A><BR>
+<A HREF="#topic165">wxShape::DeleteControlPoints</A><BR>
+<A HREF="#topic166">wxShape::Detach</A><BR>
+<A HREF="#topic167">wxShape::Draggable</A><BR>
+<A HREF="#topic168">wxShape::Draw</A><BR>
+<A HREF="#topic169">wxShape::DrawContents</A><BR>
+<A HREF="#topic170">wxShape::DrawLinks</A><BR>
+<A HREF="#topic171">wxShape::Erase</A><BR>
+<A HREF="#topic172">wxShape::EraseContents</A><BR>
+<A HREF="#topic173">wxShape::EraseLinks</A><BR>
+<A HREF="#topic174">wxShape::FindRegion</A><BR>
+<A HREF="#topic175">wxShape::FindRegionNames</A><BR>
+<A HREF="#topic176">wxShape::Flash</A><BR>
+<A HREF="#topic177">wxShape::FormatText</A><BR>
+<A HREF="#topic178">wxShape::GetAttachmentMode</A><BR>
+<A HREF="#wxshapegetattachmentposition">wxShape::GetAttachmentPosition</A><BR>
+<A HREF="#topic179">wxShape::GetBoundingBoxMax</A><BR>
+<A HREF="#topic180">wxShape::GetBoundingBoxMin</A><BR>
+<A HREF="#topic181">wxShape::GetBrush</A><BR>
+<A HREF="#topic182">wxShape::GetCanvas</A><BR>
+<A HREF="#topic183">wxShape::GetCentreResize</A><BR>
+<A HREF="#topic184">wxShape::GetChildren</A><BR>
+<A HREF="#topic185">wxShape::GetClientData</A><BR>
+<A HREF="#topic186">wxShape::GetDisableLabel</A><BR>
+<A HREF="#topic187">wxShape::GetEventHandler</A><BR>
+<A HREF="#topic188">wxShape::GetFixedHeight</A><BR>
+<A HREF="#topic189">wxShape::GetFixedSize</A><BR>
+<A HREF="#topic190">wxShape::GetFixedWidth</A><BR>
+<A HREF="#topic191">wxShape::GetFont</A><BR>
+<A HREF="#topic192">wxShape::GetFunctor</A><BR>
+<A HREF="#topic193">wxShape::GetId</A><BR>
+<A HREF="#wxshapegetlineposition">wxShape::GetLinePosition</A><BR>
+<A HREF="#topic194">wxShape::GetLines</A><BR>
+<A HREF="#wxshapegetmaintainaspectratio">wxShape::GetMaintainAspectRatio</A><BR>
+<A HREF="#wxshapegetnumberofattachments">wxShape::GetNumberOfAttachments</A><BR>
+<A HREF="#topic195">wxShape::GetNumberOfTextRegions</A><BR>
+<A HREF="#topic196">wxShape::GetParent</A><BR>
+<A HREF="#topic197">wxShape::GetPen</A><BR>
+<A HREF="#topic198">wxShape::GetPerimeterPoint</A><BR>
+<A HREF="#getregionid">wxShape::GetRegionId</A><BR>
+<A HREF="#getregionname">wxShape::GetRegionName</A><BR>
+<A HREF="#getregions">wxShape::GetRegions</A><BR>
+<A HREF="#topic199">wxShape::GetRotation</A><BR>
+<A HREF="#topic200">wxShape::GetSensitivityFilter</A><BR>
+<A HREF="#topic201">wxShape::GetShadowMode</A><BR>
+<A HREF="#topic202">wxShape::GetSpaceAttachments</A><BR>
+<A HREF="#topic203">wxShape::GetTextColour</A><BR>
+<A HREF="#topic204">wxShape::GetTopAncestor</A><BR>
+<A HREF="#topic205">wxShape::GetX</A><BR>
+<A HREF="#topic206">wxShape::GetY</A><BR>
+<A HREF="#topic207">wxShape::HitTest</A><BR>
+<A HREF="#topic208">wxShape::Insert</A><BR>
+<A HREF="#topic209">wxShape::IsHighlighted</A><BR>
+<A HREF="#topic210">wxShape::IsShown</A><BR>
+<A HREF="#topic211">wxShape::MakeControlPoints</A><BR>
+<A HREF="#topic212">wxShape::MakeMandatoryControlPoints</A><BR>
+<A HREF="#wxshapemove">wxShape::Move</A><BR>
+<A HREF="#wxshapemovelinetonewattachment">wxShape::MoveLineToNewAttachment</A><BR>
+<A HREF="#topic213">wxShape::MoveLinks</A><BR>
+<A HREF="#topic214">wxShape::NameRegions</A><BR>
+<A HREF="#topic215">wxShape::Rotate</A><BR>
+<A HREF="#topic216">wxShape::ReadConstraints</A><BR>
+<A HREF="#topic217">wxShape::ReadAttributes</A><BR>
+<A HREF="#topic218">wxShape::ReadRegions</A><BR>
+<A HREF="#topic219">wxShape::Recentre</A><BR>
+<A HREF="#topic220">wxShape::RemoveFromCanvas</A><BR>
+<A HREF="#topic221">wxShape::ResetControlPoints</A><BR>
+<A HREF="#topic222">wxShape::ResetMandatoryControlPoints</A><BR>
+<A HREF="#wxshaperecompute">wxShape::Recompute</A><BR>
+<A HREF="#topic223">wxShape::RemoveLine</A><BR>
+<A HREF="#wxshapeselect">wxShape::Select</A><BR>
+<A HREF="#wxshapeselected">wxShape::Selected</A><BR>
+<A HREF="#wxshapesetattachmentmode">wxShape::SetAttachmentMode</A><BR>
+<A HREF="#topic224">wxShape::SetBrush</A><BR>
+<A HREF="#wxshapesetcanvas">wxShape::SetCanvas</A><BR>
+<A HREF="#topic225">wxShape::SetCentreResize</A><BR>
+<A HREF="#topic226">wxShape::SetClientData</A><BR>
+<A HREF="#setdefaultregionsize">wxShape::SetDefaultRegionSize</A><BR>
+<A HREF="#topic227">wxShape::SetDisableLabel</A><BR>
+<A HREF="#topic228">wxShape::SetDraggable</A><BR>
+<A HREF="#topic229">wxShape::SetDrawHandles</A><BR>
+<A HREF="#topic230">wxShape::SetEventHandler</A><BR>
+<A HREF="#topic231">wxShape::SetFixedSize</A><BR>
+<A HREF="#topic232">wxShape::SetFont</A><BR>
+<A HREF="#setformatmode">wxShape::SetFormatMode</A><BR>
+<A HREF="#topic233">wxShape::SetHighlight</A><BR>
+<A HREF="#topic234">wxShape::SetId</A><BR>
+<A HREF="#wxshapesetmaintainaspectratio">wxShape::SetMaintainAspectRatio</A><BR>
+<A HREF="#topic235">wxShape::SetPen</A><BR>
+<A HREF="#wxshapesetregionname">wxShape::SetRegionName</A><BR>
+<A HREF="#wxshapesetsensitivityfilter">wxShape::SetSensitivityFilter</A><BR>
+<A HREF="#wxshapesetshadowmode">wxShape::SetShadowMode</A><BR>
+<A HREF="#topic236">wxShape::SetSize</A><BR>
+<A HREF="#topic237">wxShape::SetSpaceAttachments</A><BR>
+<A HREF="#topic238">wxShape::SetTextColour</A><BR>
+<A HREF="#topic239">wxShape::SetX</A><BR>
+<A HREF="#topic240">wxShape::SetX</A><BR>
+<A HREF="#topic241">wxShape::SpaceAttachments</A><BR>
+<A HREF="#topic242">wxShape::Show</A><BR>
+<A HREF="#topic243">wxShape::Unlink</A><BR>
+<A HREF="#topic244">wxShape::WriteAttributes</A><BR>
+<A HREF="#topic245">wxShape::WriteRegions</A><BR>
+<P>
+
+<HR>
+<A NAME="topic152"></A>
+<H3>wxShape::wxShape</H3>
+<P>
+<B></B> <B>wxShape</B>(<B>wxShapeCanvas*</B><I> canvas = NULL</I>)<P>
+Constructs a new wxShape.<P>
+
+<HR>
+<A NAME="topic153"></A>
+<H3>wxShape::~wxShape</H3>
+<P>
+<B></B> <B>~wxShape</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="topic154"></A>
+<H3>wxShape::AddLine</H3>
+<P>
+<B>void</B> <B>AddLine</B>(<B>wxLineShape*</B><I> line</I>, <B>wxShape*</B><I> other</I>, <B>int</B><I> attachFrom = 0</I>, <B>int</B><I> attachTo = 0</I>,
+ <B>int</B><I> positionFrom = -1</I>, <B>int</B><I> positionTo = -1</I>)<P>
+Adds a line between the specified canvas shapes, at the specified attachment points.<P>
+The position in the list of lines at each end can also be specified, so that the line will be drawn
+at a particular point on its attachment point.<P>
+
+<HR>
+<A NAME="topic155"></A>
+<H3>wxShape::AddRegion</H3>
+<P>
+<B>void</B> <B>AddRegion</B>(<B>wxShapeRegion*</B><I> region</I>)<P>
+Adds a region to the shape.<P>
+
+<HR>
+<A NAME="topic156"></A>
+<H3>wxShape::AddText</H3>
+<P>
+<B>void</B> <B>AddText</B>(<B>const wxString&amp; </B><I>string</I>)<P>
+Adds a line of text to the shape's default text region.<P>
+
+<HR>
+<A NAME="topic157"></A>
+<H3>wxShape::AddToCanvas</H3>
+<P>
+<B>void</B> <B>AddToCanvas</B>(<B>wxShapeCanvas*</B><I> theCanvas</I>, <B>wxShape*</B><I> addAfter=NULL</I>)<P>
+Adds the shape to the canvas's shape list. If <I>addAfter</I> is
+non-NULL, will add the shape after this one.<P>
+
+<HR>
+<A NAME="topic158"></A>
+<H3>wxShape::AncestorSelected</H3>
+<P>
+<B>bool</B> <B>AncestorSelected</B>() <B>const</B><P>
+TRUE if the shape's ancestor is currently selected.<P>
+
+<HR>
+<A NAME="wxshapeapplyattachmentordering"></A>
+<H3>wxShape::ApplyAttachmentOrdering</H3>
+<P>
+<B>void</B> <B>ApplyAttachmentOrdering</B>(<B>wxList&amp;</B><I> linesToSort</I>)<P>
+Applies the line ordering in <I>linesToSort</I> to the shape, to reorder the way lines are attached.<P>
+
+<HR>
+<A NAME="topic159"></A>
+<H3>wxShape::AssignNewIds</H3>
+<P>
+<B>void</B> <B>AssignNewIds</B>()<P>
+Assigns new ids to this image and its children.<P>
+
+<HR>
+<A NAME="wxshapeattach"></A>
+<H3>wxShape::Attach</H3>
+<P>
+<B>void</B> <B>Attach</B>(<B>wxShapeCanvas*</B><I> can</I>)<P>
+Sets the shape's internal canvas pointer to point to the given canvas.<P>
+
+<HR>
+<A NAME="wxshapeattachmentisvalid"></A>
+<H3>wxShape::AttachmentIsValid</H3>
+<P>
+<B>bool</B> <B>AttachmentIsValid</B>(<B>int</B><I> attachment</I>) <B>const</B><P>
+Returns TRUE if <I>attachment</I> is a valid attachment point.<P>
+
+<HR>
+<A NAME="wxshapeattachmentsorttest"></A>
+<H3>wxShape::AttachmentSortTest</H3>
+<P>
+<B>bool</B> <B>AttachmentSortTest</B>(<B>int</B><I> attachment</I>, <B>const wxRealPoint&amp;</B><I> pt1</I>,
+ <B>const wxRealPoint&amp;</B><I> pt2</I>) <B>const</B><P>
+Returns TRUE if <I>pt1</I> is less than or equal to <I>pt2</I>, in the sense
+that one point comes before another on an edge of the shape. <I>attachment</I> is
+the attachment point (side) in question.<P>
+This function is used in <A HREF="ogl21.htm#wxshapemovelinetonewattachment">wxShape::MoveLineToNewAttachment</A> to
+determine the new line ordering.<P>
+
+<HR>
+<A NAME="wxshapecalcsimpleattachment"></A>
+<H3>wxShape::CalcSimpleAttachment</H3>
+<P>
+<B>wxRealPoint</B> <B>CalcSimpleAttachment</B>(<B>const wxRealPoint&amp;</B><I> pt1</I>,
+ <B>const wxRealPoint&amp;</B><I> pt2</I>, <B>int</B><I> nth</I>, <B>int</B><I> noArcs</I>, <B>wxLineShape*</B><I> line</I>)<P>
+Assuming the attachment lies along a vertical or horizontal line,
+calculates the position on that point.<P>
+<B><FONT COLOR="#FF0000">Parameters</FONT></B><P>
+<I>pt1</I><UL><UL>
+The first point of the line repesenting the edge of the shape.</UL></UL>
+<P>
+<I>pt2</I><UL><UL>
+The second point of the line representing the edge of the shape.</UL></UL>
+<P>
+<I>nth</I><UL><UL>
+The position on the edge (for example there may be 6 lines at this attachment point,
+and this may be the 2nd line.</UL></UL>
+<P>
+<I>noArcs</I><UL><UL>
+The number of lines at this edge.</UL></UL>
+<P>
+<I>line</I><UL><UL>
+The line shape.</UL></UL>
+<P>
+<B><FONT COLOR="#FF0000">Remarks</FONT></B><P>
+This function expects the line to be either vertical or horizontal, and determines which.<P>
+
+<HR>
+<A NAME="topic160"></A>
+<H3>wxShape::CalculateSize</H3>
+<P>
+<B>void</B> <B>CalculateSize</B>()<P>
+Called to calculate the shape's size if dependent on children sizes.<P>
+
+<HR>
+<A NAME="topic161"></A>
+<H3>wxShape::ClearAttachments</H3>
+<P>
+<B>void</B> <B>ClearAttachments</B>()<P>
+Clears internal custom attachment point shapes (of class wxAttachmentPoint).<P>
+
+<HR>
+<A NAME="topic162"></A>
+<H3>wxShape::ClearRegions</H3>
+<P>
+<B>void</B> <B>ClearRegions</B>()<P>
+Clears the wxShapeRegions from the shape.<P>
+
+<HR>
+<A NAME="topic163"></A>
+<H3>wxShape::ClearText</H3>
+<P>
+<B>void</B> <B>ClearText</B>(<B>int</B><I> regionId = 0</I>)<P>
+Clears the text from the specified text region.<P>
+
+<HR>
+<A NAME="topic164"></A>
+<H3>wxShape::Constrain</H3>
+<P>
+<B>bool</B> <B>Constrain</B>()<P>
+Calculates the shape's constraints (if any). Applicable
+only to wxCompositeShape, does nothing if the shape is of
+a different class.<P>
+
+<HR>
+<A NAME="wxshapecopy"></A>
+<H3>wxShape::Copy</H3>
+<P>
+<B>void</B> <B>Copy</B>(<B>wxShape&amp;</B><I> copy</I>)<P>
+Copy this shape into <I>copy</I>. Every derived class must have one of these, and each Copy implementation
+must call the derived class's implementation to ensure everything is copied. See also <A HREF="ogl21.htm#wxshapecreatenewcopy">wxShape::CreateNewCopy</A>.<P>
+
+<HR>
+<A NAME="wxshapecreatenewcopy"></A>
+<H3>wxShape::CreateNewCopy</H3>
+<P>
+<B>wxShape* </B> <B>CreateNewCopy</B>(<B>bool</B><I> resetMapping = TRUE</I>, <B>bool</B><I> recompute = TRUE</I>)<P>
+Creates and returns a new copy of this shape (calling <A HREF="ogl21.htm#wxshapecopy">wxShape::Copy</A>). Do not override this function.<P>
+This function should always be used to create a new copy, since it must do special processing
+for copying constraints associated with constraints.<P>
+If <I>resetMapping</I> is TRUE, a mapping table used for complex shapes is reset; this may not be desirable
+if the shape being copied is a child of a composite (and so the mapping table is in use).<P>
+If <I>recompute</I> is TRUE, <A HREF="ogl21.htm#wxshaperecompute">wxShape::Recompute</A> is called for the new shape.<P>
+<B><FONT COLOR="#FF0000">Remarks</FONT></B><P>
+This function uses the wxWindows dynamic object creation system to create a new shape of the same
+type as 'this', before calling Copy.<P>
+If the event handler for this shape is not the same as the shape itself, the event handler is also copied
+using <A HREF="ogl23.htm#wxshapeevthandlercreatenewcopy">wxShapeEvtHandler::CreateNewCopy</A>.<P>
+
+<HR>
+<A NAME="topic165"></A>
+<H3>wxShape::DeleteControlPoints</H3>
+<P>
+<B>void</B> <B>DeleteControlPoints</B>()<P>
+Deletes the control points (or handles) for the shape. Does not redraw
+the shape.<P>
+
+<HR>
+<A NAME="topic166"></A>
+<H3>wxShape::Detach</H3>
+<P>
+<B>void</B> <B>Detach</B>()<P>
+Disassociates the shape from its canvas by setting the internal shape
+canvas pointer to NULL.<P>
+
+<HR>
+<A NAME="topic167"></A>
+<H3>wxShape::Draggable</H3>
+<P>
+<B>bool</B> <B>Draggable</B>() <P>
+TRUE if the shape may be dragged by the user.<P>
+
+<HR>
+<A NAME="topic168"></A>
+<H3>wxShape::Draw</H3>
+<P>
+<B>void</B> <B>Draw</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Draws the whole shape and any lines attached to it.<P>
+Do not override this function: override OnDraw, which is called
+by this function.<P>
+
+<HR>
+<A NAME="topic169"></A>
+<H3>wxShape::DrawContents</H3>
+<P>
+<B>void</B> <B>DrawContents</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Draws the internal graphic of the shape (such as
+text).<P>
+Do not override this function: override OnDrawContents, which is called
+by this function.<P>
+
+<HR>
+<A NAME="topic170"></A>
+<H3>wxShape::DrawLinks</H3>
+<P>
+<B>void</B> <B>DrawLinks</B>(<B>wxDC&amp;</B><I> dc</I>, <B>int</B><I> attachment = -1</I>)<P>
+Draws any lines linked to this shape.<P>
+
+<HR>
+<A NAME="topic171"></A>
+<H3>wxShape::Erase</H3>
+<P>
+<B>void</B> <B>Erase</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Erases the shape, but does not repair damage caused to other
+shapes.<P>
+
+<HR>
+<A NAME="topic172"></A>
+<H3>wxShape::EraseContents</H3>
+<P>
+<B>void</B> <B>EraseContents</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Erases the shape contents, that is, the area within the shape's
+minimum bounding box.<P>
+
+<HR>
+<A NAME="topic173"></A>
+<H3>wxShape::EraseLinks</H3>
+<P>
+<B>void</B> <B>EraseLinks</B>(<B>wxDC&amp;</B><I> dc</I>, <B>int</B><I> attachment = -1</I>)<P>
+Erases links attached to this shape, but does not repair
+damage caused to other shapes.<P>
+
+<HR>
+<A NAME="topic174"></A>
+<H3>wxShape::FindRegion</H3>
+<P>
+<B>wxShape *</B> <B>FindRegion</B>(<B>const wxString&amp; </B><I>regionName</I>, <B>int *</B><I>regionId</I>)<P>
+Finds the actual image ('this' if non-composite) and region id for the given
+region name.<P>
+
+<HR>
+<A NAME="topic175"></A>
+<H3>wxShape::FindRegionNames</H3>
+<P>
+<B>void</B> <B>FindRegionNames</B>(<B>wxStringList&amp;</B><I> list</I>)<P>
+Finds all region names for this image (composite or simple).
+Supply an empty string list.<P>
+
+<HR>
+<A NAME="topic176"></A>
+<H3>wxShape::Flash</H3>
+<P>
+<B>void</B> <B>Flash</B>()<P>
+Flashes the shape.<P>
+
+<HR>
+<A NAME="topic177"></A>
+<H3>wxShape::FormatText</H3>
+<P>
+<B>void</B> <B>FormatText</B>(<B>const wxString&amp; </B><I>s</I>, <B>int</B><I> i = 0</I>)<P>
+Reformats the given text region; defaults to formatting the default region.<P>
+
+<HR>
+<A NAME="topic178"></A>
+<H3>wxShape::GetAttachmentMode</H3>
+<P>
+<B>bool</B> <B>GetAttachmentMode</B>() <B>const</B><P>
+Returns the attachment mode, which is TRUE if attachments are used, FALSE otherwise (in which case
+lines will be drawn as if to the centre of the shape). See <A HREF="ogl21.htm#wxshapesetattachmentmode">wxShape::SetAttachmentMode</A>.<P>
+
+<HR>
+<A NAME="wxshapegetattachmentposition"></A>
+<H3>wxShape::GetAttachmentPosition</H3>
+<P>
+<B>bool</B> <B>GetAttachmentPosition</B>(<B>int</B><I> attachment</I>, <B>double*</B><I> x</I>, <B>double*</B><I> y</I>,
+ <B>int</B><I> nth = 0</I>, <B>int</B><I> noArcs = 1</I>, <B>wxLineShape*</B><I> line = NULL</I>)<P>
+Gets the position at which the given attachment point should be drawn.<P>
+If <I>attachment</I> isn't found among the attachment points of the shape, returns FALSE.<P>
+
+<HR>
+<A NAME="topic179"></A>
+<H3>wxShape::GetBoundingBoxMax</H3>
+<P>
+<B>void</B> <B>GetBoundingBoxMax</B>(<B>double *</B><I>width</I>, <B>double *</B><I>height</I>)<P>
+Gets the maximum bounding box for the shape, taking into
+account external features such as shadows.<P>
+
+<HR>
+<A NAME="topic180"></A>
+<H3>wxShape::GetBoundingBoxMin</H3>
+<P>
+<B>void</B> <B>GetBoundingBoxMin</B>(<B>double *</B><I>width</I>, <B>double *</B><I>height</I>)<P>
+Gets the minimum bounding box for the shape, that defines
+the area available for drawing the contents (such as text).<P>
+
+<HR>
+<A NAME="topic181"></A>
+<H3>wxShape::GetBrush</H3>
+<P>
+<B>wxBrush*</B> <B>GetBrush</B>() <B>const</B><P>
+Returns the brush used for filling the shape.<P>
+
+<HR>
+<A NAME="topic182"></A>
+<H3>wxShape::GetCanvas</H3>
+<P>
+<B>wxShapeCanvas*</B> <B>GetCanvas</B>() <B>const</B><P>
+Gets the internal canvas pointer.<P>
+
+<HR>
+<A NAME="topic183"></A>
+<H3>wxShape::GetCentreResize</H3>
+<P>
+<B>bool</B> <B>GetCentreResize</B>() <B>const</B><P>
+Returns TRUE if the shape is to be resized from the centre (the centre
+stands still), or FALSE if from the corner or side being dragged (the
+other corner or side stands still).<P>
+
+<HR>
+<A NAME="topic184"></A>
+<H3>wxShape::GetChildren</H3>
+<P>
+<B>wxList&amp;</B> <B>GetChildren</B>() <B>const</B><P>
+Returns a reference to the list of children for this shape.<P>
+
+<HR>
+<A NAME="topic185"></A>
+<H3>wxShape::GetClientData</H3>
+<P>
+<B>wxObject*</B> <B>GetClientData</B>()<P>
+Gets the client data associated with the shape (NULL if there is
+none).<P>
+
+<HR>
+<A NAME="topic186"></A>
+<H3>wxShape::GetDisableLabel</H3>
+<P>
+<B>bool</B> <B>GetDisableLabel</B>() <B>const</B><P>
+Returns TRUE if the default region will not be shown, FALSE otherwise.<P>
+
+<HR>
+<A NAME="topic187"></A>
+<H3>wxShape::GetEventHandler</H3>
+<P>
+<B>wxShapeEvtHandler*</B> <B>GetEventHandler</B>() <B>const</B><P>
+Returns the event handler for this shape.<P>
+
+<HR>
+<A NAME="topic188"></A>
+<H3>wxShape::GetFixedHeight</H3>
+<P>
+<B>bool</B> <B>GetFixedHeight</B>() <B>const</B><P>
+Returns TRUE if the shape cannot be resized in the vertical plane.<P>
+
+<HR>
+<A NAME="topic189"></A>
+<H3>wxShape::GetFixedSize</H3>
+<P>
+<B>void</B> <B>GetFixedSize</B>(<B>bool *</B><I> x</I>, <B>bool *</B><I> y</I>)<P>
+Returns flags indicating whether the shape is of fixed size in either direction.<P>
+
+<HR>
+<A NAME="topic190"></A>
+<H3>wxShape::GetFixedWidth</H3>
+<P>
+<B>bool</B> <B>GetFixedWidth</B>() <B>const</B><P>
+Returns TRUE if the shape cannot be resized in the horizontal plane.<P>
+
+<HR>
+<A NAME="topic191"></A>
+<H3>wxShape::GetFont</H3>
+<P>
+<B>wxFont*</B> <B>GetFont</B>(<B>int</B><I> regionId = 0</I>) <B>const</B><P>
+Gets the font for the specified text region.<P>
+
+<HR>
+<A NAME="topic192"></A>
+<H3>wxShape::GetFunctor</H3>
+<P>
+<B>wxString</B> <B>GetFunctor</B>() <B>const</B><P>
+Gets a string representing the type of the shape, to be used when
+writing out shape descriptions to a file. This is overridden by
+each derived shape class to provide an appropriate type string. By default,
+"node_image" is used for non-line shapes, and "arc_image" for lines.<P>
+
+<HR>
+<A NAME="topic193"></A>
+<H3>wxShape::GetId</H3>
+<P>
+<B>long</B> <B>GetId</B>() <B>const</B><P>
+Returns the integer identifier for this shape.<P>
+
+<HR>
+<A NAME="wxshapegetlineposition"></A>
+<H3>wxShape::GetLinePosition</H3>
+<P>
+<B>int</B> <B>GetLinePosition</B>(<B>wxLineShape*</B><I> line</I>)<P>
+Gets the zero-based position of <I>line</I> in the list of lines for this shape.<P>
+
+<HR>
+<A NAME="topic194"></A>
+<H3>wxShape::GetLines</H3>
+<P>
+<B>wxList&amp;</B> <B>GetLines</B>() <B>const</B><P>
+Returns a reference to the list of lines connected to this shape.<P>
+
+<HR>
+<A NAME="wxshapegetmaintainaspectratio"></A>
+<H3>wxShape::GetMaintainAspectRatio</H3>
+<P>
+<B>bool</B> <B>GetMaintainAspectRatio</B>() <B>const</B><P>
+If returns TRUE, resizing the shape will not change the aspect ratio
+(width and height will be in the original proportion).<P>
+
+<HR>
+<A NAME="wxshapegetnumberofattachments"></A>
+<H3>wxShape::GetNumberOfAttachments</H3>
+<P>
+<B>int</B> <B>GetNumberOfAttachments</B>() <B>const</B><P>
+Gets the number of attachment points for this shape.<P>
+
+<HR>
+<A NAME="topic195"></A>
+<H3>wxShape::GetNumberOfTextRegions</H3>
+<P>
+<B>int</B> <B>GetNumberOfTextRegions</B>() <B>const</B><P>
+Gets the number of text regions for this shape.<P>
+
+<HR>
+<A NAME="topic196"></A>
+<H3>wxShape::GetParent</H3>
+<P>
+<B>wxShape *</B> <B>GetParent</B>() <B>const</B><P>
+Returns the parent of this shape, if it is part of a composite.<P>
+
+<HR>
+<A NAME="topic197"></A>
+<H3>wxShape::GetPen</H3>
+<P>
+<B>wxPen*</B> <B>GetPen</B>() <B>const</B><P>
+Returns the pen used for drawing the shape's outline.<P>
+
+<HR>
+<A NAME="topic198"></A>
+<H3>wxShape::GetPerimeterPoint</H3>
+<P>
+<B>bool</B> <B>GetPerimeterPoint</B>(<B>double</B><I> x1</I>, <B>double</B><I> y1</I>, <B>double</B><I> x2</I>, <B>double</B><I> y2</I>, <B>double *</B><I>x3</I>, <B>double *</B><I>y3</I>)<P>
+Gets the point at which the line from (x1, y1) to (x2, y2) hits the shape. Returns TRUE if the
+line hits the perimeter.<P>
+
+<HR>
+<A NAME="getregionid"></A>
+<H3>wxShape::GetRegionId</H3>
+<P>
+<B>int</B> <B>GetRegionId</B>(<B>const wxString&amp; </B><I>name</I>)<P>
+Gets the region's identifier by name. This is <I>not</I> unique for within an entire composite, but
+is unique for the image.<P>
+
+<HR>
+<A NAME="getregionname"></A>
+<H3>wxShape::GetRegionName</H3>
+<P>
+<B>wxString</B> <B>GetRegionName</B>(<B>int</B><I> regionId = 0</I>)<P>
+Gets the region's name. A region's name can be used to uniquely determine a region within
+an entire composite image hierarchy. See also <A HREF="ogl21.htm#wxshapesetregionname">wxShape::SetRegionName</A>.<P>
+
+<HR>
+<A NAME="getregions"></A>
+<H3>wxShape::GetRegions</H3>
+<P>
+<B>wxList&amp;</B> <B>GetRegions</B>()<P>
+Returns the list of wxShapeRegions.<P>
+
+<HR>
+<A NAME="topic199"></A>
+<H3>wxShape::GetRotation</H3>
+<P>
+<B>double</B> <B>GetRotatation</B>() <B>const</B><P>
+Returns the angle of rotation in radians.<P>
+
+<HR>
+<A NAME="topic200"></A>
+<H3>wxShape::GetSensitivityFilter</H3>
+<P>
+<B>void</B> <B>GetSensitivityFilter</B>() <B>const</B><P>
+Returns the sensitivity filter, a bitlist of values. See <A HREF="ogl21.htm#wxshapesetsensitivityfilter">wxShape::SetSensitivityFilter</A>.<P>
+
+<HR>
+<A NAME="topic201"></A>
+<H3>wxShape::GetShadowMode</H3>
+<P>
+<B>int</B> <B>SetShadowMode</B>() <B>const</B><P>
+Returns the shadow mode. See <A HREF="ogl21.htm#wxshapesetshadowmode">wxShape::SetShadowMode</A>.<P>
+
+<HR>
+<A NAME="topic202"></A>
+<H3>wxShape::GetSpaceAttachments</H3>
+<P>
+<B>bool</B> <B>GetSpaceAttachments</B>() <B>const</B><P>
+Indicates whether lines should be spaced out evenly at the point they touch the node (TRUE), or whether they
+should join at a single point (FALSE).<P>
+
+<HR>
+<A NAME="topic203"></A>
+<H3>wxShape::GetTextColour</H3>
+<P>
+<B>wxString</B> <B>GetTextColour</B>(<B>int</B><I> regionId = 0</I>) <B>const</B><P>
+Gets the colour for the specified text region.<P>
+
+<HR>
+<A NAME="topic204"></A>
+<H3>wxShape::GetTopAncestor</H3>
+<P>
+<B>wxShape *</B> <B>GetTopAncestor</B>() <B>const</B><P>
+Returns the top-most ancestor of this shape (the root of the composite).<P>
+
+<HR>
+<A NAME="topic205"></A>
+<H3>wxShape::GetX</H3>
+<P>
+<B>double</B> <B>GetX</B>() <B>const</B><P>
+Gets the x position of the centre of the shape.<P>
+
+<HR>
+<A NAME="topic206"></A>
+<H3>wxShape::GetY</H3>
+<P>
+<B>double</B> <B>GetY</B>() <B>const</B><P>
+Gets the y position of the centre of the shape.<P>
+
+<HR>
+<A NAME="topic207"></A>
+<H3>wxShape::HitTest</H3>
+<P>
+<B>bool</B> <B>HitTest</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>int*</B><I> attachment</I>, <B>double*</B><I> distance</I>)<P>
+Given a point on a canvas, returns TRUE if the point was on the shape, and returns
+the nearest attachment point and distance from the given point and target.<P>
+
+<HR>
+<A NAME="topic208"></A>
+<H3>wxShape::Insert</H3>
+<P>
+<B>void</B> <B>InsertInCanvas</B>(<B>wxShapeCanvas*</B><I> canvas</I>)<P>
+Inserts the shape at the front of the shape list of <I>canvas</I>.<P>
+
+<HR>
+<A NAME="topic209"></A>
+<H3>wxShape::IsHighlighted</H3>
+<P>
+<B>bool</B> <B>IsHighlighted</B>() <B>const</B><P>
+Returns TRUE if the shape is highlighted. Shape highlighting is unimplemented.<P>
+
+<HR>
+<A NAME="topic210"></A>
+<H3>wxShape::IsShown</H3>
+<P>
+<B>bool</B> <B>IsShown</B>() <B>const</B><P>
+Returns TRUE if the shape is in a visible state, FALSE otherwise. Note
+that this has nothing to do with whether the window is hidden or the
+shape has scrolled off the canvas; it refers to the internal
+visibility flag.<P>
+
+<HR>
+<A NAME="topic211"></A>
+<H3>wxShape::MakeControlPoints</H3>
+<P>
+<B>void</B> <B>MakeControlPoints</B>()<P>
+Make a list of control points (draggable handles) appropriate to the shape.<P>
+
+<HR>
+<A NAME="topic212"></A>
+<H3>wxShape::MakeMandatoryControlPoints</H3>
+<P>
+<B>void</B> <B>MakeMandatoryControlPoints</B>()<P>
+Make the mandatory control points. For example, the control point on a dividing line should
+appear even if the divided rectangle shape's handles should not appear (because it is the child of
+a composite, and children are not resizable).<P>
+
+<HR>
+<A NAME="wxshapemove"></A>
+<H3>wxShape::Move</H3>
+<P>
+<B>void</B> <B>Move</B>(<B>wxDC&amp;</B><I> dc</I>, <B>double</B><I> x1</I>, <B>double</B><I> y1</I>, <B>bool</B><I> display = TRUE</I>)<P>
+Move the shape to the given position, redrawing if <I>display</I> is TRUE.<P>
+
+<HR>
+<A NAME="wxshapemovelinetonewattachment"></A>
+<H3>wxShape::MoveLineToNewAttachment</H3>
+<P>
+<B>void</B> <B>MoveLineToNewAttachment</B>(<B>wxDC&amp;</B><I> dc</I>, <B>wxLineShape*</B><I> toMove</I>, <B>double</B><I> x</I>, <B>double</B><I> y</I>)<P>
+Move the given line (which must already be attached to the shape) to 
+a different attachment point on the shape, or a different order on the same attachment.<P>
+Cals <A HREF="ogl21.htm#wxshapeattachmentsorttest">wxShape::AttachmentSortTest</A> and then <A HREF="ogl23.htm#wxshapeevthandleronchangeattachment">wxShapeEvtHandler::OnChangeAttachment</A>.<P>
+
+<HR>
+<A NAME="topic213"></A>
+<H3>wxShape::MoveLinks</H3>
+<P>
+<B>void</B> <B>MoveLinks</B>(<B>wxDC&amp;</B><I> dc</I>)<P>
+Redraw all the lines attached to the shape.<P>
+
+<HR>
+<A NAME="topic214"></A>
+<H3>wxShape::NameRegions</H3>
+<P>
+<B>void</B> <B>NameRegions</B>(<B>const wxString&amp; </B><I>parentName = ""</I>)<P>
+Make unique names for all the regions in a shape or composite shape.<P>
+
+<HR>
+<A NAME="topic215"></A>
+<H3>wxShape::Rotate</H3>
+<P>
+<B>void</B> <B>Rotate</B>(<B>double </B><I>x</I>, <B>double </B><I>y</I>, <B>double </B><I>theta</I>)<P>
+Rotate about the given axis by the given amount in radians (does nothing
+for most shapes). But even non-rotating shapes should record their
+notional rotation in case it's important (e.g. in dog-leg code).<P>
+
+<HR>
+<A NAME="topic216"></A>
+<H3>wxShape::ReadConstraints</H3>
+<P>
+<B>void</B> <B>ReadConstraints</B>(<B>wxExpr *</B><I>clause</I>, <B>wxExprDatabase *</B><I>database</I>)<P>
+If the shape is a composite, it may have constraints that need to be read in in a separate pass.<P>
+
+<HR>
+<A NAME="topic217"></A>
+<H3>wxShape::ReadAttributes</H3>
+<P>
+<B>void</B> <B>ReadAttributes</B>(<B>wxExpr*</B><I> clause</I>)<P>
+Reads the attributes (data member values) from the given expression.<P>
+
+<HR>
+<A NAME="topic218"></A>
+<H3>wxShape::ReadRegions</H3>
+<P>
+<B>void</B> <B>ReadRegions</B>(<B>wxExpr *</B><I>clause</I>)<P>
+Reads in the regions.<P>
+
+<HR>
+<A NAME="topic219"></A>
+<H3>wxShape::Recentre</H3>
+<P>
+<B>void</B> <B>Recentre</B>()<P>
+Does recentring (or other formatting) for all the text regions for this shape.<P>
+
+<HR>
+<A NAME="topic220"></A>
+<H3>wxShape::RemoveFromCanvas</H3>
+<P>
+<B>void</B> <B>RemoveFromCanvas</B>(<B>wxShapeCanvas*</B><I> canvas</I>)<P>
+Removes the shape from the canvas.<P>
+
+<HR>
+<A NAME="topic221"></A>
+<H3>wxShape::ResetControlPoints</H3>
+<P>
+<B>void</B> <B>ResetControlPoints</B>()<P>
+Resets the positions of the control points (for instance when the
+shape's shape has changed).<P>
+
+<HR>
+<A NAME="topic222"></A>
+<H3>wxShape::ResetMandatoryControlPoints</H3>
+<P>
+<B>void</B> <B>ResetMandatoryControlPoints</B>()<P>
+Reset the mandatory control points. For example, the control point on a dividing line should
+appear even if the divided rectangle shape's handles should not appear (because it is the child of
+a composite, and children are not resizable).<P>
+
+<HR>
+<A NAME="wxshaperecompute"></A>
+<H3>wxShape::Recompute</H3>
+<P>
+<B>bool</B> <B>Recompute</B>() <P>
+Recomputes any constraints associated with the shape (normally
+applicable to wxCompositeShapes only, but harmless for other
+classes of shape).<P>
+
+<HR>
+<A NAME="topic223"></A>
+<H3>wxShape::RemoveLine</H3>
+<P>
+<B>void</B> <B>RemoveLine</B>(<B>wxLineShape*</B><I> line</I>)<P>
+Removes the given line from the shape's list of attached lines.<P>
+
+<HR>
+<A NAME="wxshapeselect"></A>
+<H3>wxShape::Select</H3>
+<P>
+<B>void</B> <B>Select</B>(<B>bool</B><I> select = TRUE</I>)<P>
+Selects or deselects the given shape, drawing or erasing control points
+(handles) as necessary.<P>
+
+<HR>
+<A NAME="wxshapeselected"></A>
+<H3>wxShape::Selected</H3>
+<P>
+<B>bool</B> <B>Selected</B>() <B>const</B><P>
+TRUE if the shape is currently selected.<P>
+
+<HR>
+<A NAME="wxshapesetattachmentmode"></A>
+<H3>wxShape::SetAttachmentMode</H3>
+<P>
+<B>void</B> <B>SetAttachmentMode</B>(<B>bool</B><I> flag</I>)<P>
+Sets the attachment mode to TRUE or FALSE. If TRUE, attachment points
+will be significant when drawing lines to and from this shape.
+If FALSE, lines will be drawn as if to the centre of the shape.<P>
+
+<HR>
+<A NAME="topic224"></A>
+<H3>wxShape::SetBrush</H3>
+<P>
+<B>void</B> <B>SetBrush</B>(<B>wxBrush *</B><I>brush</I>)<P>
+Sets the brush for filling the shape's shape.<P>
+
+<HR>
+<A NAME="wxshapesetcanvas"></A>
+<H3>wxShape::SetCanvas</H3>
+<P>
+<B>void</B> <B>SetCanvas</B>(<B>wxShapeCanvas*</B><I> theCanvas</I>)<P>
+Identical to <A HREF="ogl21.htm#wxshapesetcanvas">wxShape::Attach</A>.<P>
+
+<HR>
+<A NAME="topic225"></A>
+<H3>wxShape::SetCentreResize</H3>
+<P>
+<B>void</B> <B>SetCentreResize</B>(<B>bool</B><I> cr</I>)<P>
+Specify whether the shape is to be resized from the centre (the centre stands still) or from the corner or side
+being dragged (the other corner or side stands still).<P>
+
+<HR>
+<A NAME="topic226"></A>
+<H3>wxShape::SetClientData</H3>
+<P>
+<B>void</B> <B>SetClientData</B>(<B>wxObject *</B><I>clientData</I>)<P>
+Sets the client data.<P>
+
+<HR>
+<A NAME="setdefaultregionsize"></A>
+<H3>wxShape::SetDefaultRegionSize</H3>
+<P>
+<B>void</B> <B>SetDefaultRegionSize</B>()<P>
+Set the default region to be consistent with the shape size.<P>
+
+<HR>
+<A NAME="topic227"></A>
+<H3>wxShape::SetDisableLabel</H3>
+<P>
+<B>void</B> <B>SetDisableLabel</B>(<B>bool</B><I> flag</I>)<P>
+Set <I>flag</I> to TRUE to stop the default region being shown, FALSE otherwise.<P>
+
+<HR>
+<A NAME="topic228"></A>
+<H3>wxShape::SetDraggable</H3>
+<P>
+<B>void</B> <B>SetDraggable</B>(<B>bool</B><I> drag</I>, <B>bool</B><I> recursive = FALSE</I>)<P>
+Sets the shape to be draggable or not draggable.<P>
+
+<HR>
+<A NAME="topic229"></A>
+<H3>wxShape::SetDrawHandles</H3>
+<P>
+<B>void</B> <B>SetDrawHandles</B>(<B>bool</B><I> drawH</I>)<P>
+Sets the <I>drawHandles</I> flag for this shape and all descendants. If <I>drawH</I> is TRUE (the default),
+any handles (control points) will be drawn. Otherwise, the handles will not be drawn.<P>
+
+<HR>
+<A NAME="topic230"></A>
+<H3>wxShape::SetEventHandler</H3>
+<P>
+<B>void</B> <B>GetEventHandler</B>(<B>wxShapeEvtHandler *</B><I>handler</I>)<P>
+Sets the event handler for this shape.<P>
+
+<HR>
+<A NAME="topic231"></A>
+<H3>wxShape::SetFixedSize</H3>
+<P>
+<B>void</B> <B>SetFixedSize</B>(<B>bool</B><I> x</I>, <B>bool</B><I> y</I>) <P>
+Sets the shape to be of the given, fixed size.<P>
+
+<HR>
+<A NAME="topic232"></A>
+<H3>wxShape::SetFont</H3>
+<P>
+<B>void</B> <B>SetFont</B>(<B>wxFont *</B><I>font</I>, <B>int</B><I> regionId = 0</I>)<P>
+Sets the font for the specified text region.<P>
+
+<HR>
+<A NAME="setformatmode"></A>
+<H3>wxShape::SetFormatMode</H3>
+<P>
+<B>void</B> <B>SetFormatMode</B>(<B>int</B><I> mode</I>, <B>int</B><I> regionId = 0</I>) <P>
+Sets the format mode of the default text region. The argument can be a bit list
+of the following:<P>
+<DL>
+
+<DT> FORMAT_NONE
+<DD> No formatting.
+<DT> FORMAT_CENTRE_HORIZ
+<DD> Horizontal centring.
+<DT> FORMAT_CENTRE_VERT
+<DD> Vertical centring.
+</DL>
+<P>
+
+<HR>
+<A NAME="topic233"></A>
+<H3>wxShape::SetHighlight</H3>
+<P>
+<B>void</B> <B>SetHighlight</B>(<B>bool</B><I> hi</I>, <B>bool</B><I> recurse = FALSE</I>)<P>
+Sets the highlight for a shape. Shape highlighting is unimplemented.<P>
+
+<HR>
+<A NAME="topic234"></A>
+<H3>wxShape::SetId</H3>
+<P>
+<B>void</B> <B>SetId</B>(<B>long</B><I> id</I>)<P>
+Set the integer identifier for this shape.<P>
+
+<HR>
+<A NAME="wxshapesetmaintainaspectratio"></A>
+<H3>wxShape::SetMaintainAspectRatio</H3>
+<P>
+<B>void</B> <B>SetMaintainAspectRatio</B>(<B>bool</B><I> flag</I>)<P>
+If the argument is TRUE, tells the shape that resizes should not change the aspect ratio
+(width and height should be in the original proportion).<P>
+
+<HR>
+<A NAME="topic235"></A>
+<H3>wxShape::SetPen</H3>
+<P>
+<B>void</B> <B>SetPen</B>(<B>wxPen *</B><I>pen</I>)<P>
+Sets the pen for drawing the shape's outline.<P>
+
+<HR>
+<A NAME="wxshapesetregionname"></A>
+<H3>wxShape::SetRegionName</H3>
+<P>
+<B>void</B> <B>SetRegionName</B>(<B>const wxString&amp; </B><I>name</I>, <B>int</B><I> regionId = 0</I>)<P>
+Sets the name for this region. The name for a region is unique within the scope of the whole
+composite, whereas a region id is unique only for a single image.<P>
+
+<HR>
+<A NAME="wxshapesetsensitivityfilter"></A>
+<H3>wxShape::SetSensitivityFilter</H3>
+<P>
+<B>void</B> <B>SetSensitivityFilter</B>(<B>int</B><I> sens=OP_ALL</I>, <B>bool</B><I> recursive = FALSE</I>)<P>
+Sets the shape to be sensitive or insensitive to specific mouse operations.<P>
+<I>sens</I> is a bitlist of the following:<P>
+<UL>
+
+<LI> OP_CLICK_LEFT
+<LI> OP_CLICK_RIGHT
+<LI> OP_DRAG_LEFT
+<LI> OP_DRAG_RIGHT
+<LI> OP_ALL (equivalent to a combination of all the above).
+</UL>
+<P>
+
+<HR>
+<A NAME="wxshapesetshadowmode"></A>
+<H3>wxShape::SetShadowMode</H3>
+<P>
+<B>void</B> <B>SetShadowMode</B>(<B>int</B><I> mode</I>, <B>bool</B><I> redraw = FALSE</I>)<P>
+Sets the shadow mode (whether a shadow is drawn or not). <I>mode</I> can be one of
+the following:<P>
+<DL>
+
+<DT> SHADOW_NONE
+<DD> No shadow (the default).
+<DT> SHADOW_LEFT
+<DD> Shadow on the left side.
+<DT> SHADOW_RIGHT
+<DD> Shadow on the right side.
+</DL>
+<P>
+
+<HR>
+<A NAME="topic236"></A>
+<H3>wxShape::SetSize</H3>
+<P>
+<B>void</B> <B>SetSize</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>, <B>bool</B><I> recursive = TRUE</I>)<P>
+Sets the shape's size.<P>
+
+<HR>
+<A NAME="topic237"></A>
+<H3>wxShape::SetSpaceAttachments</H3>
+<P>
+<B>void</B> <B>SetSpaceAttachments</B>(<B>bool</B><I> sp</I>)<P>
+Indicate whether lines should be spaced out evenly at the point they touch the node (TRUE), or whether they
+should join at a single point (FALSE).<P>
+
+<HR>
+<A NAME="topic238"></A>
+<H3>wxShape::SetTextColour</H3>
+<P>
+<B>void</B> <B>SetTextColour</B>(<B>const wxString&amp; </B><I>colour</I>, <B>int</B><I> regionId = 0</I>)<P>
+Sets the colour for the specified text region.<P>
+
+<HR>
+<A NAME="topic239"></A>
+<H3>wxShape::SetX</H3>
+<P>
+<B>void</B> <B>SetX</B>(<B>double</B><I> x</I>)<P>
+Sets the <I>x</I> position of the shape.<P>
+
+<HR>
+<A NAME="topic240"></A>
+<H3>wxShape::SetX</H3>
+<P>
+<B>void</B> <B>SetY</B>(<B>double</B><I> y</I>)<P>
+Sets the <I>y</I> position of the shape.<P>
+
+<HR>
+<A NAME="topic241"></A>
+<H3>wxShape::SpaceAttachments</H3>
+<P>
+<B>void</B> <B>SpaceAttachments</B>(<B>bool</B><I> sp</I>) <P>
+Sets the spacing mode: if TRUE, lines at the same attachment point will be
+spaced evenly across that side of the shape. If false, all lines at the
+same attachment point will emanate from the same point.<P>
+
+<HR>
+<A NAME="topic242"></A>
+<H3>wxShape::Show</H3>
+<P>
+<B>void</B> <B>Show</B>(<B>bool</B><I> show</I>)<P>
+Sets a flag indicating whether the shape should be drawn.<P>
+
+<HR>
+<A NAME="topic243"></A>
+<H3>wxShape::Unlink</H3>
+<P>
+<B>void</B> <B>Unlink</B>()<P>
+If the shape is a line, unlinks the nodes attached to the shape, removing itself from the list of
+lines for each of the 'to' and 'from' nodes.<P>
+
+<HR>
+<A NAME="topic244"></A>
+<H3>wxShape::WriteAttributes</H3>
+<P>
+<B>void</B> <B>WriteAttributes</B>(<B>wxExpr *</B><I>clause</I>)<P>
+Writes the shape's attributes (data member values) into the given expression.<P>
+
+<HR>
+<A NAME="topic245"></A>
+<H3>wxShape::WriteRegions</H3>
+<P>
+<B>void</B> <B>WriteRegions</B>(<B>wxExpr *</B><I>clause</I>)<P>
+Writes the regions.<P>
+
+</FONT></BODY></HTML>

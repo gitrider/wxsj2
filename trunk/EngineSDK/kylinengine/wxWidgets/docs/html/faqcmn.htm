@@ -1,0 +1,179 @@
+<html>
+
+<head>
+<title>wxWidgets 2 FAQ: Questions common to all platforms</title>
+</head>
+
+<body bgcolor=#ffffff text=#000000 vlink="#00376a" link="#00529c" alink="#313063">
+
+<font face="arial, lucida sans, helvetica">
+
+<table width=100% border=0 cellpadding=3 cellspacing=0>
+<tr>
+<td bgcolor="#004080" align=left height=24 background="images/bluetitlegradient.gif">
+<font size=+1 face="arial, lucida sans, helvetica" color="#ffffff">
+<b>wxWidgets 2 FAQ: Questions common to all platforms</b>
+</font>
+</td>
+</tr>
+</table>
+
+<p>
+
+See also <a href="faq.htm">top-level FAQ page</a>.
+<hr>
+<h3>List of questions in this category</h3>
+<ul>
+<li><a href="#windelete">Who deletes all the windows I create?</a></li>
+<li><a href="#custevent">How to create and use custom events?</a></li>
+<li><a href="#taborder">How can I set the TAB order of the controls?</a></li>
+<li><a href="#wxtmacro">What is the difference between <tt>_T()</tt>, <tt>wxT()</tt> and <tt>_()</tt>?</a></li>
+<li><a href="#escdlg">Why doesn&#39;t <tt>Esc</tt> close my dialog?</a></li>
+<li><a href="#lognull">How can I get rid of message boxes with error messages?</a></li>
+<li><a href="#exedir">How can I retrieve the path containing my executable?</a></li>
+<li><a href="#printfstr">Printf(str) works perfectly under Windows but crashes under Unix, why?</a></li>
+<li><a href="#xrclocale">XRC can't display non-ASCII characters correctly</a></li>
+</ul>
+<hr>
+
+<h3><a name="windelete">Who deletes all the windows I create?</a></h3>
+
+All windows and controls in wxWidgets programs are created using <tt>new</tt>
+but you shouldn&#39;t use <tt>delete</tt> to free them. This doesn&#39;t result
+in memory leaks because wxWidgets takes care of this: all objects derived from
+wxWindow will be deleted automatically by the library when the corresponding
+real, on screen, window is destroyed. Thus, the top level window objects are
+deleted when you call <tt>Close()</tt> or <tt>Destroy()</tt> and all the child
+windows are deleted just before the parent window is. More details about the
+top level windows can be found in the ``Window deletion overview&#39;&#39; in
+the manual.
+
+<p>
+wxWidgets also automatically deletes some other kind of the objects, notably
+the sizer or constraint associated with the window -- this happens just before
+the window itself is deleted. The sizers, in turn, delete their child sizers
+automatically as well so in a typical situation you don&#39;t have to worry
+about freeing the sizers you create. Note, however, that if you
+<tt>Remove()</tt> a sizer from the window, it isn&#39;t automatically deleted
+any more and you are responsable for doing this.
+
+<p>
+<h3><a name="custevent">How to create and use custom events?</a></h3>
+
+Please look at the <tt>event</tt> wxWidgets sample source code, it shows how to
+do this among other things. Note that the way custom events are defined has
+changed in wxWidgets 2.3.1 as compared to the previous releases.
+
+<p>
+<h3><a name="taborder">How can I set the TAB order of the controls?</a></h3>
+
+Unfortunately in the current wxWidgets version (2.4.0 as of this writing) this
+is not possible: the TAB order of the control (that is, the order in which the
+controls gain focus when the user repeatedly presses the <tt>&lt;TAB&gt;</tt>
+key) is fixed and is the same as the order of the controls creation.
+
+<p>
+Changing this should become possible in future versions of wxWidgets as soon as
+we come up with a nice API for this feature.
+
+<p>
+<h3><a name="#wxtmacro">What is the difference between <tt>_T()</tt>, <tt>wxT()</tt> and <tt>_()</tt>?</a></h3>
+
+First of all, <tt>_T()</tt> is exactly the same as <tt>wxT()</tt> (it exists
+only because it should be more familiar to Windows programmers) which reduces
+the problem of choosing among the macros to use somewhat.
+<p>
+Here is some pseudo-code for choosing the macro to use between the remaining
+possibilities, that is whether to use <tt>wxT()</tt>, use <tt>_()</tt> or not
+use any of them:<br>
+<pre>
+	if ( string should be translated )
+		use _("string")
+	else if ( string should be in Unicode in Unicode build )
+		use wxT("string")
+	else
+		just use "string" normally
+	
+</pre>
+
+<p>
+Note that if you don't care about Unicode at all, you don't have to use
+<tt>wxT()</tt> at all. On the contrary, if you do, note that <tt>_()</tt>
+takes care of it internally so if you use it your code will compile in both
+the ANSI and Unicode builds.
+
+<p>
+Please see the description of these macros in the manual for more details.
+
+<p>
+<h3><a name="#escdlg">Why doesn&#39;t <tt>Esc</tt> close my dialog?</a></h3>
+
+Pressing <tt>Esc</tt> will close the dialog if and only if it has a button
+with <tt>wxID_CANCEL</tt> id.
+
+<p>
+<h3><a name="lognull">How can I get rid of message boxes with error messages?</a></h3>
+
+These message boxes are probably due to calls to <tt>wxLogError()</tt> or
+other log functions from wxWidgets code. To completely suppress them you
+may use wxLogNull class, please see the manual for details. Do note, however,
+that a better solution is to avoid the error in the first place as suppressing
+these error message might hide other, important, ones.
+
+<p>
+<h3><a name="exedir">How can I retrieve the path containing my executable?</a></h3>
+
+This topic is covered in the technical note <a href="http://www.wxwidgets.org/technote/install.htm">Writing installers</a>.
+
+<p>
+<h3><a name="printfstr">Printf(str) works perfectly under Windows but crashes under Unix, why?</a></h3>
+
+The following code:
+
+<pre>
+wxString str;
+str.Printf(wxT("My string is %s"), wxString("whatever"));
+</pre>
+
+does <strong>not</strong> work. Unfortunately, it may seem to work fine under
+Windows because of a compiler quirk there but passing a wxString object to a
+function taking a variable number of arguments such as <tt>Printf()</tt> is
+undefined behaviour in C++. Accordingly, it will simply crash under most
+platforms but may even "work" on some of them.
+
+<p>
+You must use <tt>c_str()</tt> to make the above code work, i.e. write this
+instead:
+<pre>
+wxString str;
+str.Printf(wxT("My string is %s"), wxString("whatever").c_str());
+</pre>
+
+<p>
+Note that g++ should give you an error when passing an object to a vararg
+function like this -- another reason to compile your code with g++ even if you
+normally use another compiler.
+
+<p>
+
+<h3><a name="xrclocale">
+XRC can't display non-ASCII characters correctly
+</a></h3>
+
+If you use the wxXRC_USE_LOCALE flag (which is on by default), strings
+from XRC files are translated using wxLocale. wxLocale assumes the strings
+are in ASCII - if the are not, wxXmlResource leaves them in UTF-8 encoding in
+ANSI build of wxWidgets. Either don't use <tt>wxXRC_USE_LOCALE</tt> or use
+<tt>translate="0"</tt> attribute in XRC files. More details can be found 
+<a href="http://groups.google.com/groups?hl=en&lr=&ie=UTF-8&c2coff=1&threadm=89dac687.0312270921.69d8ea56%40posting.google.com&rnum=2&prev=/groups%3Fq%3DwxXRC_USE_LOCALE%26hl%3Den%26lr%3D%26ie%3DUTF-8%26c2coff%3D1%26sa%3DN%26tab%3Dwg">here</a> or 
+<a href="http://lists.wxwidgets.org/archive/wx-users/msg32094.html">here</a>.
+
+
+<p>
+
+</font>
+
+</body>
+
+</html>
+

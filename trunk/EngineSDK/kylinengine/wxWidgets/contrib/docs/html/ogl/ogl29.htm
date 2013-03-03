@@ -1,0 +1,48 @@
+<HTML>
+<head><title>wxCompositeShape overview</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="compositeshapeoverview"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl26.htm#topic295"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl28.htm#dividedshapeoverview"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl30.htm#bugs"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxCompositeShape overview</H2>
+<P>
+Classes: <A HREF="ogl13.htm#wxcompositeshape">wxCompositeShape</A>, <A HREF="ogl8.htm#wxoglconstraint">wxOGLConstraint</A><P>
+The wxCompositeShape allows fairly complex shapes to be created, and maintains
+a set of constraints which specify the layout and proportions of child shapes.<P>
+Add child shapes to a wxCompositeShape using <A HREF="ogl13.htm#wxcompositeshapeaddchild">AddChild</A>, and
+add constraints using <A HREF="ogl13.htm#wxcompositeshapeaddconstraint">AddConstraint</A>.<P>
+After children and shapes have been added, call <A HREF="ogl13.htm#wxcompositeshaperecompute">Recompute</A> which
+will return TRUE is the constraints could be satisfied, FALSE otherwise. If
+constraints have been correctly and consistently specified, this call will succeed.<P>
+If there is more than one child, constraints must be specified: OGL cannot calculate
+the size and position of children otherwise. Don't assume that children will simply
+move relative to the parent without the use of constraints.<P>
+To specify a constraint, you need three things:<P>
+<OL>
+
+<LI> a constraint type, such as gyCONSTRAINT_CENTRED_VERTICALLY;
+<LI> a reference shape, with respect to which other shapes are going to be positioned - the
+<I>constraining</I> shape;
+<LI> a list of one or more shapes to be constrained: the <I>constrained</I> shapes.
+</OL>
+<P>
+The constraining shape can be either the parent of the constrained shapes, or a sibling. The
+constrained shapes must all be siblings of each other.<P>
+For an exhaustive list and description of the available constraint types, see the <A HREF="ogl8.htm#wxoglconstraintconstr">wxOGLConstraint constructor</A>.
+Note that most constraints operate in one dimension only (vertically or horizontally), so you will
+usually need to specify constraints in pairs.<P>
+You can set the spacing between constraining and constrained shapes by
+calling <A HREF="ogl8.htm#wxoglconstraintsetspacing">wxOGLConstraint::SetSpacing</A>.<P>
+Finally, a wxCompositeShape can have <I>divisions</I>, which are special child shapes of class
+wxDivisionShape (not to be confused with wxDividedShape). The purpose of this is to allow
+the composite to be divided into user-adjustable regions (divisions) into which other shapes
+can be dropped dynamically, given suitable application code. Divisons allow the child
+shapes to have an identity of their own - they can be manipulated independently of their container -
+but to behave as if they are contained with the division, moving with the parent shape.
+Divisions boundaries can themselves be moved using the mouse.<P>
+To create an initial division, call <A HREF="ogl13.htm#wxcompositeshapemakecontainer">wxCompositeShape::MakeContainer</A>.
+Make further divisions by calling <A HREF="ogl15.htm#wxdivisionshapedivide">wxDivisionShape::Divide</A>.<P>
+
+</FONT></BODY></HTML>

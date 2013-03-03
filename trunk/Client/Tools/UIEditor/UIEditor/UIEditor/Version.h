@@ -1,0 +1,1 @@
+#define UI_EDITOR_VERSION "2010-01-30 Version 1.0"

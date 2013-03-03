@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding = "Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="PACKAGE"
+	ProjectGUID="{4E7BF082-B75C-4FD5-97C4-A281AFD4D637}"
+	Keyword="Win32Proj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="PACKAGE.dir\Debug"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\GL\src\nvparse\winheaders;..\..\..\RenderSystems\GL\src\win32;..\..\..\RenderSystems\GL\include;..\..\..\RenderSystems\GL\src\GLSL\include;..\..\..\RenderSystems\GL\src\atifs\include;..\..\..\RenderSystems\GL\src\nvparse;"
+				ExceptionHandling="0"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;Debug\&quot;"
+				AssemblerListingLocation="Debug"
+				ObjectFile="$(IntDir)\"
+/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\GL\src\nvparse\winheaders;..\..\..\RenderSystems\GL\src\win32;..\..\..\RenderSystems\GL\include;..\..\..\RenderSystems\GL\src\GLSL\include;..\..\..\RenderSystems\GL\src\atifs\include;..\..\..\RenderSystems\GL\src\nvparse;"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;Debug\&quot;"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;Debug\&quot;"
+				MkTypLibCompatible="FALSE"
+				TargetEnvironment="1"
+				GenerateStublessProxies="TRUE"
+				TypeLibraryName="$(InputName).tlb"
+				OutputDirectory="$(IntDir)"
+				HeaderFileName="$(InputName).h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+CommandLine="cd ..\..&#x0D;&#x0A;E:&#x0D;&#x0A;&quot;C:\Program Files\CMake 2.8\bin\cpack.exe&quot; -C $(OutDir) --config ./CPackConfig.cmake"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="PACKAGE.dir\Release"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\GL\src\nvparse\winheaders;..\..\..\RenderSystems\GL\src\win32;..\..\..\RenderSystems\GL\include;..\..\..\RenderSystems\GL\src\GLSL\include;..\..\..\RenderSystems\GL\src\atifs\include;..\..\..\RenderSystems\GL\src\nvparse;"
+				ExceptionHandling="0"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;Release\&quot;"
+				AssemblerListingLocation="Release"
+				ObjectFile="$(IntDir)\"
+/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\GL\src\nvparse\winheaders;..\..\..\RenderSystems\GL\src\win32;..\..\..\RenderSystems\GL\include;..\..\..\RenderSystems\GL\src\GLSL\include;..\..\..\RenderSystems\GL\src\atifs\include;..\..\..\RenderSystems\GL\src\nvparse;"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;Release\&quot;"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;Release\&quot;"
+				MkTypLibCompatible="FALSE"
+				TargetEnvironment="1"
+				GenerateStublessProxies="TRUE"
+				TypeLibraryName="$(InputName).tlb"
+				OutputDirectory="$(IntDir)"
+				HeaderFileName="$(InputName).h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+CommandLine="cd ..\..&#x0D;&#x0A;E:&#x0D;&#x0A;&quot;C:\Program Files\CMake 2.8\bin\cpack.exe&quot; -C $(OutDir) --config ./CPackConfig.cmake"/>
+		</Configuration>
+		<Configuration
+			Name="MinSizeRel|Win32"
+			OutputDirectory="MinSizeRel"
+			IntermediateDirectory="PACKAGE.dir\MinSizeRel"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\GL\src\nvparse\winheaders;..\..\..\RenderSystems\GL\src\win32;..\..\..\RenderSystems\GL\include;..\..\..\RenderSystems\GL\src\GLSL\include;..\..\..\RenderSystems\GL\src\atifs\include;..\..\..\RenderSystems\GL\src\nvparse;"
+				ExceptionHandling="0"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;MinSizeRel\&quot;"
+				AssemblerListingLocation="MinSizeRel"
+				ObjectFile="$(IntDir)\"
+/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\GL\src\nvparse\winheaders;..\..\..\RenderSystems\GL\src\win32;..\..\..\RenderSystems\GL\include;..\..\..\RenderSystems\GL\src\GLSL\include;..\..\..\RenderSystems\GL\src\atifs\include;..\..\..\RenderSystems\GL\src\nvparse;"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;MinSizeRel\&quot;"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;MinSizeRel\&quot;"
+				MkTypLibCompatible="FALSE"
+				TargetEnvironment="1"
+				GenerateStublessProxies="TRUE"
+				TypeLibraryName="$(InputName).tlb"
+				OutputDirectory="$(IntDir)"
+				HeaderFileName="$(InputName).h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+CommandLine="cd ..\..&#x0D;&#x0A;E:&#x0D;&#x0A;&quot;C:\Program Files\CMake 2.8\bin\cpack.exe&quot; -C $(OutDir) --config ./CPackConfig.cmake"/>
+		</Configuration>
+		<Configuration
+			Name="RelWithDebInfo|Win32"
+			OutputDirectory="RelWithDebInfo"
+			IntermediateDirectory="PACKAGE.dir\RelWithDebInfo"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\GL\src\nvparse\winheaders;..\..\..\RenderSystems\GL\src\win32;..\..\..\RenderSystems\GL\include;..\..\..\RenderSystems\GL\src\GLSL\include;..\..\..\RenderSystems\GL\src\atifs\include;..\..\..\RenderSystems\GL\src\nvparse;"
+				ExceptionHandling="0"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;RelWithDebInfo\&quot;"
+				AssemblerListingLocation="RelWithDebInfo"
+				ObjectFile="$(IntDir)\"
+/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\..\..\OgreMain\include;..\..\include;..\..\..\Dependencies\include;..\..\..\Dependencies\include\OIS;..\..\..\Dependencies\include\Cg;&quot;C:\Program Files\Microsoft DirectX SDK (April 2006)\Include&quot;;..\..\..\OgreMain\include\Threading;..\..\..\RenderSystems\GL\src\nvparse\winheaders;..\..\..\RenderSystems\GL\src\win32;..\..\..\RenderSystems\GL\include;..\..\..\RenderSystems\GL\src\GLSL\include;..\..\..\RenderSystems\GL\src\atifs\include;..\..\..\RenderSystems\GL\src\nvparse;"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;RelWithDebInfo\&quot;"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="CMAKE_INTDIR=\&quot;RelWithDebInfo\&quot;"
+				MkTypLibCompatible="FALSE"
+				TargetEnvironment="1"
+				GenerateStublessProxies="TRUE"
+				TypeLibraryName="$(InputName).tlb"
+				OutputDirectory="$(IntDir)"
+				HeaderFileName="$(InputName).h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+CommandLine="cd ..\..&#x0D;&#x0A;E:&#x0D;&#x0A;&quot;C:\Program Files\CMake 2.8\bin\cpack.exe&quot; -C $(OutDir) --config ./CPackConfig.cmake"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="CMake Rules"
+			Filter="">
+			<File
+				RelativePath="CMakeFiles\PACKAGE_force.rule">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+					Name="VCCustomBuildTool"
+					Description=" "
+					CommandLine="cd ."
+					AdditionalDependencies="CMakeFiles\PACKAGE_force.rule"
+					Outputs="CMakeFiles\PACKAGE_force"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+					Name="VCCustomBuildTool"
+					Description=" "
+					CommandLine="cd ."
+					AdditionalDependencies="CMakeFiles\PACKAGE_force.rule"
+					Outputs="CMakeFiles\PACKAGE_force"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="MinSizeRel|Win32">
+					<Tool
+					Name="VCCustomBuildTool"
+					Description=" "
+					CommandLine="cd ."
+					AdditionalDependencies="CMakeFiles\PACKAGE_force.rule"
+					Outputs="CMakeFiles\PACKAGE_force"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="RelWithDebInfo|Win32">
+					<Tool
+					Name="VCCustomBuildTool"
+					Description=" "
+					CommandLine="cd ."
+					AdditionalDependencies="CMakeFiles\PACKAGE_force.rule"
+					Outputs="CMakeFiles\PACKAGE_force"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

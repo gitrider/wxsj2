@@ -1,0 +1,257 @@
+<HTML>
+<head><title>wxDivisionShape</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxdivisionshape"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl14.htm#wxdividedshape"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl16.htm#wxellipseshape"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxDivisionShape</H2>
+<P>
+A division shape is like a composite in that it can contain further objects, but is used exclusively to
+divide another shape into regions, or divisions. A wxDivisionShape is never free-standing.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+<A HREF="ogl13.htm#wxcompositeshape">wxCompositeShape</A><P>
+<B><FONT COLOR="#FF0000">See also</FONT></B><P>
+<A HREF="ogl29.htm#compositeshapeoverview">wxCompositeShape overview</A><P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic75">wxDivisionShape::wxDivisionShape</A><BR>
+<A HREF="#topic76">wxDivisionShape::~wxDivisionShape</A><BR>
+<A HREF="#topic77">wxDivisionShape::AdjustBottom</A><BR>
+<A HREF="#topic78">wxDivisionShape::AdjustLeft</A><BR>
+<A HREF="#topic79">wxDivisionShape::AdjustRight</A><BR>
+<A HREF="#topic80">wxDivisionShape::AdjustTop</A><BR>
+<A HREF="#wxdivisionshapedivide">wxDivisionShape::Divide</A><BR>
+<A HREF="#topic81">wxDivisionShape::EditEdge</A><BR>
+<A HREF="#topic82">wxDivisionShape::GetBottomSide</A><BR>
+<A HREF="#topic83">wxDivisionShape::GetHandleSide</A><BR>
+<A HREF="#topic84">wxDivisionShape::GetLeftSide</A><BR>
+<A HREF="#topic85">wxDivisionShape::GetLeftSideColour</A><BR>
+<A HREF="#topic86">wxDivisionShape::GetLeftSidePen</A><BR>
+<A HREF="#topic87">wxDivisionShape::GetRightSide</A><BR>
+<A HREF="#topic88">wxDivisionShape::GetTopSide</A><BR>
+<A HREF="#topic89">wxDivisionShape::GetTopSideColour</A><BR>
+<A HREF="#topic90">wxDivisionShape::GetTopSidePen</A><BR>
+<A HREF="#topic91">wxDivisionShape::ResizeAdjoining</A><BR>
+<A HREF="#topic92">wxDivisionShape::PopupMenu</A><BR>
+<A HREF="#topic93">wxDivisionShape::SetBottomSide</A><BR>
+<A HREF="#topic94">wxDivisionShape::SetHandleSide</A><BR>
+<A HREF="#topic95">wxDivisionShape::SetLeftSide</A><BR>
+<A HREF="#topic96">wxDivisionShape::SetLeftSideColour</A><BR>
+<A HREF="#topic97">wxDivisionShape::SetLeftSidePen</A><BR>
+<A HREF="#topic98">wxDivisionShape::SetRightSide</A><BR>
+<A HREF="#topic99">wxDivisionShape::SetTopSide</A><BR>
+<A HREF="#topic100">wxDivisionShape::SetTopSideColour</A><BR>
+<A HREF="#topic101">wxDivisionShape::SetTopSidePen</A><BR>
+<P>
+
+<HR>
+<A NAME="topic75"></A>
+<H3>wxDivisionShape::wxDivisionShape</H3>
+<P>
+<B></B> <B>wxDivisionShape</B>()<P>
+Constructor.<P>
+
+<HR>
+<A NAME="topic76"></A>
+<H3>wxDivisionShape::~wxDivisionShape</H3>
+<P>
+<B></B> <B>~wxDivisionShape</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="topic77"></A>
+<H3>wxDivisionShape::AdjustBottom</H3>
+<P>
+<B>void</B> <B>AdjustBottom</B>(<B>double</B><I> bottom</I>, <B>bool</B><I> test</I>)<P>
+Adjust a side, returning FALSE if it's not physically possible to adjust it to this point.<P>
+
+<HR>
+<A NAME="topic78"></A>
+<H3>wxDivisionShape::AdjustLeft</H3>
+<P>
+<B>void</B> <B>AdjustLeft</B>(<B>double</B><I> left</I>, <B>bool</B><I> test</I>)<P>
+Adjust a side, returning FALSE if it's not physically possible to adjust it to this point.<P>
+
+<HR>
+<A NAME="topic79"></A>
+<H3>wxDivisionShape::AdjustRight</H3>
+<P>
+<B>void</B> <B>AdjustRight</B>(<B>double</B><I> right</I>, <B>bool</B><I> test</I>)<P>
+Adjust a side, returning FALSE if it's not physically possible to adjust it to this point.<P>
+
+<HR>
+<A NAME="topic80"></A>
+<H3>wxDivisionShape::AdjustTop</H3>
+<P>
+<B>void</B> <B>AdjustTop</B>(<B>double</B><I> top</I>, <B>bool</B><I> test</I>)<P>
+Adjust a side, returning FALSE if it's not physically possible to adjust it to this point.<P>
+
+<HR>
+<A NAME="wxdivisionshapedivide"></A>
+<H3>wxDivisionShape::Divide</H3>
+<P>
+<B>void</B> <B>Divide</B>(<B>int</B><I> direction</I>)<P>
+Divide this division into two further divisions, horizontally (<I>direction</I> is wxHORIZONTAL) or
+vertically (<I>direction</I> is wxVERTICAL).<P>
+
+<HR>
+<A NAME="topic81"></A>
+<H3>wxDivisionShape::EditEdge</H3>
+<P>
+<B>void</B> <B>EditEdge</B>(<B>int</B><I> side</I>)<P>
+Interactively edit style of left or top side.<P>
+
+<HR>
+<A NAME="topic82"></A>
+<H3>wxDivisionShape::GetBottomSide</H3>
+<P>
+<B>wxDivisionShape *</B> <B>GetBottomSide</B>()<P>
+Returns a pointer to the division on the bottom side of this division.<P>
+
+<HR>
+<A NAME="topic83"></A>
+<H3>wxDivisionShape::GetHandleSide</H3>
+<P>
+<B>int</B> <B>GetHandleSide</B>()<P>
+Returns the side which the handle appears on (DIVISION_SIDE_LEFT or DIVISION_SIDE_TOP).<P>
+
+<HR>
+<A NAME="topic84"></A>
+<H3>wxDivisionShape::GetLeftSide</H3>
+<P>
+<B>wxDivisionShape *</B> <B>GetLeftSide</B>()<P>
+Returns a pointer to the division on the left side of this division.<P>
+
+<HR>
+<A NAME="topic85"></A>
+<H3>wxDivisionShape::GetLeftSideColour</H3>
+<P>
+<B>wxString</B> <B>GetLeftSideColour</B>()<P>
+Returns a pointer to the colour used for drawing the left side of the division.<P>
+
+<HR>
+<A NAME="topic86"></A>
+<H3>wxDivisionShape::GetLeftSidePen</H3>
+<P>
+<B>wxPen *</B> <B>GetLeftSidePen</B>()<P>
+Returns a pointer to the pen used for drawing the left side of the division.<P>
+
+<HR>
+<A NAME="topic87"></A>
+<H3>wxDivisionShape::GetRightSide</H3>
+<P>
+<B>wxDivisionShape *</B> <B>GetRightSide</B>()<P>
+Returns a pointer to the division on the right side of this division.<P>
+
+<HR>
+<A NAME="topic88"></A>
+<H3>wxDivisionShape::GetTopSide</H3>
+<P>
+<B>wxDivisionShape *</B> <B>GetTopSide</B>()<P>
+Returns a pointer to the division on the top side of this division.<P>
+
+<HR>
+<A NAME="topic89"></A>
+<H3>wxDivisionShape::GetTopSideColour</H3>
+<P>
+<B>wxString</B> <B>GetTopSideColour</B>()<P>
+Returns a pointer to the colour used for drawing the top side of the division.<P>
+
+<HR>
+<A NAME="topic90"></A>
+<H3>wxDivisionShape::GetTopSidePen</H3>
+<P>
+<B>wxPen *</B> <B>GetTopSidePen</B>()<P>
+Returns a pointer to the pen used for drawing the left side of the division.<P>
+
+<HR>
+<A NAME="topic91"></A>
+<H3>wxDivisionShape::ResizeAdjoining</H3>
+<P>
+<B>void</B> <B>ResizeAdjoining</B>(<B>int</B><I> side</I>, <B>double</B><I> newPos</I>, <B>bool</B><I> test</I>)<P>
+Resize adjoining divisions at the given side. If <I>test</I> is TRUE,
+just see whether it's possible for each adjoining region,
+returning FALSE if it's not.<P>
+<I>side</I> can be one of:<P>
+<UL>
+
+<LI> DIVISION_SIDE_NONE
+<LI> DIVISION_SIDE_LEFT
+<LI> DIVISION_SIDE_TOP
+<LI> DIVISION_SIDE_RIGHT
+<LI> DIVISION_SIDE_BOTTOM
+</UL>
+<P>
+
+<HR>
+<A NAME="topic92"></A>
+<H3>wxDivisionShape::PopupMenu</H3>
+<P>
+<B>void</B> <B>PopupMenu</B>(<B>double</B><I> x</I>, <B>double</B><I> y</I>)<P>
+Popup the division menu.<P>
+
+<HR>
+<A NAME="topic93"></A>
+<H3>wxDivisionShape::SetBottomSide</H3>
+<P>
+<B>void</B> <B>SetBottomSide</B>(<B>wxDivisionShape *</B><I>shape</I>)<P>
+Set the pointer to the division on the bottom side of this division.<P>
+
+<HR>
+<A NAME="topic94"></A>
+<H3>wxDivisionShape::SetHandleSide</H3>
+<P>
+<B>int</B> <B>SetHandleSide</B>()<P>
+Sets the side which the handle appears on (DIVISION_SIDE_LEFT or DIVISION_SIDE_TOP).<P>
+
+<HR>
+<A NAME="topic95"></A>
+<H3>wxDivisionShape::SetLeftSide</H3>
+<P>
+<B>void</B> <B>SetLeftSide</B>(<B>wxDivisionShape *</B><I>shape</I>)<P>
+Set the pointer to the division on the left side of this division.<P>
+
+<HR>
+<A NAME="topic96"></A>
+<H3>wxDivisionShape::SetLeftSideColour</H3>
+<P>
+<B>void</B> <B>SetLeftSideColour</B>(<B>const wxString&amp; </B><I>colour</I>)<P>
+Sets the colour for drawing the left side of the division.<P>
+
+<HR>
+<A NAME="topic97"></A>
+<H3>wxDivisionShape::SetLeftSidePen</H3>
+<P>
+<B>void</B> <B>SetLeftSidePen</B>(<B>wxPen *</B><I>pen</I>)<P>
+Sets the pen for drawing the left side of the division.<P>
+
+<HR>
+<A NAME="topic98"></A>
+<H3>wxDivisionShape::SetRightSide</H3>
+<P>
+<B>void</B> <B>SetRightSide</B>(<B>wxDivisionShape *</B><I>shape</I>)<P>
+Set the pointer to the division on the right side of this division.<P>
+
+<HR>
+<A NAME="topic99"></A>
+<H3>wxDivisionShape::SetTopSide</H3>
+<P>
+<B>void</B> <B>SetTopSide</B>(<B>wxDivisionShape *</B><I>shape</I>)<P>
+Set the pointer to the division on the top side of this division.<P>
+
+<HR>
+<A NAME="topic100"></A>
+<H3>wxDivisionShape::SetTopSideColour</H3>
+<P>
+<B>void</B> <B>SetTopSideColour</B>(<B>const wxString&amp; </B><I>colour</I>)<P>
+Sets the colour for drawing the top side of the division.<P>
+
+<HR>
+<A NAME="topic101"></A>
+<H3>wxDivisionShape::SetTopSidePen</H3>
+<P>
+<B>void</B> <B>SetTopSidePen</B>(<B>wxPen *</B><I>pen</I>)<P>
+Sets the pen for drawing the top side of the division.<P>
+
+</FONT></BODY></HTML>

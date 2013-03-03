@@ -1,0 +1,153 @@
+Notes
+=====
+
+How do we cope with conditional
+dependencies, e.g. drag and drop
+being dependent on OLE but only
+on Windows?
+
+Solutions:
+
+1) Simply document the dependency.
+
+2) If a is dependent on b and b
+is platform-specific, then assume
+b must be enabled (harmless on
+other platforms).
+
+3) Some system of specifying
+dependencies that are only valid
+on a particular platform. Could say:
+
+wxUSE_THING:__WXMSW__;__WXGTK__,wxUSE_OTHER_THING
+
+Where you only apply the rule if
+one of the following values is switched on.
+
+Changes needed: allow the x:y;z syntax;
+support in the items chooser dialog
+(can be enabled or disabled) by having
+a button for adding the platform identifiers.
+Need to parse in dependency code.
+
+Problem: when you change the platform,
+you must propagate to items that use
+this info. Could simply be another
+dependency.
+
+Another approach: have a "platforms"
+property in each item. The value
+starts off as "any". Can then tag
+e.g. wxUSE_OLE as only applicable
+to __WXMSW__. Effectively this is
+another dependency. When dependencies
+are calculated, those relating to
+a platform not selected are simply
+ignored. Much better and simpler,
+_and_ it makes explicit the platforms
+that each item is relevant to.
+
+You could use this to allow for
+specific compilers, too, and other
+kinds of variables.
+
+====
+
+Looking at dependencies again.
+
+Could have:
+
+a requires b:
+e.g. wxUSE_DRAG_AND_DROP requires wxUSE_OLE
+
+    a        b
+
+	1        1
+	0        1
+    0        0
+
+
+a precludes b:
+e.g. wxUSE_ODBC precludes wxUSE_UNICODE
+
+    a        b
+
+	1        0
+	0        0
+	0        1
+
+
+a enabled-if b:
+
+	a        b
+
+    1        1
+    1        0
+    0        0
+
+a enabled-if-not b:
+E.g. wxUSE_TOOLBAR_SIMPLE enabled-if-not wxUSE_TOOLBAR_NATIVE
+
+	a        b
+
+    1        0
+    0        1
+    1        1
+
+2003-06-16
+==========
+
+Where to place setup.h -- in include/wx/msw|mac, or
+in e.g. lib/mswd/wx? What about auto-copying
+over e.g. lib/mswd/wx/setup.h?
+
+But, if save to a lib dir, we have to save for
+each Debug/Release/DebugUnicode/DLL build.
+So probably it ought to be written to the
+tree. OR, there could be a new location,
+and we simply add that to the search path.
+
+One problem is that the configtool can
+allow for specification of e.g. Unicode,
+whereas this is done in the VC++ configuration.
+The information is duplicated.
+
+However, the configtool could still invoke
+the required .dsp file with the appropriate
+target. Perhaps have an explicit list of
+targets in the settings file.
+
+Let's visualise how it might be to invoke
+VC++ from the tool.
+
+- We select the 'Windows' target.
+- We select the Debug Unicode sub-target.
+- We press 'compile'.
+
+CT knows to configure-and-compile on
+Unix, and invoke make (or configure)
+on Windows. Hmm. We need to have
+compilers in our configuration. Or
+should this be in the Settings dialog?
+But if made explicit, we can add more
+intelligence to the settings file.
+
+How much level of detail do we want to
+specify in the configuration tool?
+Do we really want to specify optimisations,
+and compiler-specific stuff? This
+may be tweakable in configure, but makefiles
+don't tend to have that level of
+detail available to them. And even if they
+did, do you really want to specify all that
+stuff? Maybe... especially if testing out
+the effects of inlining, for example.
+Otherwise, you have to tweak both the makefiles
+(e.g makeg95.env) and the settings in the
+CT.
+
+OTOH, one has to consider how one would
+use it in conjunction with an IDE
+such as Borland's. One could still invoke
+the underlying compiler with the appropriate
+options.

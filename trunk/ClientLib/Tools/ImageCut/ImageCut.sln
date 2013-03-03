@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImageCut", "ImageCut\ImageCut.vcproj", "{75D91531-6EB5-4886-A8CE-1CA00CC73D7D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{75D91531-6EB5-4886-A8CE-1CA00CC73D7D}.Debug.ActiveCfg = Debug|Win32
+		{75D91531-6EB5-4886-A8CE-1CA00CC73D7D}.Debug.Build.0 = Debug|Win32
+		{75D91531-6EB5-4886-A8CE-1CA00CC73D7D}.Release.ActiveCfg = Release|Win32
+		{75D91531-6EB5-4886-A8CE-1CA00CC73D7D}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

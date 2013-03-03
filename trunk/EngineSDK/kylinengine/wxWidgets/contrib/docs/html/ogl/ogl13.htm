@@ -1,0 +1,157 @@
+<HTML>
+<head><title>wxCompositeShape</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxcompositeshape"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl12.htm#wxcircleshape"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl14.htm#wxdividedshape"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxCompositeShape</H2>
+<P>
+This is an object with a list of child objects, and a list of size
+and positioning constraints between the children.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+<A HREF="ogl19.htm#wxrectangleshape">wxRectangleShape</A><P>
+<B><FONT COLOR="#FF0000">See also</FONT></B><P>
+<A HREF="ogl29.htm#compositeshapeoverview">wxCompositeShape overview</A><P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic59">wxCompositeShape::wxCompositeShape</A><BR>
+<A HREF="#topic60">wxCompositeShape::~wxCompositeShape</A><BR>
+<A HREF="#wxcompositeshapeaddchild">wxCompositeShape::AddChild</A><BR>
+<A HREF="#wxcompositeshapeaddconstraint">wxCompositeShape::AddConstraint</A><BR>
+<A HREF="#topic61">wxCompositeShape::CalculateSize</A><BR>
+<A HREF="#topic62">wxCompositeShape::ContainsDivision</A><BR>
+<A HREF="#topic63">wxCompositeShape::DeleteConstraint</A><BR>
+<A HREF="#topic64">wxCompositeShape::DeleteConstraintsInvolvingChild</A><BR>
+<A HREF="#topic65">wxCompositeShape::FindConstraint</A><BR>
+<A HREF="#topic66">wxCompositeShape::FindContainerImage</A><BR>
+<A HREF="#topic67">wxCompositeShape::GetConstraints</A><BR>
+<A HREF="#topic68">wxCompositeShape::GetDivisions</A><BR>
+<A HREF="#wxcompositeshapemakecontainer">wxCompositeShape::MakeContainer</A><BR>
+<A HREF="#topic69">wxCompositeShape::OnCreateDivision</A><BR>
+<A HREF="#wxcompositeshaperecompute">wxCompositeShape::Recompute</A><BR>
+<A HREF="#topic70">wxCompositeShape::RemoveChild</A><BR>
+<P>
+
+<HR>
+<A NAME="topic59"></A>
+<H3>wxCompositeShape::wxCompositeShape</H3>
+<P>
+<B></B> <B>wxCompositeShape</B>()<P>
+Constructor.<P>
+
+<HR>
+<A NAME="topic60"></A>
+<H3>wxCompositeShape::~wxCompositeShape</H3>
+<P>
+<B></B> <B>~wxCompositeShape</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="wxcompositeshapeaddchild"></A>
+<H3>wxCompositeShape::AddChild</H3>
+<P>
+<B>void</B> <B>AddChild</B>(<B>wxShape *</B><I>child</I>, <B>wxShape *</B><I>addAfter = NULL</I>)<P>
+Adds a child shape to the composite. If <I>addAfter</I> is non-NULL, the shape will be added
+after this shape.<P>
+
+<HR>
+<A NAME="wxcompositeshapeaddconstraint"></A>
+<H3>wxCompositeShape::AddConstraint</H3>
+<P>
+<B>wxOGLConstraint *</B> <B>AddConstraint</B>(<B>wxOGLConstraint *</B><I>constraint</I>)<P>
+<B>wxOGLConstraint *</B> <B>AddConstraint</B>(<B>int</B><I> type</I>, <B>wxShape *</B><I>constraining</I>, <B>wxList&amp;</B><I>constrained</I>)<P>
+<B>wxOGLConstraint *</B> <B>AddConstraint</B>(<B>int</B><I> type</I>, <B>wxShape *</B><I>constraining</I>, <B>wxShape *</B><I>constrained</I>)<P>
+Adds a constraint to the composite.<P>
+
+<HR>
+<A NAME="topic61"></A>
+<H3>wxCompositeShape::CalculateSize</H3>
+<P>
+<B>void</B> <B>CalculateSize</B>()<P>
+Calculates the size and position of the composite based on child sizes and positions.<P>
+
+<HR>
+<A NAME="topic62"></A>
+<H3>wxCompositeShape::ContainsDivision</H3>
+<P>
+<B>bool</B> <B>FindContainerImage</B>(<B>wxDivisionShape *</B><I>division</I>)<P>
+Returns TRUE if <I>division</I> is a descendant of this container.<P>
+
+<HR>
+<A NAME="topic63"></A>
+<H3>wxCompositeShape::DeleteConstraint</H3>
+<P>
+<B>void</B> <B>DeleteConstraint</B>(<B>wxOGLConstraint *</B><I>constraint</I>)<P>
+Deletes constraint from composite.<P>
+
+<HR>
+<A NAME="topic64"></A>
+<H3>wxCompositeShape::DeleteConstraintsInvolvingChild</H3>
+<P>
+<B>void</B> <B>DeleteConstraintsInvolvingChild</B>(<B>wxShape *</B><I>child</I>)<P>
+This function deletes constraints which mention the given child. Used when
+deleting a child from the composite.<P>
+
+<HR>
+<A NAME="topic65"></A>
+<H3>wxCompositeShape::FindConstraint</H3>
+<P>
+<B>wxOGLConstraint *</B> <B>FindConstraint</B>(<B>long</B><I> id</I>, <B>wxCompositeShape **</B><I>actualComposite</I>)<P>
+Finds the constraint with the given id, also returning the actual composite the constraint was in,
+in case that composite was a descendant of this composite.<P>
+
+<HR>
+<A NAME="topic66"></A>
+<H3>wxCompositeShape::FindContainerImage</H3>
+<P>
+<B>wxShape *</B> <B>FindContainerImage</B>()<P>
+Finds the image used to visualize a container. This is any child
+of the composite that is not in the divisions list.<P>
+
+<HR>
+<A NAME="topic67"></A>
+<H3>wxCompositeShape::GetConstraints</H3>
+<P>
+<B>wxList&amp;</B> <B>GetConstraints</B>() <B>const</B><P>
+Returns a reference to the list of constraints.<P>
+
+<HR>
+<A NAME="topic68"></A>
+<H3>wxCompositeShape::GetDivisions</H3>
+<P>
+<B>wxList&amp;</B> <B>GetDivisions</B>() <B>const</B><P>
+Returns a reference to the list of divisions.<P>
+
+<HR>
+<A NAME="wxcompositeshapemakecontainer"></A>
+<H3>wxCompositeShape::MakeContainer</H3>
+<P>
+<B>void</B> <B>MakeContainer</B>()<P>
+Makes this composite into a container by creating one child wxDivisionShape.<P>
+
+<HR>
+<A NAME="topic69"></A>
+<H3>wxCompositeShape::OnCreateDivision</H3>
+<P>
+<B>wxDivisionShape *</B> <B>OnCreateDivision</B>()<P>
+Called when a new division shape is required. Can be overriden to allow an application
+to use a different class of division.<P>
+
+<HR>
+<A NAME="wxcompositeshaperecompute"></A>
+<H3>wxCompositeShape::Recompute</H3>
+<P>
+<B>bool</B> <B>Recompute</B>() <P>
+Recomputes any constraints associated with the object. If FALSE is returned,
+the constraints could not be satisfied (there was an inconsistency).<P>
+
+<HR>
+<A NAME="topic70"></A>
+<H3>wxCompositeShape::RemoveChild</H3>
+<P>
+<B>void</B> <B>RemoveChild</B>(<B>wxShape *</B><I>child</I>)<P>
+Removes the child from the composite and any constraint relationships, but does not
+delete the child.<P>
+
+</FONT></BODY></HTML>

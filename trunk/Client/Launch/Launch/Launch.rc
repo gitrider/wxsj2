@@ -1,0 +1,335 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\Launch.rc2""  // 非 Microsoft Visual C++ 编辑过的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Launch.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 167, 86
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "关于"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,11,20,20
+    LTEXT           "Launch Version 1.4.3.2",IDC_STATIC,50,17,108,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2008",IDC_STATIC,50,36,105,8
+    DEFPUSHBUTTON   "确定",IDOK,95,60,50,16,WS_GROUP
+END
+
+IDD_LAUNCH_DIALOG DIALOGEX 0, 0, 345, 224
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_EXPLORER_HELP,
+                    "{8856F961-340A-11D0-A96B-00C04FD705A2}",WS_TABSTOP,21,
+                    17,241,139
+    PUSHBUTTON      "退出",IDC_BUTTON_EXIT,226,201,42,10,BS_BITMAP
+    PUSHBUTTON      "官方主页",IDC_BUTTON_HOMEPAGE,130,201,42,10,BS_BITMAP
+    PUSHBUTTON      "启动游戏",IDC_BUTTON_START,178,201,42,10,BS_BITMAP
+    CONTROL         "",IDC_PROGRESS_INSTALL,"msctls_progress32",WS_BORDER,9,
+                    188,331,8
+    CONTROL         "",IDC_PROGRESS_DOWNLOAD,"msctls_progress32",WS_BORDER,9,
+                    175,331,7
+    PUSHBUTTON      "",IDC_BTN_SPEED,7,152,331,8,BS_LEFT
+    PUSHBUTTON      "",IDC_BTN_STATUS,7,162,331,8,BS_LEFT
+END
+
+IDD_DIALOG_SETTING DIALOGEX 0, 0, 223, 130
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "游戏设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,105,109,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,166,109,50,14
+    GROUPBOX        "服务器",IDC_STATIC,7,7,209,98
+    CONTROL         "登录Login服务器",IDC_RADIO_LOGIN,"Button",
+                    BS_AUTORADIOBUTTON,15,21,156,11
+    CONTROL         "直接登录GAME服务器",IDC_RADIO_GAMESERVER,"Button",
+                    BS_AUTORADIOBUTTON,15,35,156,11
+    COMBOBOX        IDC_COMBO_GAMESERVER,86,49,123,70,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "服务器地址：",IDC_STATIC_GAMESERVER,28,51,53,12
+    EDITTEXT        IDC_EDIT_USERNAME,85,67,123,13,ES_AUTOHSCROLL
+    RTEXT           "用户名：",IDC_STATIC_USERNAME,27,68,53,12
+    COMBOBOX        IDC_COMBO_GENDER,85,85,123,41,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "性别：",IDC_STATIC_USERGENDER,27,87,53,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,4,3,2
+ PRODUCTVERSION 1,4,3,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "Comments", "成吉思汗 (Launch)"
+            VALUE "CompanyName", "WWW.77KL.COM Inc"
+            VALUE "FileDescription", "1.4.3.2"
+            VALUE "FileVersion", "1.4.3.2"
+            VALUE "InternalName", "Launch.exe"
+            VALUE "LegalCopyright", "Copyright (C) KYLIN 2008"
+            VALUE "OriginalFilename", "Launch.exe"
+            VALUE "ProductName", "成吉思汗"
+            VALUE "ProductVersion", "1.4.3.2"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_LAUNCH_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 338
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 217
+    END
+
+    IDD_DIALOG_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_LAUNCH_DIALOG DLGINIT
+BEGIN
+    IDC_EXPLORER_HELP, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x256a, 0x0000, 0x159a, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0008, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "res\\背景.bmp"
+IDB_BITMAP_MAINPAGE     BITMAP                  "res\\主页.bmp"
+IDB_BITMAP2             BITMAP                  "res\\进度条.bmp"
+IDB_BITMAP_EXIT         BITMAP                  "res\\退出.bmp"
+IDB_BITMAP_RUNGAME      BITMAP                  "res\\开始游戏.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 Launch(&A)..."
+    IDS_MAIN_CAPTION        "成吉思汗"
+    IDP_SOCKETS_INIT_FAILED "Windows 套接字初始化失败。"
+    IDS_DOWNLOADING_PATCH_INFO "下载最新版本信息..."
+    IDS_DOWNLOAD_PATCH_INFO_FAULT "下载最新版本信息失败!"
+    IDS_ANSYS_PATCH_INFO    "更新系统启动失败!(%s)"
+    IDS_US_ERR_KEY          "无法初始化公钥"
+    IDS_US_ERR_VERSION      "version文件数据错误"
+    IDS_US_ERR_ACCESS_VERSION "version文件无法访问"
+    IDS_US_ERR_INI          "ini配置文件错误"
+    IDS_US_ERR_UPDATE       "无法从当前版本升级到最新版本"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_US_ERR_CFG          "cfg配置文件错误"
+    IDS_ERR_US_INIT         "更新系统未初始化!"
+    IDS_ERR_US_URL          "下载URL错误"
+    IDS_DOWNLOAD_FAULT      "下载文件%s失败!"
+    IDS_US_ERR_STEP         "无此下载流程"
+    IDS_US_ERR_PARAM        "参数错误"
+    IDS_US_ERR_PATCH        "无%s Patch文件或该文件错误"
+    IDS_US_ERR_COMMAND      "command文件数据错误"
+    IDS_US_ERR_ACCESS_COMMAND "command文件无法访问"
+    IDS_US_ERR_COMMAND_LOGIC "(command文件逻辑错误"
+    IDS_DOWNLOAD_FILE_ERR   "下载的Patch文件%s错误:%s"
+    IDS_US_ERR_FILE_ADD     "增加文件失败:"
+    IDS_US_ERR_PACK_NOTFOUND "包文件%s没有找到"
+    IDS_US_ERR_PACK_DEL     "从包%s中删除文件%s失败"
+    IDS_US_ERR_PACK_ADD     "往包中添加文件%s失败"
+    IDS_US_ERR_PACK_LOGIC   "包文件逻辑错误"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_UPDATE_FAULT        "升级失败:%s"
+    IDS_DOWNLOADING         "开始下载文件%s"
+    IDS_DOWNLOAD_QUER       "获取文件信息..."
+    IDS_DOWNLOAD_SPEED      "文件大小: %s/%s 下载速度: %s"
+    IDS_DOWNLOADING_PATCH_INFO_OK "下载最新版本信息成功!"
+    IDS_DOWNLOAD_FILE       "下载文件%s"
+    IDS_START_UPDATE        "开始更新..."
+    IDS_START_UPDATE_OK     "更新成功!"
+    IDS_DELETE_FILE         "删除文件..."
+    IDS_ADD_FILE            "添加文件..."
+    IDS_BACKUP              "备份..."
+    IDS_PACK_DELETE_FILE    "删除文件..."
+    IDS_PACK_ADD_FILE       "添加文件..."
+    IDS_UPDATE_ERR          "更新失败..."
+    IDS_UPDATE_SYSTEM       "更新系统..."
+    IDS_DOWNLOAD_OK         "下载%s成功!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DOWNLOAD_END        "下载结束!"
+    IDS_FIXSYS_START_ERR    "修复系统启动失败!(%s)"
+    IDS_LOCAL_NET_ERR       "请检查本地网络连接!"
+    IDS_VER_ERROR           "当前版本非最新，请重新运行本程序!"
+    IDS_VER_NOTSTART        "修复系统没有启动!"
+    IDS_NOT_ENOUGH_SPACE    "磁盘空间不足!"
+    IDS_DOWNLOAD_SRV_INFO   "下载最新服务器负载信息..."
+    IDS_DOWNLOAD_SRV_ERR    "下载最新服务器负载信息失败!"
+    IDS_DOWNLOAD_SRV_OK     "下载最新服务器负载信息成功!"
+    IDS_CHECK_ERR           "检测文件%s失败!"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\Launch.rc2"  // 非 Microsoft Visual C++ 编辑过的资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

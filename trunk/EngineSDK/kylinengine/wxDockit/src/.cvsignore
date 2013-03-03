@@ -1,0 +1,8 @@
+Debug
+Debug_DLL
+Release
+Release_DLL
+*.ncb
+*.opt
+*.plg
+*.bak

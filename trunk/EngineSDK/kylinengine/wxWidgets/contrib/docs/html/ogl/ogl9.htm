@@ -1,0 +1,67 @@
+<HTML>
+<head><title>wxBitmapShape</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxbitmapshape"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl8.htm#wxoglconstraint"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl10.htm#wxdiagram"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxBitmapShape</H2>
+<P>
+Draws a bitmap (non-resizable).<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+<A HREF="ogl19.htm#wxrectangleshape">wxRectangleShape</A><P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic8">wxBitmapShape::wxBitmapShape</A><BR>
+<A HREF="#topic9">wxBitmapShape::~wxBitmapShape</A><BR>
+<A HREF="#topic10">wxBitmapShape::GetBitmap</A><BR>
+<A HREF="#topic11">wxBitmapShape::GetFilename</A><BR>
+<A HREF="#topic12">wxBitmapShape::SetBitmap</A><BR>
+<A HREF="#topic13">wxBitmapShape::SetFilename</A><BR>
+<P>
+
+<HR>
+<A NAME="topic8"></A>
+<H3>wxBitmapShape::wxBitmapShape</H3>
+<P>
+<B></B> <B>wxBitmapShape</B>()<P>
+Constructor.<P>
+
+<HR>
+<A NAME="topic9"></A>
+<H3>wxBitmapShape::~wxBitmapShape</H3>
+<P>
+<B></B> <B>~wxBitmapShape</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="topic10"></A>
+<H3>wxBitmapShape::GetBitmap</H3>
+<P>
+<B>wxBitmap&amp;</B> <B>GetBitmap</B>() <B>const</B><P>
+Returns a reference to the bitmap associated with this shape.<P>
+
+<HR>
+<A NAME="topic11"></A>
+<H3>wxBitmapShape::GetFilename</H3>
+<P>
+<B>wxString</B> <B>GetFilename</B>() <B>const</B><P>
+Returns the bitmap filename.<P>
+
+<HR>
+<A NAME="topic12"></A>
+<H3>wxBitmapShape::SetBitmap</H3>
+<P>
+<B>void</B> <B>SetBitmap</B>(<B>const wxBitmap&amp;</B><I> bitmap</I>)<P>
+Sets the bitmap associated with this shape. You can delete the bitmap
+from the calling application, since reference counting will take care of
+holding on to the internal bitmap data.<P>
+
+<HR>
+<A NAME="topic13"></A>
+<H3>wxBitmapShape::SetFilename</H3>
+<P>
+<B>void</B> <B>SetFilename</B>(<B>const wxString&amp; </B><I>filename</I>)<P>
+Sets the bitmap filename.<P>
+
+</FONT></BODY></HTML>

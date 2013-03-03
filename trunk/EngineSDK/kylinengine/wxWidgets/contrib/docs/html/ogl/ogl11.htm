@@ -1,0 +1,288 @@
+<HTML>
+<head><title>wxDrawnShape</title></head>
+
+<BODY BGCOLOR=#FFFFFF>
+<FONT FACE="Times New Roman">
+<A NAME="wxdrawnshape"></A><CENTER>
+<A HREF="ogl.htm"><img align=center src="contents.gif" BORDER=0 ALT="Contents"></A> <A HREF="ogl7.htm#classref"><img align=center src="up.gif" BORDER=0 ALT="Up"></A> <A HREF="ogl10.htm#wxdiagram"><img align=center src="back.gif" BORDER=0 ALT="Previous"></A> <A HREF="ogl12.htm#wxcircleshape"><img align=center src="forward.gif" BORDER=0 ALT="Next"></A> </CENTER><HR>
+
+<H2>wxDrawnShape</H2>
+<P>
+Draws a pseduo-metafile shape, which can be loaded from a simple Windows metafile.<P>
+wxDrawnShape allows you to specify a different shape for each of four orientations (North, West,
+South and East). It also provides a set of drawing functions for programmatic drawing of a shape,
+so that during construction of the shape you can draw into it as if it were a device context.<P>
+<B><FONT COLOR="#FF0000">Derived from</FONT></B><P>
+<A HREF="ogl19.htm#wxrectangleshape">wxRectangleShape</A><P>
+See also <A HREF="ogl19.htm#wxrectangleshape">wxRectangleShape</A>.<P>
+<B><FONT COLOR="#FF0000">Members</FONT></B><P>
+<A HREF="#topic48">wxDrawnShape::wxDrawnShape</A><BR>
+<A HREF="#topic49">wxDrawnShape::~wxDrawnShape</A><BR>
+<A HREF="#topic50">wxDrawnShape::CalculateSize</A><BR>
+<A HREF="#wxdrawnshapedestroyclippingrect">wxDrawnShape::DestroyClippingRect</A><BR>
+<A HREF="#wxdrawnshapedrawarc">wxDrawnShape::DrawArc</A><BR>
+<A HREF="#wxdrawnshapedrawatangle">wxDrawnShape::DrawAtAngle</A><BR>
+<A HREF="#wxdrawnshapedrawellipticarc">wxDrawnShape::DrawEllipticArc</A><BR>
+<A HREF="#wxdrawnshapedrawline">wxDrawnShape::DrawLine</A><BR>
+<A HREF="#wxdrawnshapedrawlines">wxDrawnShape::DrawLines</A><BR>
+<A HREF="#wxdrawnshapedrawpoint">wxDrawnShape::DrawPoint</A><BR>
+<A HREF="#wxdrawnshapedrawpolygon">wxDrawnShape::DrawPolygon</A><BR>
+<A HREF="#wxdrawnshapedrawrectangle">wxDrawnShape::DrawRectangle</A><BR>
+<A HREF="#wxdrawnshapedrawroundedrectangle">wxDrawnShape::DrawRoundedRectangle</A><BR>
+<A HREF="#wxdrawnshapedrawspline">wxDrawnShape::DrawSpline</A><BR>
+<A HREF="#wxdrawnshapedrawtext">wxDrawnShape::DrawText</A><BR>
+<A HREF="#wxdrawnshapegetangle">wxDrawnShape::GetAngle</A><BR>
+<A HREF="#topic51">wxDrawnShape::GetMetaFile</A><BR>
+<A HREF="#wxdrawnshapegetrotation">wxDrawnShape::GetRotation</A><BR>
+<A HREF="#topic52">wxDrawnShape::LoadFromMetaFile</A><BR>
+<A HREF="#topic53">wxDrawnShape::Rotate</A><BR>
+<A HREF="#wxdrawnshapesetclippingrect">wxDrawnShape::SetClippingRect</A><BR>
+<A HREF="#wxdrawnshapesetdrawnbackgroundcolour">wxDrawnShape::SetDrawnBackgroundColour</A><BR>
+<A HREF="#wxdrawnshapesetdrawnbackgroundmode">wxDrawnShape::SetDrawnBackgroundMode</A><BR>
+<A HREF="#wxdrawnshapesetdrawnbrush">wxDrawnShape::SetDrawnBrush</A><BR>
+<A HREF="#wxdrawnshapesetdrawnfont">wxDrawnShape::SetDrawnFont</A><BR>
+<A HREF="#wxdrawnshapesetdrawnpen">wxDrawnShape::SetDrawnPen</A><BR>
+<A HREF="#wxdrawnshapesetdrawntextcolour">wxDrawnShape::SetDrawnTextColour</A><BR>
+<A HREF="#topic54">wxDrawnShape::Scale</A><BR>
+<A HREF="#topic55">wxDrawnShape::SetSaveToFile</A><BR>
+<A HREF="#topic56">wxDrawnShape::Translate</A><BR>
+<P>
+
+<HR>
+<A NAME="topic48"></A>
+<H3>wxDrawnShape::wxDrawnShape</H3>
+<P>
+<B></B> <B>wxDrawnShape</B>()<P>
+Constructor.<P>
+
+<HR>
+<A NAME="topic49"></A>
+<H3>wxDrawnShape::~wxDrawnShape</H3>
+<P>
+<B></B> <B>~wxDrawnShape</B>()<P>
+Destructor.<P>
+
+<HR>
+<A NAME="topic50"></A>
+<H3>wxDrawnShape::CalculateSize</H3>
+<P>
+<B>void</B> <B>CalculateSize</B>()<P>
+Calculates the wxDrawnShape size from the current metafile. Call this after you have drawn
+into the shape.<P>
+
+<HR>
+<A NAME="wxdrawnshapedestroyclippingrect"></A>
+<H3>wxDrawnShape::DestroyClippingRect</H3>
+<P>
+<B>void</B> <B>DestroyClippingRect</B>()<P>
+Destroys the clipping rectangle. See also <A HREF="ogl11.htm#wxdrawnshapesetclippingrect">wxDrawnShape::SetClippingRect</A>.<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawarc"></A>
+<H3>wxDrawnShape::DrawArc</H3>
+<P>
+<B>void</B> <B>DrawArc</B>(<B>const wxPoint&amp;</B><I> centrePoint</I>, <B>const wxPoint&amp;</B><I> startPoint</I>,
+ <B>const wxPoint&amp;</B><I> endPoint</I>)<P>
+Draws an arc (see wxWindows documentation for details).<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawatangle"></A>
+<H3>wxDrawnShape::DrawAtAngle</H3>
+<P>
+<B>void</B> <B>DrawAtAngle</B>(<B>int</B><I> angle</I>)<P>
+Sets the metafile for the given orientation, which can be one of:<P>
+<UL>
+
+<LI> oglDRAWN_ANGLE_0
+<LI> oglDRAWN_ANGLE_90
+<LI> oglDRAWN_ANGLE_180
+<LI> oglDRAWN_ANGLE_270
+</UL>
+<P>
+See also <A HREF="ogl11.htm#wxdrawnshapegetangle">wxDrawnShape::GetAngle</A>.<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawellipticarc"></A>
+<H3>wxDrawnShape::DrawEllipticArc</H3>
+<P>
+<B>void</B> <B>DrawEllipticArc</B>(<B>const wxRect&amp;</B><I> rect</I>, <B>double</B><I> startAngle</I>, <B>double</B><I> endAngle</I>)<P>
+Draws an elliptic arc (see wxWindows documentation for details).<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawline"></A>
+<H3>wxDrawnShape::DrawLine</H3>
+<P>
+<B>void</B> <B>DrawLine</B>(<B>const wxPoint&amp;</B><I> point1</I>, <B>const wxPoint&amp;</B><I> point2</I>)<P>
+Draws a line from <I>point1</I> to <I>point2</I>.<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawlines"></A>
+<H3>wxDrawnShape::DrawLines</H3>
+<P>
+<B>void</B> <B>DrawLines</B>(<B>int</B><I> n</I>, <B>wxPoint&amp;</B><I> points[]</I>)<P>
+Draws <I>n</I> lines.<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawpoint"></A>
+<H3>wxDrawnShape::DrawPoint</H3>
+<P>
+<B>void</B> <B>DrawPoint</B>(<B>const wxPoint&amp;</B><I> point</I>)<P>
+Draws a point.<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawpolygon"></A>
+<H3>wxDrawnShape::DrawPolygon</H3>
+<P>
+<B>void</B> <B>DrawPolygon</B>(<B>int</B><I> n</I>, <B>wxPoint&amp;</B><I> points[]</I>, <B>int</B><I> flags = 0</I>)<P>
+Draws a polygon. <I>flags</I> can be one or more of <B>oglMETAFLAGS_OUTLINE</B> (use this polygon for the drag outline)
+and <B>oglMETAFLAGS_ATTACHMENTS</B> (use the vertices of this polygon for attachments).<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawrectangle"></A>
+<H3>wxDrawnShape::DrawRectangle</H3>
+<P>
+<B>void</B> <B>DrawRectangle</B>(<B>const wxRect&amp;</B><I> rect</I>)<P>
+Draws a rectangle.<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawroundedrectangle"></A>
+<H3>wxDrawnShape::DrawRoundedRectangle</H3>
+<P>
+<B>void</B> <B>DrawRoundedRectangle</B>(<B>const wxRect&amp;</B><I> rect</I>, <B>double</B><I> radius</I>)<P>
+Draws a rounded rectangle. <I>radius</I> is the corner radius. If <I>radius</I> is negative,
+it expresses the radius as a proportion of the smallest dimension of the rectangle.<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawspline"></A>
+<H3>wxDrawnShape::DrawSpline</H3>
+<P>
+<B>void</B> <B>DrawSpline</B>(<B>int</B><I> n</I>, <B>wxPoint&amp;</B><I> points[]</I>)<P>
+Draws a spline curve.<P>
+
+<HR>
+<A NAME="wxdrawnshapedrawtext"></A>
+<H3>wxDrawnShape::DrawText</H3>
+<P>
+<B>void</B> <B>DrawText</B>(<B>const wxString&amp;</B><I> text</I>, <B>const wxPoint&amp;</B><I> point</I>)<P>
+Draws text at the given point.<P>
+
+<HR>
+<A NAME="wxdrawnshapegetangle"></A>
+<H3>wxDrawnShape::GetAngle</H3>
+<P>
+<B>int</B> <B>GetAngle</B>() <B>const</B><P>
+Returns the current orientation, which can be one of:<P>
+<UL>
+
+<LI> oglDRAWN_ANGLE_0
+<LI> oglDRAWN_ANGLE_90
+<LI> oglDRAWN_ANGLE_180
+<LI> oglDRAWN_ANGLE_270
+</UL>
+<P>
+See also <A HREF="ogl11.htm#wxdrawnshapedrawatangle">wxDrawnShape::DrawAtAngle</A>.<P>
+
+<HR>
+<A NAME="topic51"></A>
+<H3>wxDrawnShape::GetMetaFile</H3>
+<P>
+<B>wxPseudoMetaFile&amp; </B> <B>GetMetaFile</B>() <B>const</B><P>
+Returns a reference to the internal 'pseudo-metafile'.<P>
+
+<HR>
+<A NAME="wxdrawnshapegetrotation"></A>
+<H3>wxDrawnShape::GetRotation</H3>
+<P>
+<B>double</B> <B>GetRotation</B>() <B>const</B><P>
+Returns the current rotation of the shape in radians.<P>
+
+<HR>
+<A NAME="topic52"></A>
+<H3>wxDrawnShape::LoadFromMetaFile</H3>
+<P>
+<B>bool</B> <B>LoadFromMetaFile</B>(<B>const wxString&amp; </B><I>filename</I>)<P>
+Loads a (very simple) Windows metafile, created for example by Top Draw, the Windows shareware graphics package.<P>
+
+<HR>
+<A NAME="topic53"></A>
+<H3>wxDrawnShape::Rotate</H3>
+<P>
+<B>void</B> <B>Rotate</B>(<B>double </B><I>x</I>, <B>double </B><I>y</I>, <B>double </B><I>theta</I>)<P>
+Rotate about the given axis by the given amount in radians.<P>
+
+<HR>
+<A NAME="wxdrawnshapesetclippingrect"></A>
+<H3>wxDrawnShape::SetClippingRect</H3>
+<P>
+<B>void</B> <B>SetClippingRect</B>(<B>const wxRect&amp;</B><I> rect</I>)<P>
+Sets the clipping rectangle. See also <A HREF="ogl11.htm#wxdrawnshapedestroyclippingrect">wxDrawnShape::DestroyClippingRect</A>.<P>
+
+<HR>
+<A NAME="wxdrawnshapesetdrawnbackgroundcolour"></A>
+<H3>wxDrawnShape::SetDrawnBackgroundColour</H3>
+<P>
+<B>void</B> <B>SetDrawnBackgroundColour</B>(<B>const wxColour&amp;</B><I> colour</I>)<P>
+Sets the current background colour for the current metafile.<P>
+
+<HR>
+<A NAME="wxdrawnshapesetdrawnbackgroundmode"></A>
+<H3>wxDrawnShape::SetDrawnBackgroundMode</H3>
+<P>
+<B>void</B> <B>SetDrawnBackgroundMode</B>(<B>int</B><I> mode</I>)<P>
+Sets the current background mode for the current metafile.<P>
+
+<HR>
+<A NAME="wxdrawnshapesetdrawnbrush"></A>
+<H3>wxDrawnShape::SetDrawnBrush</H3>
+<P>
+<B>void</B> <B>SetDrawnBrush</B>(<B>wxPen*</B><I> pen</I>, <B>bool</B><I> isOutline = FALSE</I>)<P>
+Sets the pen for this metafile. If <I>isOutline</I> is TRUE, this pen is taken to indicate the outline
+(and if the outline pen is changed for the whole shape, the pen will be replaced with the outline pen).<P>
+
+<HR>
+<A NAME="wxdrawnshapesetdrawnfont"></A>
+<H3>wxDrawnShape::SetDrawnFont</H3>
+<P>
+<B>void</B> <B>SetDrawnFont</B>(<B>wxFont*</B><I> font</I>)<P>
+Sets the current font for the current metafile.<P>
+
+<HR>
+<A NAME="wxdrawnshapesetdrawnpen"></A>
+<H3>wxDrawnShape::SetDrawnPen</H3>
+<P>
+<B>void</B> <B>SetDrawnPen</B>(<B>wxPen*</B><I> pen</I>, <B>bool</B><I> isOutline = FALSE</I>)<P>
+Sets the pen for this metafile. If <I>isOutline</I> is TRUE, this pen is taken to indicate the outline
+(and if the outline pen is changed for the whole shape, the pen will be replaced with the outline pen).<P>
+
+<HR>
+<A NAME="wxdrawnshapesetdrawntextcolour"></A>
+<H3>wxDrawnShape::SetDrawnTextColour</H3>
+<P>
+<B>void</B> <B>SetDrawnTextColour</B>(<B>const wxColour&amp;</B><I> colour</I>)<P>
+Sets the current text colour for the current metafile.<P>
+
+<HR>
+<A NAME="topic54"></A>
+<H3>wxDrawnShape::Scale</H3>
+<P>
+<B>void</B> <B>Scale</B>(<B>double </B><I>sx</I>, <B>double </B><I>sy</I>)<P>
+Scales the shape by the given amount.<P>
+
+<HR>
+<A NAME="topic55"></A>
+<H3>wxDrawnShape::SetSaveToFile</H3>
+<P>
+<B>void</B> <B>SetSaveToFile</B>(<B>bool </B><I>save</I>)<P>
+If <I>save</I> is TRUE, the image will be saved along with the shape's other attributes. The reason
+why this might not be desirable is that if there are many shapes with the same image, it would be
+more efficient for the application to save one copy, and not duplicate the information for every
+shape. The default is TRUE.<P>
+
+<HR>
+<A NAME="topic56"></A>
+<H3>wxDrawnShape::Translate</H3>
+<P>
+<B>void</B> <B>Translate</B>(<B>double </B><I>x</I>, <B>double </B><I>y</I>)<P>
+Translates the shape by the given amount.<P>
+
+</FONT></BODY></HTML>

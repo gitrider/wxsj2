@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<GUIScheme Name="CEImagesetEditor">
+	<Imageset Name="CEImagesetEditor" Filename="CEImagesetEditor.imageset" />
+	<LookNFeel Filename="CEImagesetEditor.looknfeel" />
+	<WindowRendererSet Filename="CEGUIFalagardWRBase">
+		<WindowRendererFactory Name="Falagard/StaticImage" />
+	</WindowRendererSet>
+	<FalagardMapping WindowType="CEImagesetEditor/StaticImage" TargetType="DefaultWindow" Renderer="Falagard/StaticImage" LookNFeel="CEImagesetEditor/StaticImage" />
+    <FalagardMapping WindowType="CEImagesetEditor/ImageRegion" TargetType="CEImagesetEditor/ElasticBox" Renderer="CEImagesetEditor/ElasticBoxRenderer" LookNFeel="CEImagesetEditor/ElasticBox" />
+</GUIScheme>

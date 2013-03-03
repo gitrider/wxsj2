@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Agent desc="DEFAULT" >
+	<Scripts>
+		<Script name="..\Common\Main.lua" />
+		<Script name="..\Common\Procedure_Login.lua" />
+		<Script name="..\Common\Procedure_CharSel.lua" />
+		<Script name="..\Common\Procedure_CharCreate.lua" />
+		<Script name="..\Common\Procedure_GameServer.lua" />
+		<Script name="..\Common\Procedure_EnterScene.lua" />
+		<Script name="Procedure_Main.lua" />
+	</Scripts>
+	
+	<Variables>
+		<Variable name="LoginServer_Address" default="10.1.164.152" />
+		<Variable name="LoginServer_Port" default="3733" />
+		<Variable name="AccountName" default="tlbb0001" />
+		<Variable name="AccountPassword" default="111" />
+		<Variable name="AccountGender" default="1" />
+	</Variables>
+</Agent>

@@ -1,0 +1,100 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mdi", "..\..\samples\build\msw\samples_mdi.vcproj", "{2AA83D5C-8708-493E-81E1-BC15119290A8}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sdi", "..\..\samples\build\msw\samples_sdi.vcproj", "{8763B204-884E-4395-B2F9-7A1430CFBE32}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79} = {7FA332FA-F939-4FCD-B530-817FF3D0FD79}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxdockit_dll", "wxdockit_wxdockit_dll.vcproj", "{352960DD-E5F1-47DF-9D8B-275C448130F2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxdockit_lib", "wxdockit_wxdockit_lib.vcproj", "{7FA332FA-F939-4FCD-B530-817FF3D0FD79}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Default = Default
+		DLL = DLL
+		DLL Debug = DLL Debug
+		DLL Unicode = DLL Unicode
+		DLL Unicode Debug = DLL Unicode Debug
+		Unicode = Unicode
+		Unicode Debug = Unicode Debug
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.Debug.ActiveCfg = Debug|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.Debug.Build.0 = Debug|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.Default.ActiveCfg = Default|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.Default.Build.0 = Default|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.DLL.ActiveCfg = DLL|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.DLL.Build.0 = DLL|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.DLL Debug.ActiveCfg = DLL Debug|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.DLL Debug.Build.0 = DLL Debug|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.DLL Unicode.ActiveCfg = DLL Unicode|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.DLL Unicode.Build.0 = DLL Unicode|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.DLL Unicode Debug.ActiveCfg = DLL Unicode Debug|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.DLL Unicode Debug.Build.0 = DLL Unicode Debug|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.Unicode.ActiveCfg = Unicode|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.Unicode.Build.0 = Unicode|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.Unicode Debug.ActiveCfg = Unicode Debug|Win32
+		{2AA83D5C-8708-493E-81E1-BC15119290A8}.Unicode Debug.Build.0 = Unicode Debug|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.Debug.ActiveCfg = Debug|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.Debug.Build.0 = Debug|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.Default.ActiveCfg = Default|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.Default.Build.0 = Default|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.DLL.ActiveCfg = DLL|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.DLL.Build.0 = DLL|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.DLL Debug.ActiveCfg = DLL Debug|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.DLL Debug.Build.0 = DLL Debug|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.DLL Unicode.ActiveCfg = DLL Unicode|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.DLL Unicode.Build.0 = DLL Unicode|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.DLL Unicode Debug.ActiveCfg = DLL Unicode Debug|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.DLL Unicode Debug.Build.0 = DLL Unicode Debug|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.Unicode.ActiveCfg = Unicode|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.Unicode.Build.0 = Unicode|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.Unicode Debug.ActiveCfg = Unicode Debug|Win32
+		{8763B204-884E-4395-B2F9-7A1430CFBE32}.Unicode Debug.Build.0 = Unicode Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.Debug.ActiveCfg = DLL Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.Debug.Build.0 = DLL Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.Default.ActiveCfg = DLL Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.Default.Build.0 = DLL Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.DLL.ActiveCfg = DLL|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.DLL.Build.0 = DLL|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.DLL Debug.ActiveCfg = DLL Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.DLL Debug.Build.0 = DLL Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.DLL Unicode.ActiveCfg = DLL Unicode|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.DLL Unicode.Build.0 = DLL Unicode|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.DLL Unicode Debug.ActiveCfg = DLL Unicode Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.DLL Unicode Debug.Build.0 = DLL Unicode Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.Unicode.ActiveCfg = DLL Unicode Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.Unicode.Build.0 = DLL Unicode Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.Unicode Debug.ActiveCfg = DLL Unicode Debug|Win32
+		{352960DD-E5F1-47DF-9D8B-275C448130F2}.Unicode Debug.Build.0 = DLL Unicode Debug|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.Debug.ActiveCfg = Debug|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.Debug.Build.0 = Debug|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.Default.ActiveCfg = Default|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.Default.Build.0 = Default|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.DLL.ActiveCfg = Default|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.DLL.Build.0 = Default|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.DLL Debug.ActiveCfg = Debug|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.DLL Debug.Build.0 = Debug|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.DLL Unicode.ActiveCfg = Unicode|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.DLL Unicode.Build.0 = Unicode|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.DLL Unicode Debug.ActiveCfg = Unicode Debug|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.DLL Unicode Debug.Build.0 = Unicode Debug|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.Unicode.ActiveCfg = Unicode|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.Unicode.Build.0 = Unicode|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.Unicode Debug.ActiveCfg = Unicode Debug|Win32
+		{7FA332FA-F939-4FCD-B530-817FF3D0FD79}.Unicode Debug.Build.0 = Unicode Debug|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

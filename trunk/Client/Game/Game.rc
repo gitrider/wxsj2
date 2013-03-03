@@ -1,0 +1,236 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_GAME                ICON                    "Res\\Game.ico"
+IDI_SMALL               ICON                    "Res\\small.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_GAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_GAME ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CHOOSE_USERID DIALOGEX 0, 0, 247, 349
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "武侠世界II V0042901 登录选择"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,124,326,50,14
+    PUSHBUTTON      "取消",IDCANCEL,179,326,50,14
+    RTEXT           "用户名称:",IDC_STATIC,18,70,37,10
+    EDITTEXT        IDC_EDIT_USERID,88,67,138,14,ES_AUTOHSCROLL
+    CONTROL         "不再显示此对话框",IDC_CHECK_REMEMBER,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,18,328,82,9
+    COMBOBOX        IDC_COMBO_SERVER,88,209,139,62,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "全局泛光:",IDC_STATIC,18,276,36,12
+    COMBOBOX        IDC_COMBO_POSTFILTER,88,274,141,62,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "渲染器:",IDC_STATIC,18,296,28,12
+    COMBOBOX        IDC_COMBO_DEVICE,88,292,142,62,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "性别:",IDC_STATIC_GENDER,18,107,21,11
+    COMBOBOX        IDC_COMBO_GENDER,88,104,139,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "直接登录GameServer",IDC_CHECK_GAMESERVER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,25,88,10
+    GROUPBOX        " 选择登录方式 ",IDC_STATIC,7,7,233,34
+    GROUPBOX        " 直连GameServer服务器的参数 ",IDC_STATIC,7,51,233,132
+    LTEXT           "GameServer IP:",IDC_STATIC,18,211,57,8
+    LTEXT           "GameServer 端口:",IDC_STATIC,18,231,65,8
+    EDITTEXT        IDC_EDIT_SERVER_PORT,88,227,139,14,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        " 渲染选项 ",IDC_STATIC,7,260,233,52
+    GROUPBOX        " 服务器信息 ",IDC_STATIC,7,194,233,56
+    LTEXT           "GUID:",IDC_STATIC,19,164,21,8
+    EDITTEXT        IDC_EDIT_USEGUID,88,161,139,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "职业:",IDC_STATIC,19,127,21,8
+    COMBOBOX        IDC_COMBO_PROFESSION,88,122,140,108,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "国家:",IDC_STATIC,19,145,21,8
+    COMBOBOX        IDC_COMBO_COUNTRY,88,142,139,90,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "（要创建新人就必须更改名称， 只修改下面的不起作用）",IDC_STATIC,18,88,205,8
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_NORMAL       CURSOR                  "Res\\Normal.cur"
+IDC_CURSOR_ATTACK       CURSOR                  "Res\\Attack.cur"
+IDC_CURSOR_AUTORUN      CURSOR                  "Res\\AutoRun.cur"
+IDC_CURSOR_UNREACHABLE  CURSOR                  "Res\\UnReachable.cur"
+IDC_CURSOR_PICKUP       CURSOR                  "Res\\PickUp.cur"
+IDC_CURSOR_MINE         CURSOR                  "Res\\Mine.CUR"
+IDC_CURSOR_HERBS        CURSOR                  "Res\\Herbs.CUR"
+IDC_CURSOR_INTERACT     CURSOR                  "Res\\Interact.CUR"
+IDC_CURSOR_SPEAK        CURSOR                  "Res\\Speak.CUR"
+IDC_CURSOR_REPAIR       CURSOR                  "Res\\Repair.CUR"
+IDC_CURSOR_HOVER        CURSOR                  "Res\\Hover.CUR"
+IDC_CURSOR_IDENFITY     CURSOR                  "Res\\Identify.CUR"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,4,4,1
+ PRODUCTVERSION 1,4,4,1
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", "Client"
+            VALUE "CompanyName", "hopecool.COM Inc"
+            VALUE "FileDescription", "武侠世界 Client"
+            VALUE "FileVersion", "0, 0, 4, 2901"
+            VALUE "InternalName", "HopeCool"
+            VALUE "LegalCopyright", "Copyright (C) 2010"
+            VALUE "OriginalFilename", "Game.exe"
+            VALUE "ProductName", "HopeCool Version"
+            VALUE "ProductVersion", "0, 0, 4, 2901"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_CHOOSE_USERID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 342
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "Game"
+    IDC_GAME                "GAME"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

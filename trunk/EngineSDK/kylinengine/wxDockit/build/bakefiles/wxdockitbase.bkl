@@ -1,0 +1,268 @@
+<?xml version="1.0" ?>
+
+<!-- Author: Francesco Montorsi <frm@users.sourceforge.net>         -->
+<!-- Date: 7/4/2005  												-->
+
+
+<!--                WXDOCKIT GENERIC BAKEFILE                       -->
+<!--                                                                -->
+<!--    This bakefile can be used by all wxDockIt-based app and     -->
+<!--    lib since it provides:                                      -->
+<!--                                                                -->
+<!--    1) the version of wxDockIt (WXDOCKIT_VERSION)               -->
+<!--    2) the wxdockit template                                    -->
+<!--    3) the wxdockit-lib tag to link against wxdockit            -->
+<!--                                                                -->
+
+<makefile>
+
+	<using module="datafiles"/>
+
+    <!-- This file contains the declaration of the WX & WX-LIB templates   -->
+    <set var="WX_VERSION_DEFAULT">26</set>
+    <include file="presets/wx.bkl"/>
+    
+    <!-- This one contains some new utility targets -->
+    <include file="utils.bkl"/>
+
+
+
+    <!--                                                                -->
+    <!--                            VARIABLES                           -->
+    <!--                                                                -->
+
+    <!-- Some infos on the version. -->
+    <set var="WXDOCKIT_MAJOR">2</set>
+    <set var="WXDOCKIT_MINOR">1</set>
+    <set var="WXDOCKIT_RELEASE">0</set>
+    <set var="WXDOCKIT_VERSION">$(WXDOCKIT_MAJOR).$(WXDOCKIT_MINOR).$(WXDOCKIT_RELEASE)</set>
+    
+    <!--    A simple variable used to understand if we are          -->
+    <!--    creating a makefile for a Win32 target or a more        -->
+    <!--    generic linux/GNU-based system.                         -->
+    <set var="TARGETING_WIN32">
+        <if cond="FORMAT=='autoconf' or FORMAT=='gnu'">0</if>
+        <if cond="FORMAT!='autoconf' and FORMAT!='gnu'">1</if>
+    </set>    
+    <set var="WXDOCKIT_LIBPOSTFIX">
+        <!-- Use same naming conventions as for wxWidgets. -->
+        <if cond="TARGETING_WIN32=='1'">$(WXLIBPOSTFIX)</if>
+        <if cond="TARGETING_WIN32=='0'"></if>		<!-- empty in this case... -->
+    </set>
+    
+    <set var="WXDOCKIT_LIBNAME">wxdockit$(WXDOCKIT_LIBPOSTFIX)</set>
+    <set var="WXDOCKIT_DLLNAME">
+        <if cond="TARGETING_WIN32=='0'">wxdockit$(WXDOCKIT_LIBPOSTFIX)-$(WXDOCKIT_MAJOR).$(WXDOCKIT_MINOR)</if>
+        <if cond="TARGETING_WIN32=='1'">wxdockit$(WXDOCKIT_LIBPOSTFIX)</if>
+    </set>
+        
+    <!-- 0.0.0 must be used for stable releases; 1.0.0, 2.0.0 ...
+         are used for development releases. -->
+    <set var="WXDOCKIT_SOVERSION">0.0.0</set>
+    
+    <!-- Same as WXDOCKIT_SOVERSION just without dots -->
+    <set var="WXDOCKIT_MACVERSION">0</set>
+
+        
+    <!-- some path stuff -->
+        
+    <if cond="TARGETING_WIN32=='1'">
+	    <!-- Win32 makefiles will be put in BUILD/MSW -->
+	    <set var="WXDOCKIT_BASEDIR">..$(DIRSEP)..</set>
+	</if>
+    <if cond="TARGETING_WIN32=='0'">
+    	<!-- Unix makefiles will be put in the main folder -->
+	    <set var="WXDOCKIT_BASEDIR">.</set>
+	</if>
+	
+    <set var="WXDOCKIT_LIBOUTPUT_FOLDER">
+        <if cond="TARGETING_WIN32=='1'">
+            <!-- in this case, the COMPILER variable is defined -->
+            lib$(DIRSEP)$(COMPILER)_lib
+        </if>
+        <if cond="TARGETING_WIN32=='0'">
+           lib
+        </if>
+    </set>
+    <set var="WXDOCKIT_DLLOUTPUT_FOLDER">
+        <if cond="TARGETING_WIN32=='1'">
+            <!-- in this case, the COMPILER variable is defined -->
+            lib$(DIRSEP)$(COMPILER)_dll
+        </if>
+        <if cond="TARGETING_WIN32=='0'">
+            lib
+        </if>
+    </set>
+    <set var="WXDOCKIT_OUTPUT_FOLDER">
+        <if cond="TARGETING_WIN32=='1' and WX_SHARED=='1'">$(WXDOCKIT_DLLOUTPUT_FOLDER)</if>
+        <if cond="TARGETING_WIN32=='1' and WX_SHARED=='0'">$(WXDOCKIT_LIBOUTPUT_FOLDER)</if>
+        <if cond="TARGETING_WIN32=='0'">lib</if>    <!-- shared & static builds go to the same folder -->
+    </set>
+
+    
+    <!-- sources -->
+    <set var="WXDOCKIT_SRC">
+		src/generic/layoutmanager.cpp
+		src/generic/dockhost.cpp 
+		src/generic/dockpanel.cpp	
+		src/generic/dockwindow.cpp 
+		src/generic/exsplitter.cpp 
+		src/generic/toolbutton.cpp 
+		src/generic/pane.cpp 
+		src/generic/gripper.cpp 
+		src/generic/gdi.cpp 
+		src/generic/slidebar.cpp 
+		src/generic/barholder.cpp 
+		src/generic/util.cpp 
+    </set>    
+    <set var="WXDOCKIT_SPECIFIC_SRC">
+		<if cond="TARGETING_WIN32=='1'">
+			src/msw/dockwindow_msw.cpp 
+			src/msw/pane_msw.cpp 
+			src/msw/toolbutton_msw.cpp
+			src/msw/gdi_msw.cpp
+		</if>
+		<if cond="TARGETING_WIN32=='0'">
+			src/gtk/dockwindow_gtk.cpp 
+			src/gtk/pane_gtk.cpp 
+			src/gtk/gdi_gtk.cpp
+		</if>
+	</set>
+
+    <!-- headers -->
+    <set var="WXDOCKIT_HDR">
+		include/wx/layoutmanager.h
+		include/wx/dockhost.h
+		include/wx/dockpanel.h	
+		include/wx/dockwindow.h 
+		include/wx/exsplitter.h 
+		include/wx/export.h		
+		include/wx/toolbutton.h 
+		include/wx/pane.h 
+		include/wx/gripper.h 
+		include/wx/gdi.h 
+		include/wx/slidebar.h 
+		include/wx/barholder.h 
+		include/wx/util.h 
+    </set>    
+    <set var="WXDOCKIT_SPECIFIC_HDR">
+   		<if cond="TARGETING_WIN32=='1'">
+			include/wx/msw/dockwindow.h 
+			include/wx/msw/pane.h 
+			include/wx/msw/toolbutton.h
+			include/wx/msw/gdi.h
+		</if>
+		<if cond="TARGETING_WIN32=='0'">
+			include/wx/gtk/dockwindow.h 
+			include/wx/gtk/pane.h 
+			include/wx/gtk/gdi.h
+		</if>
+    </set>
+    
+	<if cond="TARGETING_WIN32=='1'">
+	    <set var="WARNINGS">
+	        <if cond="WX_DEBUG=='1'">max</if>
+	        <if cond="WX_DEBUG=='0'">no</if>
+	    </set>
+	    <set var="DEBUGINFO">
+	        <if cond="WX_DEBUG=='1'">on</if>
+	        <if cond="WX_DEBUG=='0'">off</if>
+	    </set>
+	    <set var="DEBUGRUNTIME">
+	        <if cond="WX_DEBUG=='1'">on</if>
+	        <if cond="WX_DEBUG=='0'">off</if>
+	    </set>
+	    <set var="OPTIMIZEFLAG">
+	        <if cond="WX_DEBUG=='1'">off</if>
+	        <if cond="WX_DEBUG=='0'">speed</if>
+	    </set>
+	    <set var="WX_SHAREDDEFINE">
+    		<if cond="WX_SHARED=='1'">WXUSINGDLL</if>
+	    </set>	    
+	    <set var="WXDOCKIT_SHAREDDEFINE">
+    		<if cond="WX_SHARED=='1'">WXMAKINGDLL_DOCKIT</if>
+	    </set>	    
+    </if>
+    <if cond="TARGETING_WIN32=='0'">
+	    <set var="WX_SHAREDDEFINE"/>
+	    <set var="WXDOCKIT_SHAREDDEFINE"/>	    
+    </if>
+        
+
+
+
+    <!--                                                                -->
+    <!--                            NEW TAGS                            -->
+    <!--                                                                -->
+
+    <!-- This defines a tag which includes headers on MSVC          -->
+    <!-- Note that $(value) is stuck in there by bakefile,          -->
+    <!-- and is the value between the beginning and end tag.        -->
+    <define-tag name="headers" rules="dll,lib,exe">
+        <if cond="FORMAT=='msvc6prj'">
+            <msvc-project-files>
+                $(value)
+            </msvc-project-files>
+        </if>
+    </define-tag>
+    
+    <!-- The wxdockit-lib tag. Use this *before* <wx-lib> -->
+    <define-tag name="wxdockit-lib" rules="exe,dll,lib">
+        <sys-lib>wxdockit$(WXDOCKIT_LIBPOSTFIX)</sys-lib>
+    </define-tag>
+    <tag-info name="wxdockit-lib" position="before:wx-lib"/>    
+
+	<!-- Creates the following custom build rule for MSVC6PRJ file:
+	     copies ..\..\include\$(value)\msw\config.h into ..\..\include\$(value)\config.h
+	     NOTE: this tag must be used before the <sources> tag if you want that the configuration
+	           file will be created before any other source file is compiled... -->
+    <define-tag name="msvc-copy-setup-h" rules="dll,lib,action">
+        <if cond="FORMAT=='msvc6prj'">
+	        <headers>include\$(value)\msw\config.h</headers>
+	        <set var="__subdir">$(value)</set>
+            <set var="_custom_build_files" append="1">include\$(value)\msw\config.h</set>
+            <set var="_custom_build_include_$(__subdir)_msw_config_h">
+Creating the configuration file ..\..\include\$(value)\config.h from ..\..\include\$(value)\msw\config.h
+InputPath=..\..\include\$(value)\msw\config.h
+
+"..\..\include\$(value)\config.h" : $(DOLLAR)(SOURCE) "$(DOLLAR)(INTDIR)" "$(DOLLAR)(OUTDIR)"
+$(TAB)copy "$(DOLLAR)(InputPath)" ..\..\include\$(value)\config.h
+            </set>
+        </if>
+    </define-tag>
+    
+    <define-tag name="run-tarball" rules="action">
+		<command>tar -cvzf $(value) --exclude-from=$(WXDOCKIT_BASEDIR)$(DIRSEP)build$(DIRSEP)bakefiles$(DIRSEP)excludelist.txt wxDockIt/*</command>
+    </define-tag>
+    <define-tag name="run-zip" rules="action">
+        <command>zip -r9 $(value) $(WXDOCKIT_BASEDIR)$(DIRSEP)*  -x *.pdb -x *.log -x *.o* -x *.#* -x *.csm -x *.il?</command>
+    </define-tag>
+
+
+
+
+
+    <!--                                                                -->
+    <!--                          TEMPLATES                             -->
+    <!--                                                                -->
+
+	<template id="wxdockit">
+        <!-- an additional include & link path are required not only on win32 but also
+             on *nix: when compiling the samples or the library the user have not 
+             installed the library yet ! -->
+   		<include>$(WXDOCKIT_BASEDIR)$(DIRSEP)include</include>
+    	<lib-path>$(WXDOCKIT_BASEDIR)$(DIRSEP)$(WXDOCKIT_OUTPUT_FOLDER)</lib-path>
+	
+		<if cond="TARGETING_WIN32=='1'">
+	        <warnings>$(WARNINGS)</warnings>
+    	    <optimize>$(OPTIMIZEFLAG)</optimize>
+        	<debug-info>$(DEBUGINFO)</debug-info>
+	        <debug-runtime-libs>$(DEBUGRUNTIME)</debug-runtime-libs>
+			<threading>multi</threading>
+		</if>
+		
+		<!-- This is a non-empty variable only when using wxWidgets as a DLL -->
+		<define>$(WX_SHAREDDEFINE)</define>
+	</template>
+
+</makefile>

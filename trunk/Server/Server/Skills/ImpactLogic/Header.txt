@@ -1,0 +1,56 @@
+ 驱动器 D 中的卷是 工作区
+ 卷的序列号是 3491-9B4A
+
+ D:\Prj\Server\Server\Skills\ImpactLogic 的目录
+
+2005-11-02  18:00             1,786 AllDefenceAttrSOT.h
+2005-11-02  17:59             1,541 AllSkillCoolDownImmediately.h
+2005-11-02  21:04             3,047 AttackRateAndCriticalUpAndIgnoreControl.h
+2005-11-02  17:58             2,955 DamagesAndDispelRage.h
+2005-11-02  17:57             4,044 DamagesAndNonTypeDOT.h
+2005-11-02  17:55             3,504 DamagesAndSlowMoveSpeed.h
+2005-11-02  17:54             2,157 DamagesToRageAndCriticalSot.h
+2005-11-02  17:51             1,583 DispelSpecificImpact.h
+2005-11-02  18:12             1,479 FaintOverTime.h
+2005-11-02  17:49             1,392 ForceAttackTarget.h
+2005-11-02  17:47             2,299 HitIncreaseRageAndDecreaseAllDefence.h
+2005-11-10  14:16             7,878 ImpactLogic.h
+2005-11-02  17:44             2,303 ImproveNextImpactContinuance.h
+2005-11-02  17:43             2,305 ImproveNextSkillAttackPhy.h
+2005-11-02  17:42             2,250 ImproveNextSkillDamage.h
+2005-11-02  17:39             2,434 MoveSpeedAndOneTimeRage.h
+2005-11-02  17:38             1,714 MoveSpeedSOT.h
+2005-11-02  17:36             1,401 NonTypeDamage.h
+2005-11-02  17:35             1,801 NonTypeDmgIgnoreShield.h
+2005-11-02  17:32             2,048 NonTypeDmgReflectShield.h
+2005-11-02  21:13             2,480 PhyAttackUpAndPhyMagicDefencesDown.h
+2005-11-02  17:31             1,790 PhyDefenceAttrSOT.h
+2005-11-02  17:30             1,348 RageModifyNow.h
+2005-11-10  14:18             1,527 RootSOT.h
+2005-11-02  17:29             2,559 TypeDamages.h
+              25 个文件         59,625 字节
+               0 个目录 21,851,561,984 可用字节
+ 驱动器 D 中的卷是 工作区
+ 卷的序列号是 3491-9B4A
+
+ D:\Home\Server\Server\Skills\ImpactLogic 的目录
+
+2005-11-22  21:09             1,231 DI_AttackMe.h
+2005-11-22  21:09             1,358 DI_Damage.h
+2005-11-22  21:09             2,829 DI_Damages.h
+2005-11-22  21:09             1,273 DI_ModifyRage.h
+2005-11-22  21:09             2,311 DOT_Damage.h
+2005-11-22  22:07             1,651 DS_Ignore.h
+2005-11-22  22:07             1,891 DS_Reflect.h
+2005-11-23  18:16             9,427 ImpactLogic.h
+2005-11-22  22:54             2,112 SOT_DamageMore.h
+2005-11-23  10:45             1,484 SOT_Faint.h
+2005-11-23  10:46             2,302 SOT_PhyAttackImprove.h
+2005-11-23  11:02             1,770 SOT_ResistAll.h
+2005-11-23  11:03             2,150 SOT_ShaoLin007.h
+2005-11-23  17:38             1,848 SOT_ShaoLin009.h
+2005-11-23  11:05             2,391 SOT_ShaoLin013.h
+2005-11-22  23:42             2,375 SOT_ShaoLin016.h
+2005-11-23  11:06             1,756 SOT_SlowDown.h
+              17 个文件         40,159 字节
+               0 个目录 20,052,979,712 可用字节
